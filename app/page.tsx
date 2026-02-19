@@ -1,65 +1,89 @@
-import Image from "next/image";
+import { Hero } from "@/components/blocks/Hero";
+import { ProblemGrid } from "@/components/blocks/ProblemGrid";
+import { StepList } from "@/components/blocks/StepList";
+import { MetricRow } from "@/components/blocks/MetricRow";
+import { CTASection } from "@/components/blocks/CTASection";
+import { organizationJsonLd } from "@/lib/metadata";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationJsonLd),
+        }}
+      />
+
+      <Hero
+        title={`Automatiser d'abord.\nIA quand nécessaire.\nToujours pilotable.`}
+        subtitle="J'aide les dirigeants de PME à débloquer l'exécution, rationaliser les outils et tirer parti de l'IA — sans perdre le contrôle."
+        primaryCTA={{ label: "Découvrir l'approche", href: "/offres" }}
+        secondaryCTA={{ label: "Prendre rendez-vous", href: "/contact" }}
+      />
+
+      <ProblemGrid
+        intro="Votre entreprise tourne. Mais elle n'avance pas aussi vite qu'elle le devrait."
+        problems={[
+          {
+            title: "Outils dépassés",
+            description:
+              "Le socle technique a suivi la croissance un temps. Aujourd'hui, il la freine.",
+          },
+          {
+            title: "Process manuels",
+            description:
+              "Trop de tâches reposent sur des personnes. Pas assez sur des systèmes.",
+          },
+          {
+            title: "IA sans plan",
+            description:
+              "Tout le monde en parle. Personne ne sait par où commencer concrètement.",
+          },
+        ]}
+      />
+
+      <StepList
+        title="Ce que je fais"
+        steps={[
+          {
+            label: "Diagnostic",
+            description:
+              "Identifier les freins réels — tech, orga, culture.",
+          },
+          {
+            label: "Plan actionnable",
+            description:
+              "Prioriser ce qui a un ROI clair, en 90 jours.",
+          },
+          {
+            label: "Livraison",
+            description:
+              "Implémenter, mesurer, documenter. Résultats concrets.",
+          },
+          {
+            label: "Capitalisation",
+            description:
+              "Chaque intervention laisse des actifs. Vous gardez tout.",
+          },
+        ]}
+        cta={{ label: "Voir les offres", href: "/offres" }}
+      />
+
+      <MetricRow
+        title="Résultats observés"
+        metrics={[
+          { value: "-40%", label: "de délai sur les cycles de livraison" },
+          { value: "x3", label: "de débit sur les process automatisés" },
+          { value: "< 90 jours", label: "pour un ROI mesurable" },
+        ]}
+        note="Estimations basées sur des missions passées auprès de PME de services (50 à 200 personnes). Chaque contexte produit des résultats différents — ces ordres de grandeur illustrent le potentiel, pas une promesse."
+      />
+
+      <CTASection
+        text="Un échange de 30 minutes pour voir si ça matche."
+        primaryCTA={{ label: "Prendre rendez-vous", href: "/contact" }}
+      />
+    </>
   );
 }
