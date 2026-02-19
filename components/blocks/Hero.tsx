@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/Button";
-import { HeroCanvas } from "@/components/blocks/HeroCanvas";
+import { HeroCanvasLazy } from "@/components/blocks/HeroCanvasLazy";
 
 type HeroProps = {
   title: string;
@@ -13,7 +13,7 @@ export function Hero({ title, subtitle, primaryCTA, secondaryCTA }: HeroProps) {
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-32 pb-24">
-      <HeroCanvas />
+      <HeroCanvasLazy />
       <div className="relative z-10 mx-auto max-w-[var(--width-wide)] px-6 text-center">
         <h1 className="mx-auto max-w-3xl font-serif leading-tight tracking-display">
           {lines.map((line, i) => (
