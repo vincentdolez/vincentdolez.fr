@@ -16,7 +16,7 @@ export default function ContactPage() {
         <h1 className="gradient-text font-serif text-4xl leading-tight tracking-display">
           Parlons de votre situation.
         </h1>
-        <p className="mt-3 text-xl text-muted">
+        <p className="mt-3 text-xl text-muted text-balance">
           30 minutes pour comprendre vos freins et voir si je peux aider.
         </p>
       </Section>

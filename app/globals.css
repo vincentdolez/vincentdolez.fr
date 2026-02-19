@@ -288,6 +288,12 @@ body {
   background-size: 100% 1px;
 }
 
+/* ── Text balance for subtitles ── */
+
+.text-balance {
+  text-wrap: balance;
+}
+
 /* ── Selection ── */
 
 ::selection {

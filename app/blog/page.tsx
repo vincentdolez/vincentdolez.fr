@@ -17,9 +17,9 @@ export default function BlogPage() {
         <h1 className="gradient-text font-serif text-4xl leading-tight tracking-display">
           Articles
         </h1>
-        <p className="mt-3 text-xl text-muted">
-          Retours de terrain, méthodes et preuves techniques. Pas de contenu
-          pour remplir — chaque article part d&apos;un problème réel.
+        <p className="mt-3 text-xl text-muted text-balance">
+          Retours de terrain, méthodes et preuves techniques. Chaque article
+          part d&apos;un problème réel.
         </p>
       </Section>
 
