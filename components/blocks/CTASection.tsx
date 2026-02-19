@@ -10,7 +10,7 @@ type CTASectionProps = {
 
 export function CTASection({ text, primaryCTA, secondaryCTA }: CTASectionProps) {
   return (
-    <Section variant="surface" className="py-32">
+    <Section variant="surface">
       <Reveal>
         <div className="text-center">
           <hr className="hairline-fade mx-auto mb-12 max-w-xs" />

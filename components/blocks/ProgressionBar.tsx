@@ -1,30 +1,35 @@
-import { Section } from "@/components/layout/Section";
+import { Reveal } from "@/components/ui/Reveal";
 
 const steps = [
-  { label: "Quickscan", duration: "jours", signal: "confiance" },
-  { label: "Sprint", duration: "semaines", signal: "preuve" },
-  { label: "Partner", duration: "mois", signal: "récurrence" },
+  { number: "01", label: "Quickscan", duration: "Jours", signal: "Confiance" },
+  { number: "02", label: "Sprint", duration: "Semaines", signal: "Preuve" },
+  { number: "03", label: "Partner", duration: "Mois", signal: "Récurrence" },
 ];
 
 export function ProgressionBar() {
   return (
-    <Section variant="white">
-      <div className="flex flex-col items-center gap-4 md:flex-row md:justify-center md:gap-0">
+    <Reveal>
+      <div className="grid gap-6 md:grid-cols-3">
         {steps.map((step, index) => (
-          <div key={index} className="flex items-center">
-            <div className="text-center">
-              <div className="font-serif text-xl tracking-tight text-text">
+          <div key={index} className="relative flex items-center gap-4 md:flex-col md:items-start md:gap-0">
+            {/* Connector line (desktop) */}
+            {index < steps.length - 1 && (
+              <div className="absolute right-0 top-4 hidden h-px w-6 translate-x-full bg-border md:block" />
+            )}
+            <span className="font-mono text-xs text-muted">{step.number}</span>
+            <div>
+              <div className="font-serif text-2xl tracking-display text-text md:mt-2">
                 {step.label}
               </div>
-              <div className="mt-1 text-xs text-muted">({step.duration})</div>
-              <div className="mt-1 text-xs text-muted/70">{step.signal}</div>
+              <div className="mt-1 flex gap-3 text-sm text-muted">
+                <span>{step.duration}</span>
+                <span className="text-border">·</span>
+                <span>{step.signal}</span>
+              </div>
             </div>
-            {index < steps.length - 1 && (
-              <div className="mx-6 hidden h-px w-16 bg-border md:block" />
-            )}
           </div>
         ))}
       </div>
-    </Section>
+    </Reveal>
   );
 }

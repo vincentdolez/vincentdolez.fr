@@ -4,6 +4,7 @@ import { ProgressionBar } from "@/components/blocks/ProgressionBar";
 import { OfferCard } from "@/components/blocks/OfferCard";
 import { Accordion } from "@/components/ui/Accordion";
 import { CTASection } from "@/components/blocks/CTASection";
+import { Reveal } from "@/components/ui/Reveal";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -39,20 +40,26 @@ const faqItems = [
 export default function OffersPage() {
   return (
     <>
-      <Section variant="white" className="pt-32">
+      {/* Hero + Progression intégrée */}
+      <Section variant="white" className="pt-32 pb-12">
         <h1 className="gradient-text font-serif text-4xl leading-tight tracking-display">
           Trois façons de travailler ensemble
         </h1>
-        <p className="mt-3 text-xl text-stone-500">
+        <p className="mt-3 max-w-xl text-xl text-stone-500">
           Du diagnostic rapide au partenariat récurrent. Chaque étape construit
           sur la précédente.
         </p>
+        <div className="mt-12">
+          <ProgressionBar />
+        </div>
       </Section>
 
-      <ProgressionBar />
+      <hr className="hairline-fade mx-auto max-w-xs" />
 
+      {/* Offer details */}
       <OfferCard
         id="quickscan"
+        number="01"
         title="Quickscan"
         hook="Comprendre vos freins en quelques jours."
         itemsLabel="Ce que vous obtenez :"
@@ -67,10 +74,9 @@ export default function OffersPage() {
         variant="surface"
       />
 
-      <hr className="hairline-fade mx-auto max-w-xs" />
-
       <OfferCard
         id="sprint"
+        number="02"
         title="Sprint de déverrouillage"
         hook="2 à 3 livraisons mesurables en quelques semaines."
         itemsLabel="Ce que vous obtenez :"
@@ -83,12 +89,12 @@ export default function OffersPage() {
         deliverable="Des résultats démontrables et des équipes qui savent continuer."
         cta={{ label: "En savoir plus", href: "/contact" }}
         variant="white"
+        highlighted
       />
-
-      <hr className="hairline-fade mx-auto max-w-xs" />
 
       <OfferCard
         id="partner"
+        number="03"
         title="AI Operating Partner"
         hook="Votre partenaire permanent d'accélération."
         itemsLabel="Chaque mois :"
@@ -105,9 +111,11 @@ export default function OffersPage() {
       />
 
       <Section variant="white">
-        <h2 className="gradient-text mb-8 font-serif text-3xl leading-tight tracking-display">
-          Vous vous demandez peut-être...
-        </h2>
+        <Reveal>
+          <h2 className="gradient-text mb-8 font-serif text-3xl leading-tight tracking-display">
+            Vous vous demandez peut-être...
+          </h2>
+        </Reveal>
         <div className="mx-auto max-w-2xl">
           <Accordion items={faqItems} />
         </div>
