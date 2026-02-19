@@ -24,15 +24,15 @@ export function StepList({
   return (
     <Section variant={variant}>
       <Reveal>
-        <h2 className="gradient-text mt-4 mb-16 font-serif text-3xl leading-tight tracking-display">
+        <h2 className="gradient-text mt-4 mb-16 text-center font-serif text-3xl leading-tight tracking-display">
           {title}
         </h2>
       </Reveal>
-      <div className="space-y-0">
+      <div className="mx-auto max-w-3xl rounded-xl border border-border/60 bg-white p-8 shadow-sm md:p-10">
         {steps.map((step, index) => (
           <Reveal key={index} delay={index * 100}>
             <div
-              className={`flex gap-6 py-8 ${
+              className={`flex gap-6 py-6 ${
                 index < steps.length - 1 ? "border-b border-border/50" : ""
               }`}
             >
@@ -53,14 +53,14 @@ export function StepList({
             </div>
           </Reveal>
         ))}
+        {cta && (
+          <div className="mt-8 text-center">
+            <Button href={cta.href} variant="secondary">
+              {cta.label}
+            </Button>
+          </div>
+        )}
       </div>
-      {cta && (
-        <div className="mt-12">
-          <Button href={cta.href} variant="secondary">
-            {cta.label}
-          </Button>
-        </div>
-      )}
     </Section>
   );
 }
