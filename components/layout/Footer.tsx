@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border py-8">
+    <footer className="mt-24 border-t border-border py-12">
       <div className="mx-auto flex max-w-[var(--width-wide)] flex-col items-center justify-between gap-4 px-6 text-sm text-muted sm:flex-row">
         <span>&copy; Vincent Dolez {new Date().getFullYear()}</span>
 

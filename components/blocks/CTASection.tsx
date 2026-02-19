@@ -1,5 +1,6 @@
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 
 type CTASectionProps = {
   text: string;
@@ -9,20 +10,23 @@ type CTASectionProps = {
 
 export function CTASection({ text, primaryCTA, secondaryCTA }: CTASectionProps) {
   return (
-    <Section variant="white">
-      <div className="text-center">
-        <p className="mx-auto max-w-lg font-serif text-2xl leading-snug tracking-tight text-text">
-          {text}
-        </p>
-        <div className="mt-8 flex items-center justify-center gap-4">
-          <Button href={primaryCTA.href}>{primaryCTA.label}</Button>
-          {secondaryCTA && (
-            <Button href={secondaryCTA.href} variant="secondary">
-              {secondaryCTA.label}
-            </Button>
-          )}
+    <Section variant="surface" className="py-32">
+      <Reveal>
+        <div className="text-center">
+          <hr className="hairline-fade mx-auto mb-12 max-w-xs" />
+          <p className="mx-auto max-w-lg font-serif text-2xl leading-snug tracking-display text-text">
+            {text}
+          </p>
+          <div className="mt-10 flex items-center justify-center gap-4">
+            <Button href={primaryCTA.href}>{primaryCTA.label}</Button>
+            {secondaryCTA && (
+              <Button href={secondaryCTA.href} variant="secondary">
+                {secondaryCTA.label}
+              </Button>
+            )}
+          </div>
         </div>
-      </div>
+      </Reveal>
     </Section>
   );
 }

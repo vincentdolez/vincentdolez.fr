@@ -15,12 +15,12 @@ export default function AboutPage() {
   return (
     <>
       <Section variant="white" className="pt-32">
-        <h1 className="gradient-text font-serif text-4xl leading-tight tracking-tight">
+        <h1 className="gradient-text font-serif text-4xl leading-tight tracking-display">
           Vincent Dolez
         </h1>
-        <p className="mt-2 text-lg text-muted">AI Operating Partner</p>
+        <p className="mt-2 text-xl text-stone-500">AI Operating Partner</p>
 
-        <div className="mt-8 max-w-2xl space-y-4 leading-normal text-text">
+        <div className="mt-8 max-w-[var(--width-content)] space-y-4 leading-normal text-text">
           <p>
             Plus de 15 ans d&apos;expérience en pilotage de projets, delivery et
             transformation opérationnelle. J&apos;ai travaillé avec des PME, des
@@ -41,6 +41,8 @@ export default function AboutPage() {
           </p>
         </div>
       </Section>
+
+      <hr className="hairline-fade mx-auto max-w-xs" />
 
       <ConvictionGrid
         title="Mes convictions"

@@ -9,17 +9,26 @@ type HeroProps = {
 };
 
 export function Hero({ title, subtitle, primaryCTA, secondaryCTA }: HeroProps) {
+  const lines = title.split("\n");
+
   return (
-    <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden py-24">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-32 pb-24">
       <HeroCanvas />
       <div className="relative z-10 mx-auto max-w-[var(--width-wide)] px-6 text-center">
-        <h1 className="gradient-text mx-auto max-w-3xl font-serif text-5xl leading-tight tracking-tight">
-          {title}
+        <h1 className="mx-auto max-w-3xl font-serif leading-tight tracking-display">
+          {lines.map((line, i) => (
+            <span
+              key={i}
+              className="gradient-text block text-3xl sm:text-4xl md:text-5xl"
+            >
+              {line}
+            </span>
+          ))}
         </h1>
-        <p className="mx-auto mt-6 max-w-xl text-lg leading-normal text-muted">
+        <p className="mx-auto mt-8 max-w-xl text-xl leading-normal text-stone-500">
           {subtitle}
         </p>
-        <div className="mt-8 flex items-center justify-center gap-4">
+        <div className="mt-10 flex items-center justify-center gap-4">
           <Button href={primaryCTA.href}>{primaryCTA.label}</Button>
           {secondaryCTA && (
             <Button href={secondaryCTA.href} variant="secondary">

@@ -40,10 +40,10 @@ export default function OffersPage() {
   return (
     <>
       <Section variant="white" className="pt-32">
-        <h1 className="gradient-text font-serif text-4xl leading-tight tracking-tight">
+        <h1 className="gradient-text font-serif text-4xl leading-tight tracking-display">
           Trois façons de travailler ensemble
         </h1>
-        <p className="mt-3 text-lg text-muted">
+        <p className="mt-3 text-xl text-stone-500">
           Du diagnostic rapide au partenariat récurrent. Chaque étape construit
           sur la précédente.
         </p>
@@ -67,6 +67,8 @@ export default function OffersPage() {
         variant="surface"
       />
 
+      <hr className="hairline-fade mx-auto max-w-xs" />
+
       <OfferCard
         id="sprint"
         title="Sprint de déverrouillage"
@@ -82,6 +84,8 @@ export default function OffersPage() {
         cta={{ label: "En savoir plus", href: "/contact" }}
         variant="white"
       />
+
+      <hr className="hairline-fade mx-auto max-w-xs" />
 
       <OfferCard
         id="partner"
@@ -101,7 +105,7 @@ export default function OffersPage() {
       />
 
       <Section variant="white">
-        <h2 className="gradient-text mb-8 font-serif text-3xl leading-tight tracking-tight">
+        <h2 className="gradient-text mb-8 font-serif text-3xl leading-tight tracking-display">
           Vous vous demandez peut-être...
         </h2>
         <div className="mx-auto max-w-2xl">

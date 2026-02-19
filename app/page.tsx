@@ -22,6 +22,8 @@ export default function HomePage() {
         secondaryCTA={{ label: "Prendre rendez-vous", href: "/contact" }}
       />
 
+      <hr className="hairline-fade mx-auto max-w-xs" />
+
       <ProblemGrid
         intro="Votre entreprise tourne. Mais elle n'avance pas aussi vite qu'elle le devrait."
         problems={[
@@ -42,6 +44,8 @@ export default function HomePage() {
           },
         ]}
       />
+
+      <hr className="hairline-fade mx-auto max-w-xs" />
 
       <StepList
         title="Ce que je fais"
@@ -69,6 +73,8 @@ export default function HomePage() {
         ]}
         cta={{ label: "Voir les offres", href: "/offres" }}
       />
+
+      <hr className="hairline-fade mx-auto max-w-xs" />
 
       <MetricRow
         title="Résultats observés"

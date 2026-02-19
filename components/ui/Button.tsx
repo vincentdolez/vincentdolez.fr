@@ -22,9 +22,9 @@ export function Button({
     "inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-medium transition-all duration-[var(--duration-default)] ease-[var(--ease-default)]";
 
   const variants = {
-    primary: "bg-accent text-white hover:bg-accent/90",
+    primary: "bg-accent text-white hover:bg-accent/90 hover:shadow-md",
     secondary:
-      "border border-border text-text hover:bg-stone-100 hover:border-transparent",
+      "border border-border text-text font-medium hover:bg-stone-100 hover:border-transparent",
   };
 
   const classes = `${base} ${variants[variant]} ${disabled ? "opacity-50 cursor-not-allowed" : ""} ${className}`;

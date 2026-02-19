@@ -22,7 +22,7 @@ export function Section({
       : "max-w-[var(--width-wide)]";
 
   return (
-    <section id={id} className={`py-16 ${bgClass} ${className}`}>
+    <section id={id} className={`py-24 ${bgClass} ${className}`}>
       <div className={`mx-auto px-6 ${widthClass}`}>{children}</div>
     </section>
   );

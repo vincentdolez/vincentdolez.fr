@@ -91,12 +91,17 @@ body {
 
 /* ── Micro-details: Luxe discret ── */
 
-/* Gradient titles */
+/* Gradient titles — subtle, quasi-black with a shimmer */
 .gradient-text {
-  background: linear-gradient(to right, var(--color-stone-700), var(--color-stone-500));
+  background: linear-gradient(to right, var(--color-stone-800), var(--color-stone-600));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Tight tracking for serif display titles */
+.tracking-display {
+  letter-spacing: -0.03em;
 }
 
 /* Hairline separators */

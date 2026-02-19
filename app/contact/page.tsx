@@ -13,22 +13,20 @@ export default function ContactPage() {
   return (
     <>
       <Section variant="white" className="pt-32">
-        <h1 className="gradient-text font-serif text-4xl leading-tight tracking-tight">
+        <h1 className="gradient-text font-serif text-4xl leading-tight tracking-display">
           Parlons de votre situation.
         </h1>
-        <p className="mt-3 text-lg text-muted">
+        <p className="mt-3 text-xl text-stone-500">
           30 minutes pour comprendre vos freins et voir si je peux aider.
         </p>
       </Section>
 
       <Section variant="white" className="pt-0">
         <div className="grid gap-12 md:grid-cols-2">
-          {/* Form */}
           <div>
             <ContactForm />
           </div>
 
-          {/* Alternatives */}
           <div>
             <p className="mb-4 text-sm font-medium text-text">
               Ou si vous préférez :
