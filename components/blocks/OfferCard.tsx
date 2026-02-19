@@ -39,7 +39,7 @@ export function OfferCard({
             className={`mx-auto max-w-3xl rounded-xl p-8 md:p-10 ${
               highlighted
                 ? "border-2 border-accent/20 bg-white shadow-md"
-                : ""
+                : "border border-border/60 bg-white shadow-sm"
             }`}
           >
             <div className="flex items-start gap-4">
