@@ -45,7 +45,7 @@ export default function OffersPage() {
         <h1 className="gradient-text font-serif text-4xl leading-tight tracking-display">
           Trois façons de travailler ensemble
         </h1>
-        <p className="mt-3 max-w-xl text-xl text-stone-500">
+        <p className="mt-3 max-w-xl text-xl text-muted">
           Du diagnostic rapide au partenariat récurrent. Chaque étape construit
           sur la précédente.
         </p>

@@ -25,7 +25,7 @@ export function Hero({ title, subtitle, primaryCTA, secondaryCTA }: HeroProps) {
             </span>
           ))}
         </h1>
-        <p className="mx-auto mt-8 max-w-xl text-xl leading-normal text-stone-500">
+        <p className="mx-auto mt-8 max-w-xl text-xl leading-normal text-muted">
           {subtitle}
         </p>
         <div className="mt-10 flex items-center justify-center gap-4">

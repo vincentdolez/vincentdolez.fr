@@ -28,7 +28,7 @@ export function StepList({
           {title}
         </h2>
       </Reveal>
-      <div className="mx-auto max-w-3xl rounded-xl border border-border/60 bg-white p-8 shadow-sm md:p-10">
+      <div className="mx-auto max-w-3xl rounded-xl border border-border/60 bg-bg p-8 shadow-sm md:p-10">
         {steps.map((step, index) => (
           <Reveal key={index} delay={index * 100}>
             <div

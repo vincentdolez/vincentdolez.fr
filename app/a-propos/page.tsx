@@ -18,7 +18,7 @@ export default function AboutPage() {
         <h1 className="gradient-text font-serif text-4xl leading-tight tracking-display">
           Vincent Dolez
         </h1>
-        <p className="mt-2 text-xl text-stone-500">AI Operating Partner</p>
+        <p className="mt-2 text-xl text-muted">AI Operating Partner</p>
 
         <div className="mt-8 max-w-[var(--width-content)] space-y-4 leading-normal text-text">
           <p>

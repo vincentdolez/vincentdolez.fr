@@ -97,7 +97,7 @@ export function Header() {
       {/* Mobile menu overlay — rendered outside header to avoid stacking context issues */}
       {open && (
         <div
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white md:hidden"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-bg md:hidden"
         >
           <button
             type="button"

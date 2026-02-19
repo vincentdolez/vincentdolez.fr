@@ -24,7 +24,7 @@ export function Button({
   const variants = {
     primary: "bg-accent text-white hover:bg-accent/90 hover:shadow-md",
     secondary:
-      "border border-border text-text font-medium hover:bg-stone-100 hover:border-transparent",
+      "border border-border text-text font-medium hover:bg-surface hover:border-transparent",
   };
 
   const classes = `${base} ${variants[variant]} ${disabled ? "opacity-50 cursor-not-allowed" : ""} ${className}`;

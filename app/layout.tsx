@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { DM_Serif_Display, DM_Sans, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./globals.css";
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -52,6 +54,8 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

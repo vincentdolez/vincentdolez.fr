@@ -37,7 +37,7 @@ export const mdxComponents: Record<string, (props: any) => React.ReactNode> = {
   ),
   blockquote: (props: any) => (
     <blockquote
-      className="my-6 border-l-2 border-stone-300 pl-4 italic text-muted"
+      className="my-6 border-l-2 border-border pl-4 italic text-muted"
       {...props}
     />
   ),
