@@ -139,6 +139,111 @@ body {
   }
 }
 
+/* ── Hero gradient mesh ── */
+
+.hero-mesh {
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 50%, #ffffff 100%);
+}
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.hero-blob-1 {
+  width: 60%;
+  height: 60%;
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, var(--color-stone-300) 0%, transparent 70%);
+  opacity: 0.35;
+  animation: blob-drift-1 70s ease-in-out infinite;
+}
+
+.hero-blob-2 {
+  width: 50%;
+  height: 50%;
+  bottom: -5%;
+  right: -10%;
+  background: radial-gradient(circle, var(--color-stone-500) 0%, transparent 70%);
+  opacity: 0.12;
+  animation: blob-drift-2 90s ease-in-out infinite;
+}
+
+.hero-blob-3 {
+  width: 40%;
+  height: 40%;
+  top: 30%;
+  left: 40%;
+  background: radial-gradient(circle, var(--color-stone-300) 0%, transparent 70%);
+  opacity: 0.25;
+  animation: blob-drift-3 80s ease-in-out infinite;
+}
+
+@keyframes blob-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(8%, 12%) scale(1.05); }
+  66% { transform: translate(-5%, 6%) scale(0.97); }
+}
+
+@keyframes blob-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-10%, -8%) scale(1.08); }
+  66% { transform: translate(6%, -4%) scale(0.95); }
+}
+
+@keyframes blob-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(12%, -6%) scale(0.96); }
+  66% { transform: translate(-8%, 10%) scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-blob {
+    animation: none;
+  }
+}
+
+/* ── Floating label ── */
+
+.floating-field {
+  position: relative;
+}
+
+.floating-field input,
+.floating-field textarea {
+  padding-top: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.floating-field label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: all var(--duration-fast) var(--ease-default);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+
+.floating-field textarea ~ label {
+  top: 1.25rem;
+  transform: none;
+}
+
+.floating-field input:focus ~ label,
+.floating-field input:not(:placeholder-shown) ~ label,
+.floating-field textarea:focus ~ label,
+.floating-field textarea:not(:placeholder-shown) ~ label {
+  top: 0.35rem;
+  transform: none;
+  font-size: 0.7rem;
+  color: var(--color-accent);
+}
+
 /* ── Selection ── */
 
 ::selection {

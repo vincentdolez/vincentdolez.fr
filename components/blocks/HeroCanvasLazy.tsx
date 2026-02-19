@@ -1,15 +1,3 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-const HeroCanvas = dynamic(
-  () =>
-    import("@/components/blocks/HeroCanvas").then((m) => ({
-      default: m.HeroCanvas,
-    })),
-  { ssr: false },
-);
-
-export function HeroCanvasLazy() {
-  return <HeroCanvas />;
-}
+// Thin re-export kept so existing imports don't break.
+// HeroCanvas is now pure CSS — no dynamic import needed.
+export { HeroCanvas as HeroCanvasLazy } from "./HeroCanvas";

@@ -47,7 +47,7 @@ export function Header() {
         <nav className="mx-auto flex max-w-[var(--width-wide)] items-center justify-between px-6 py-4">
           <Link
             href="/"
-            className="font-serif text-xl tracking-display text-text transition-opacity duration-[var(--duration-default)] hover:opacity-80"
+            className="font-serif text-xl tracking-display text-text opacity-80 transition-opacity duration-[var(--duration-default)] hover:opacity-100"
           >
             Vincent Dolez
           </Link>

@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/Button";
 
 type FormState = "idle" | "sending" | "success" | "error";
 
+const inputClasses =
+  "w-full rounded-md border border-border bg-bg px-4 pt-5 pb-2 text-sm text-text outline-none transition-all duration-[var(--duration-default)] placeholder:text-transparent focus:border-accent focus:ring-1 focus:ring-accent/20";
+
 export function ContactForm() {
   const [state, setState] = useState<FormState>("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -55,62 +58,61 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label htmlFor="name" className="mb-1 block text-sm font-medium">
-          Nom
-        </label>
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="floating-field">
         <input
           type="text"
           id="name"
           name="name"
           required
-          className="w-full rounded-md border border-border bg-bg px-4 py-2.5 text-sm text-text outline-none transition-colors duration-[var(--duration-default)] placeholder:text-muted/50 focus:border-accent"
+          placeholder="Nom"
+          className={inputClasses}
         />
+        <label htmlFor="name">Nom</label>
       </div>
-      <div>
-        <label htmlFor="email" className="mb-1 block text-sm font-medium">
-          Email
-        </label>
+      <div className="floating-field">
         <input
           type="email"
           id="email"
           name="email"
           required
-          className="w-full rounded-md border border-border bg-bg px-4 py-2.5 text-sm text-text outline-none transition-colors duration-[var(--duration-default)] placeholder:text-muted/50 focus:border-accent"
+          placeholder="Email"
+          className={inputClasses}
         />
+        <label htmlFor="email">Email</label>
       </div>
-      <div>
-        <label htmlFor="company" className="mb-1 block text-sm font-medium">
-          Entreprise
-        </label>
+      <div className="floating-field">
         <input
           type="text"
           id="company"
           name="company"
-          className="w-full rounded-md border border-border bg-bg px-4 py-2.5 text-sm text-text outline-none transition-colors duration-[var(--duration-default)] placeholder:text-muted/50 focus:border-accent"
+          placeholder="Entreprise"
+          className={inputClasses}
         />
+        <label htmlFor="company">Entreprise</label>
       </div>
-      <div>
-        <label htmlFor="message" className="mb-1 block text-sm font-medium">
-          Message
-        </label>
+      <div className="floating-field">
         <textarea
           id="message"
           name="message"
           required
           minLength={10}
           rows={4}
-          placeholder="Décrivez brièvement votre situation ou vos questions."
-          className="w-full rounded-md border border-border bg-bg px-4 py-2.5 text-sm text-text outline-none transition-colors duration-[var(--duration-default)] placeholder:text-muted/50 focus:border-accent"
+          placeholder="Message"
+          className={inputClasses}
         />
+        <label htmlFor="message">Message</label>
       </div>
 
       {state === "error" && (
         <p className="text-sm text-error">{errorMessage}</p>
       )}
 
-      <Button type="submit" disabled={state === "sending"}>
+      <Button
+        type="submit"
+        disabled={state === "sending"}
+        className="w-full sm:w-auto"
+      >
         {state === "sending" ? "Envoi..." : "Envoyer"}
       </Button>
     </form>

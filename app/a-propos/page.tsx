@@ -70,6 +70,8 @@ export default function AboutPage() {
         ]}
       />
 
+      <hr className="hairline-fade mx-auto max-w-xs" />
+
       <StepList
         title="Comment je travaille"
         steps={[

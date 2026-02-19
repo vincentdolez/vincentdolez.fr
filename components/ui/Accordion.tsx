@@ -27,15 +27,25 @@ export function Accordion({ items }: AccordionProps) {
             aria-expanded={openIndex === index}
           >
             <span>{item.question}</span>
-            <span
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
               className="ml-4 shrink-0 transition-transform duration-[var(--duration-default)]"
               style={{
                 transform:
-                  openIndex === index ? "rotate(45deg)" : "rotate(0deg)",
+                  openIndex === index ? "rotate(180deg)" : "rotate(0deg)",
               }}
             >
-              +
-            </span>
+              <path
+                d="M4 6l4 4 4-4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
           <div
             className="overflow-hidden transition-all duration-[var(--duration-default)]"

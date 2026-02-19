@@ -57,6 +57,7 @@ export default function OffersPage() {
       <hr className="hairline-fade mx-auto max-w-xs" />
 
       {/* Offer details */}
+
       <OfferCard
         id="quickscan"
         number="01"
