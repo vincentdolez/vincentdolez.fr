@@ -38,6 +38,7 @@ export function Header() {
   return (
     <>
       <header
+        style={{ viewTransitionName: "header" }}
         className={`fixed top-0 z-50 w-full transition-all duration-[var(--duration-default)] ${
           scrolled
             ? "border-b border-border/60 bg-bg/90 backdrop-blur-lg backdrop-saturate-150"
@@ -61,7 +62,7 @@ export function Header() {
                 className={`relative text-sm transition-colors duration-[var(--duration-default)] ${
                   pathname === link.href
                     ? "text-text"
-                    : "text-muted hover:text-text"
+                    : "text-muted hover:text-text link-underline"
                 }`}
               >
                 {link.label}

@@ -29,6 +29,13 @@ export function buildMetadata({
       url,
       type: ogType,
       ...(publishedTime && { publishedTime }),
+      images: [
+        {
+          url: `/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`,
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
   };
 }

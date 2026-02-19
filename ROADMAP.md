@@ -1,6 +1,6 @@
 # Roadmap — vincentdolez.fr
 
-> État : Sprint 1 terminé. Dark mode auto, Vercel Analytics, CI GitHub en place.
+> État : Sprint 2 terminé. Page transitions, link underline, OG images, favicon, canonical URLs en place.
 
 ---
 
@@ -79,11 +79,11 @@
 ## P4 — Animations & transitions (le site "vit")
 
 - [x] **Scroll reveal global** — `<Reveal>` sur tous les blocs
-- [ ] **Page transitions** — fade cross-dissolve via View Transitions API
+- [x] **Page transitions** — fade cross-dissolve via View Transitions API
 - [x] **Hover CTA spec** — transition 400ms cubic-bezier
 - [x] **Staggered reveal** — grilles en séquence (stagger 100ms)
 - [x] **Header scroll behavior** — glassmorphism au scroll
-- [ ] **Link underline animation** — underline animé au hover
+- [x] **Link underline animation** — underline animé au hover
 
 ---
 
@@ -101,10 +101,10 @@
 
 ## P6 — SEO & Performance
 
-- [ ] **OG image** — image OpenGraph typographique
-- [ ] **Favicon** — initiales VD
+- [x] **OG image** — image OpenGraph typographique dynamique
+- [x] **Favicon** — initiales VD (icon + apple-icon)
 - [x] **Vercel Analytics** — intégré
-- [ ] **Canonical URLs** — vérification
+- [x] **Canonical URLs** — root layout + buildMetadata
 - [x] **`<html lang="fr">`** — en place
 - [ ] **Core Web Vitals** — mesure post-déploiement
 - [x] **Font loading** — next/font optimisé
@@ -134,13 +134,13 @@
 ## Ordre de priorité
 
 ```
-Sprint 1 (terminé ✅)                Sprint 2 (à faire)                  Sprint 3 (contenu + polish)
+Sprint 1 (terminé ✅)                Sprint 2 (terminé ✅)                Sprint 3 (contenu + polish)
 ─────────────────────────────        ──────────────────────────           ─────────────────────────────
-✅ P0 bugs fonctionnels              ○ Page transitions                   ○ Articles piliers (×3)
-✅ P1 proportions & espacement       ○ Link underline animation           ○ CTA sticky mobile
-✅ P2 micro-détails typo             ○ OG image + Favicon                 ○ Touch targets audit
-✅ P3 composants sophistiqués        ○ Canonical URLs                     ○ Calendly réel
-✅ P4 animations (partiel)           ○ Core Web Vitals                    ○ Deploy production final
+✅ P0 bugs fonctionnels              ✅ Page transitions                   ○ Articles piliers (×3)
+✅ P1 proportions & espacement       ✅ Link underline animation           ○ CTA sticky mobile
+✅ P2 micro-détails typo             ✅ OG image + Favicon                 ○ Touch targets audit
+✅ P3 composants sophistiqués        ✅ Canonical URLs                     ○ Calendly réel
+✅ P4 animations (partiel)           ○ Core Web Vitals (post-deploy)      ○ Deploy production final
 ✅ Dark mode auto
 ✅ Vercel Analytics
 ✅ CI GitHub

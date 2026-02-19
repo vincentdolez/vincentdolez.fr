@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ViewTransition } from "react";
 import { DM_Serif_Display, DM_Sans, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -33,10 +34,18 @@ export const metadata: Metadata = {
   description:
     "J'aide les dirigeants de PME à débloquer l'exécution et tirer parti de l'IA.",
   metadataBase: new URL("https://vincentdolez.fr"),
+  alternates: { canonical: "https://vincentdolez.fr" },
   openGraph: {
     type: "website",
     locale: "fr_FR",
     siteName: "Vincent Dolez",
+    images: [
+      {
+        url: "/og?title=Vincent+Dolez&description=AI+Operating+Partner",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
@@ -52,7 +61,9 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased">
         <Header />
-        <main>{children}</main>
+        <ViewTransition>
+          <main>{children}</main>
+        </ViewTransition>
         <Footer />
         <Analytics />
         <SpeedInsights />
