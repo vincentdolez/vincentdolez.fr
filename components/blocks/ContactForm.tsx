@@ -12,6 +12,7 @@ const inputClasses =
 export function ContactForm() {
   const [state, setState] = useState<FormState>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [captchaReady, setCaptchaReady] = useState(false);
   const turnstileToken = useRef<string>("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -111,7 +112,10 @@ export function ContactForm() {
         siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
         onSuccess={(token) => {
           turnstileToken.current = token;
+          setCaptchaReady(true);
         }}
+        onExpire={() => setCaptchaReady(false)}
+        onError={() => setCaptchaReady(false)}
         options={{ theme: "light" }}
       />
 
@@ -121,7 +125,7 @@ export function ContactForm() {
 
       <Button
         type="submit"
-        disabled={state === "sending"}
+        disabled={!captchaReady || state === "sending"}
         className="w-full sm:w-auto"
       >
         {state === "sending" ? "Envoi..." : "Envoyer"}
