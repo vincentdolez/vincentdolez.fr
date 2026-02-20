@@ -44,8 +44,8 @@ function CountUp({ value }: { value: string }) {
       "(prefers-reduced-motion: reduce)"
     ).matches;
     if (prefersReducedMotion) {
-      setCurrent(number);
-      return;
+      const id = requestAnimationFrame(() => setCurrent(number));
+      return () => cancelAnimationFrame(id);
     }
 
     const observer = new IntersectionObserver(

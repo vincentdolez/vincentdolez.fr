@@ -1,19 +1,10 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 interface EmailLinkProps {
   className?: string;
   showAddress?: boolean;
 }
 
 export function EmailLink({ className, showAddress = false }: EmailLinkProps) {
-  const [email, setEmail] = useState("");
-
-  useEffect(() => {
-    setEmail(["vincent", "vincentdolez.fr"].join("@"));
-  }, []);
-
+  const email = process.env.CONTACT_EMAIL;
   if (!email) return null;
 
   return (
