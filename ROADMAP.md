@@ -90,11 +90,11 @@
 ## P5 — Mobile experience
 
 - [x] **Burger menu** — overlay fullscreen avec fond blur
-- [ ] **CTA sticky mobile** — bouton sticky en bas
+- [x] **CTA sticky mobile** — bouton sticky en bas
 - [x] **Hero responsive** — scale `text-3xl` → `text-5xl`
 - [x] **Metrics stack** — colonne sur mobile
 - [x] **Contact 2 colonnes** — stack vertical mobile
-- [ ] **Touch targets** — vérification 44x44px
+- [x] **Touch targets** — vérification 44x44px
 - [x] **Progression bar** — layout adapté mobile
 
 ---
@@ -106,7 +106,7 @@
 - [x] **Vercel Analytics** — intégré
 - [x] **Canonical URLs** — root layout + buildMetadata
 - [x] **`<html lang="fr">`** — en place
-- [ ] **Core Web Vitals** — mesure post-déploiement
+- [x] **Core Web Vitals** — SpeedInsights branché (mesure post-déploiement)
 - [x] **Font loading** — next/font optimisé
 - [x] **HeroCanvas dynamic import** — lazy loading
 

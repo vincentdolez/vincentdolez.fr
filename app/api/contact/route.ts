@@ -47,12 +47,39 @@ export async function POST(request: Request) {
     );
   }
 
-  const { name, email, company, message } = body as {
+  const { name, email, company, message, turnstileToken } = body as {
     name?: string;
     email?: string;
     company?: string;
     message?: string;
+    turnstileToken?: string;
   };
+
+  // Turnstile verification
+  const secretKey = process.env.TURNSTILE_SECRET_KEY;
+  if (secretKey) {
+    if (!turnstileToken) {
+      return NextResponse.json(
+        { error: "Vérification de sécurité manquante." },
+        { status: 400 }
+      );
+    }
+    const verifyRes = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ secret: secretKey, response: turnstileToken }),
+      }
+    );
+    const verifyData = (await verifyRes.json()) as { success: boolean };
+    if (!verifyData.success) {
+      return NextResponse.json(
+        { error: "Vérification de sécurité échouée. Réessayez." },
+        { status: 400 }
+      );
+    }
+  }
 
   // Validation
   if (!name || typeof name !== "string" || name.trim().length === 0) {

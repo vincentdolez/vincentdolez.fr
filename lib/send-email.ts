@@ -19,9 +19,12 @@ export async function sendContactEmail(payload: ContactPayload) {
   const resend = getResendClient();
   const { name, email, company, message } = payload;
 
+  const to = process.env.CONTACT_EMAIL;
+  if (!to) throw new Error("CONTACT_EMAIL is not configured");
+
   return resend.emails.send({
     from: "Site vincentdolez.fr <noreply@vincentdolez.fr>",
-    to: "vincent@vincentdolez.fr",
+    to,
     subject: `Contact site — ${name}${company ? ` (${company})` : ""}`,
     replyTo: email,
     text: [

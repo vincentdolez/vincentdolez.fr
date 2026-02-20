@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { Button } from "@/components/ui/Button";
 
 type FormState = "idle" | "sending" | "success" | "error";
@@ -11,6 +12,7 @@ const inputClasses =
 export function ContactForm() {
   const [state, setState] = useState<FormState>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const turnstileToken = useRef<string>("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -28,6 +30,7 @@ export function ContactForm() {
           email: data.get("email"),
           company: data.get("company"),
           message: data.get("message"),
+          turnstileToken: turnstileToken.current,
         }),
       });
 
@@ -103,6 +106,14 @@ export function ContactForm() {
         />
         <label htmlFor="message">Message</label>
       </div>
+
+      <Turnstile
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
+        onSuccess={(token) => {
+          turnstileToken.current = token;
+        }}
+        options={{ theme: "light" }}
+      />
 
       {state === "error" && (
         <p className="text-sm text-error">{errorMessage}</p>

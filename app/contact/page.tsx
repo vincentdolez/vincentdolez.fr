@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
 import { ContactForm } from "@/components/blocks/ContactForm";
+import { EmailLink } from "@/components/ui/EmailLink";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -34,12 +35,10 @@ export default function ContactPage() {
             <ul className="space-y-3 text-sm text-muted">
               <li>
                 <span className="font-medium text-text">Email :</span>{" "}
-                <a
-                  href="mailto:vincent@vincentdolez.fr"
+                <EmailLink
+                  showAddress
                   className="text-accent transition-colors duration-[var(--duration-default)] hover:text-accent/80"
-                >
-                  vincent@vincentdolez.fr
-                </a>
+                />
               </li>
               <li>
                 <span className="font-medium text-text">LinkedIn :</span>{" "}

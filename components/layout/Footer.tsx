@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EmailLink } from "@/components/ui/EmailLink";
 
 export function Footer() {
   return (
@@ -15,12 +16,7 @@ export function Footer() {
           >
             LinkedIn
           </a>
-          <a
-            href="mailto:vincent@vincentdolez.fr"
-            className="link-underline transition-colors duration-[var(--duration-default)] hover:text-text"
-          >
-            Email
-          </a>
+          <EmailLink className="link-underline transition-colors duration-[var(--duration-default)] hover:text-text" />
           <Link
             href="/mentions-legales"
             className="link-underline transition-colors duration-[var(--duration-default)] hover:text-text"

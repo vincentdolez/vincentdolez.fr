@@ -83,7 +83,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="flex h-10 w-10 items-center justify-center md:hidden"
+            className="flex h-11 w-11 items-center justify-center md:hidden"
             aria-label="Ouvrir le menu"
           >
             <div className="relative h-4 w-5">
@@ -103,7 +103,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="absolute right-6 top-5 flex h-10 w-10 items-center justify-center"
+            className="absolute right-6 top-5 flex h-11 w-11 items-center justify-center"
             aria-label="Fermer le menu"
           >
             <div className="relative h-4 w-5">

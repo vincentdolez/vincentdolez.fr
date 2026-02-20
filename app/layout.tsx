@@ -3,6 +3,7 @@ import { ViewTransition } from "react";
 import { DM_Serif_Display, DM_Sans, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./globals.css";
@@ -59,12 +60,13 @@ export default function RootLayout({
       lang="fr"
       className={`${dmSerifDisplay.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-sans antialiased">
+      <body className="pb-20 font-sans antialiased md:pb-0">
         <Header />
         <ViewTransition>
           <main>{children}</main>
         </ViewTransition>
         <Footer />
+        <StickyMobileCTA />
         <Analytics />
         <SpeedInsights />
       </body>
