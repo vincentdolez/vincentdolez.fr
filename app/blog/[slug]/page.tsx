@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { Section } from "@/components/layout/Section";
 import { Tag } from "@/components/ui/Tag";
 import { CTASection } from "@/components/blocks/CTASection";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { buildMetadata, buildArticleJsonLd } from "@/lib/metadata";
+import { mdxComponents } from "@/components/mdx/MDXComponents";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -75,12 +77,8 @@ export default async function BlogPostPage({ params }: Params) {
 
         <hr className="hairline-fade my-8" />
 
-        {/* MDX rendering placeholder — raw content for now */}
-        <article className="prose-custom leading-loose">
-          <div
-            className="whitespace-pre-wrap text-text"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+        <article>
+          <MDXRemote source={post.content} components={mdxComponents} />
         </article>
 
         <hr className="hairline-fade my-12" />

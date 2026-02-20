@@ -60,7 +60,7 @@ export default function RootLayout({
       lang="fr"
       className={`${dmSerifDisplay.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="pb-20 font-sans antialiased md:pb-0">
+      <body className="pb-20 font-sans antialiased md:pb-0" suppressHydrationWarning>
         <Header />
         <ViewTransition>
           <main>{children}</main>

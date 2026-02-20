@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export const mdxComponents: Record<string, (props: any) => React.ReactNode> = {
-  h1: (props: any) => (
-    <h1
-      className="gradient-text mb-6 font-serif text-4xl leading-tight tracking-tight"
-      {...props}
-    />
-  ),
+  h1: () => null,
   h2: (props: any) => (
     <h2
       className="gradient-text mb-4 mt-12 font-serif text-2xl leading-snug tracking-tight"
