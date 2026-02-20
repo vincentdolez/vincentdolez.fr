@@ -67,7 +67,7 @@ export function Header() {
               >
                 {link.label}
                 {pathname === link.href && (
-                  <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-text/40" />
+                  <span className="absolute bottom-0 left-0 right-0 h-px bg-text/40" />
                 )}
               </Link>
             ))}

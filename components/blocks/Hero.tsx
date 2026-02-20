@@ -19,7 +19,7 @@ export function Hero({ title, subtitle, primaryCTA, secondaryCTA }: HeroProps) {
           {lines.map((line, i) => (
             <span
               key={i}
-              className="gradient-text block text-3xl sm:text-4xl md:text-5xl"
+              className="gradient-text block pb-[0.15em] text-3xl sm:text-4xl md:text-5xl"
             >
               {line}
             </span>
