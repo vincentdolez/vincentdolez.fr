@@ -2,15 +2,18 @@ import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
 import { BlogIndex } from "@/components/blocks/BlogIndex";
 import { buildMetadata } from "@/lib/metadata";
+import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = buildMetadata({
   title: "Articles",
   description:
-    "Retours de terrain, méthodes et preuves techniques sur l'automation, la delivery et l'IA.",
+    "Retours de terrain, méthodes et preuves techniques sur l'automation, la dette et l'IA.",
   path: "/blog",
 });
 
 export default function BlogPage() {
+  const posts = getAllPosts();
+
   return (
     <>
       <Section variant="white" className="pt-32">
@@ -23,7 +26,7 @@ export default function BlogPage() {
         </p>
       </Section>
 
-      <BlogIndex />
+      <BlogIndex posts={posts} />
     </>
   );
 }

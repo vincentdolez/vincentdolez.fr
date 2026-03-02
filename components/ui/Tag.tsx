@@ -1,12 +1,12 @@
 type TagProps = {
   children: string;
-  variant?: "automation" | "delivery" | "demos" | "default";
+  variant?: "automation" | "dette" | "lab" | "default";
 };
 
 const variantColors = {
   automation: "bg-accent/10 text-accent",
-  delivery: "bg-success/10 text-success",
-  demos: "bg-warning/10 text-warning",
+  dette: "bg-error/10 text-error",
+  lab: "bg-stone-500/10 text-stone-600",
   default: "bg-surface text-muted",
 };
 

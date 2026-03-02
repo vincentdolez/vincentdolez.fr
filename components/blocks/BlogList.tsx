@@ -6,10 +6,10 @@ type BlogListProps = {
   posts: PostMeta[];
 };
 
-const pillarVariant: Record<string, "automation" | "delivery" | "demos"> = {
+const pillarVariant: Record<string, "automation" | "dette" | "lab"> = {
   automation: "automation",
-  delivery: "delivery",
-  demos: "demos",
+  dette: "dette",
+  lab: "lab",
 };
 
 export function BlogList({ posts }: BlogListProps) {

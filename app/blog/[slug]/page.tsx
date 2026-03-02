@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -29,10 +30,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   });
 }
 
-const pillarVariant: Record<string, "automation" | "delivery" | "demos"> = {
+const pillarVariant: Record<string, "automation" | "dette" | "lab"> = {
   automation: "automation",
-  delivery: "delivery",
-  demos: "demos",
+  dette: "dette",
+  lab: "lab",
 };
 
 export default async function BlogPostPage({ params }: Params) {
@@ -55,7 +56,15 @@ export default async function BlogPostPage({ params }: Params) {
       />
 
       <Section variant="white" maxWidth="content" className="pt-32">
-        <div className="flex items-center gap-3 text-xs text-muted">
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors duration-[var(--duration-default)] hover:text-text"
+        >
+          <span aria-hidden="true">&larr;</span>
+          Articles
+        </Link>
+
+        <div className="mt-6 flex items-center gap-3 text-xs text-muted">
           <Tag variant={pillarVariant[post.pillar] ?? "default"}>
             {post.pillar}
           </Tag>

@@ -3,8 +3,8 @@
 const pillars = [
   { key: "all", label: "Tous" },
   { key: "automation", label: "Automation" },
-  { key: "delivery", label: "Delivery" },
-  { key: "demos", label: "Démos" },
+  { key: "dette", label: "Dette" },
+  { key: "lab", label: "Lab" },
 ];
 
 type BlogFiltersProps = {
