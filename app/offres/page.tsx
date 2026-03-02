@@ -23,7 +23,7 @@ const faqItems = [
   {
     question: "Combien ça coûte ?",
     answer:
-      "Chaque situation est différente. Le périmètre, la durée et le budget se définissent après un premier échange. Pas de grille tarifaire standard — un cadrage honnête, adapté à votre contexte.",
+      "Chaque situation est différente. Le périmètre, la durée et le budget se définissent après un premier échange. Pas de grille tarifaire standard — un cadrage honnête, adapté à votre contexte. Nos interventions peuvent être éligibles au Crédit Impôt Innovation (CII), qui couvre jusqu'à 20 % des dépenses d'innovation externalisées.",
   },
   {
     question: "On n'a pas d'équipe tech interne.",
@@ -91,6 +91,7 @@ export default function OffersPage() {
         cta={{ label: "En savoir plus", href: "/contact" }}
         variant="white"
         highlighted
+        badge="Éligible CII"
       />
 
       <OfferCard
@@ -109,6 +110,7 @@ export default function OffersPage() {
         deliverable="Une capitalisation continue — chaque mois construit sur le précédent."
         cta={{ label: "En savoir plus", href: "/contact" }}
         variant="surface"
+        badge="Éligible CII"
       />
 
       <Section variant="white">

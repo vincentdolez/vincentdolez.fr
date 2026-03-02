@@ -13,6 +13,7 @@ type OfferCardProps = {
   id?: string;
   number?: string;
   highlighted?: boolean;
+  badge?: string;
 };
 
 export function OfferCard({
@@ -27,6 +28,7 @@ export function OfferCard({
   id,
   number,
   highlighted = false,
+  badge,
 }: OfferCardProps) {
   return (
     <section
@@ -90,6 +92,11 @@ export function OfferCard({
                     {deliverable}
                   </span>
                 </div>
+                {badge && (
+                  <span className="mt-3 inline-block rounded-full border border-success/30 px-2.5 py-0.5 text-xs text-success">
+                    {badge}
+                  </span>
+                )}
 
                 <div className="mt-6">
                   <Button
