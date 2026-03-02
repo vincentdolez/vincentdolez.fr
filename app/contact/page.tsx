@@ -52,9 +52,11 @@ export default function ContactPage() {
                 </a>
               </li>
               <li>
-                <span className="font-medium text-text">Calendly :</span>{" "}
+                <span className="font-medium text-text">Rendez-vous :</span>{" "}
                 <a
-                  href="#"
+                  href="https://calendar.app.google/7oruDED4KzKBwUUv7"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-accent transition-colors duration-[var(--duration-default)] hover:text-accent/80"
                 >
                   Réserver un créneau directement
