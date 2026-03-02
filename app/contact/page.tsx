@@ -62,6 +62,10 @@ export default function ContactPage() {
                   Réserver un créneau directement
                 </a>
               </li>
+              <li>
+                <span className="font-medium text-text">Basé à :</span>{" "}
+                Vannes, Morbihan
+              </li>
             </ul>
           </div>
         </div>

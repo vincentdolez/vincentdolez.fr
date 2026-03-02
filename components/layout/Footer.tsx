@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer style={{ viewTransitionName: "footer" }} className="mt-24 border-t border-border py-12">
       <div className="mx-auto flex max-w-[var(--width-wide)] flex-col items-center justify-between gap-4 px-6 text-sm text-muted sm:flex-row">
-        <span>&copy; Vincent Dolez {new Date().getFullYear()}</span>
+        <span>&copy; Vincent Dolez {new Date().getFullYear()} &middot; Vannes, Morbihan</span>
 
         <div className="flex items-center gap-6">
           <a
