@@ -7,54 +7,58 @@ readingTime: 4
 author: "Vincent Dolez"
 ---
 
-# La dette technique ne fait pas de bruit. Elle fait des degats.
+# La dette technique ne fait pas de bruit. Elle fait des dégâts.
 
-Marc dirige une PME de 80 personnes. Son logiciel metier tourne. Les commandes passent, les factures sortent, les clients sont servis. Tout va bien.
+Marc dirige une PME de 80 personnes. Son logiciel métier tourne. Les commandes passent, les factures sortent, les clients sont servis. Tout va bien.
 
-Un mardi, Marc demande une evolution. Rien de fou : ajouter un type de tarification pour un nouveau segment client. Son equipe dev revient avec un devis de 45 jours. Marc avait estime une semaine.
+Un mardi, Marc demande une évolution. Rien de fou : ajouter un type de tarification pour un nouveau segment client. Son équipe dev revient avec un devis de 45 jours. Marc avait estimé une semaine.
 
-Il ne comprend pas. L'application fait deja des tarifications. Pourquoi faut-il 45 jours pour en ajouter une ?
+Il ne comprend pas. L'application fait déjà des tarifications. Pourquoi faut-il 45 jours pour en ajouter une ?
 
-Parce que l'application ne gere pas les tarifications. Elle gere *cette* tarification. Celle du debut. Codee en dur, sans modele sous-jacent. La feature existe, la fondation non.
+Parce que l'application ne gère pas les tarifications. Elle gère *cette* tarification. Celle du début. Codée en dur, sans modèle sous-jacent. La feature existe, la fondation non.
 
-Marc vient de decouvrir sa dette technique. Ou plutot, il vient d'en voir un symptome. La dette, elle, s'accumule depuis des annees.
+Marc vient de découvrir sa dette technique. Ou plutôt, il vient d'en voir un symptôme. La dette, elle, s'accumule depuis des années.
 
-## Ce n'est pas un probleme de developpeurs
+## Ce n'est pas un problème de développeurs
 
-Dans la plupart des PME, la direction traite la dette technique comme un sujet technique. Un truc de devs. Le genre de conversation qu'on laisse a l'equipe technique parce que "c'est leur metier".
+Dans la plupart des PME, la direction traite la dette technique comme un sujet technique. Un truc de devs. Le genre de conversation qu'on laisse à l'équipe technique parce que « c'est leur métier ».
 
 C'est une erreur de cadrage.
 
-Quand 20 a 40 % de votre budget IT part dans la maintenance de code fragile -- McKinsey Digital estime que les organisations avec une dette technique elevee depensent 40 % de plus en maintenance -- ce n'est plus un sujet technique. C'est un sujet de direction.
+Quand 20 à 40 % de votre budget IT part dans la maintenance de code fragile — McKinsey Digital estime que les organisations avec une dette technique élevée dépensent 40 % de plus en maintenance — ce n'est plus un sujet technique. C'est un sujet de direction.
 
-L'autre croyance qui protege la dette : "ca marche, donc ca va." Et c'est vrai -- ca marche. Tant qu'on ne demande rien de nouveau. La dette technique a cette particularite : elle ne se manifeste que quand on accelere. Exactement au moment ou on a besoin de vitesse, le systeme revele qu'il n'a jamais ete concu pour aller vite.
+L'autre croyance qui protège la dette : « ça marche, donc ça va. » Et c'est vrai — ça marche. Tant qu'on ne demande rien de nouveau. La dette technique a cette particularité : elle ne se manifeste que quand on accélère. Exactement au moment où on a besoin de vitesse, le système révèle qu'il n'a jamais été conçu pour aller vite.
 
-Le probleme n'est pas que votre code est mal ecrit. Le probleme est que votre code fait semblant de comprendre votre metier. Il implemente des features -- des facades. Mais l'abstraction metier, la structure qui permettrait de faire evoluer le systeme sans tout casser, elle n'a jamais ete construite. Le dirigeant voit le batiment. Pas les fondations.
+Le problème n'est pas que votre code est mal écrit. Le problème est que votre code fait semblant de comprendre votre métier. Il implémente des features — des façades. Mais l'abstraction métier, la structure qui permettrait de faire évoluer le système sans tout casser, elle n'a jamais été construite. Le dirigeant voit le bâtiment. Pas les fondations.
 
-**Votre code singe le metier. Vos fondations portent du vide.**
+**Votre code singe le métier. Vos fondations portent du vide.**
 
 ## Cinq signaux que vous pouvez observer sans lire une ligne de code
 
-On n'a pas besoin d'etre technique pour voir la dette. Il suffit de savoir ou regarder. (En vingt ans de missions, je n'ai jamais vu une PME qui n'en avait aucun.)
+On n'a pas besoin d'être technique pour voir la dette. Il suffit de savoir où regarder. (En vingt ans de missions, je n'ai jamais vu une PME qui n'en avait aucun.)
 
-**Les features promises sont en retard chronique.** Pas un retard ponctuel -- un motif. Les estimations sont systematiquement depassees, et l'ecart se creuse avec le temps. Chaque nouvelle demande prend plus longtemps que la precedente.
+**Les features promises sont en retard chronique.** Pas un retard ponctuel — un motif. Les estimations sont systématiquement dépassées, et l'écart se creuse avec le temps. Chaque nouvelle demande prend plus longtemps que la précédente.
 
-**Les memes bugs reviennent.** Corriges ici, ils reapparaissent la. L'equipe passe du temps a eteindre des incendies sur des zones qu'elle a deja traitees. C'est le signe que le code n'a pas de structure -- chaque correction cree un nouveau point de fragilite.
+**Les mêmes bugs reviennent.** Corrigés ici, ils réapparaissent là. L'équipe passe du temps à éteindre des incendies sur des zones qu'elle a déjà traitées. C'est le signe que le code n'a pas de structure — chaque correction crée un nouveau point de fragilité.
 
-**"On ne peut pas toucher a ca."** Cette phrase, dans la bouche d'un developpeur, est un signal d'alarme. Elle signifie qu'une partie du systeme est devenue si fragile que la modifier risque de tout casser. Les murs porteurs sont fissures.
+**« On ne peut pas toucher à ça. »** Cette phrase, dans la bouche d'un développeur, est un signal d'alarme. Elle signifie qu'une partie du système est devenue si fragile que la modifier risque de tout casser. Les murs porteurs sont fissurés.
 
-**Les devis explosent pour des changements "simples".** Le dirigeant demande un ajustement qui lui semble mineur. Le devis revient disproportionne. Ce n'est pas de la mauvaise volonte -- c'est que le changement "simple" touche des fondations sous-dimensionnees. Ajouter un etage sur un batiment dont la charpente n'a pas ete prevue pour, ca coute cher.
+**Les devis explosent pour des changements « simples ».** Le dirigeant demande un ajustement qui lui semble mineur. Le devis revient disproportionné. Ce n'est pas de la mauvaise volonté — c'est que le changement « simple » touche des fondations sous-dimensionnées. Ajouter un étage sur un bâtiment dont la charpente n'a pas été prévue pour, ça coûte cher.
 
-**Les meilleurs developpeurs partent.** Hirschman l'a formalise : face a une organisation qui dysfonctionne, les gens ont deux options -- voice (alerter) ou exit (partir). Les developpeurs qui voient la dette essaient d'abord de la signaler. Quand personne n'ecoute, les meilleurs s'en vont. Ils ont le choix. Restent ceux qui s'accommodent -- ou qui n'ont pas vu le probleme.
+**Les meilleurs développeurs partent.** Hirschman l'a formalisé : face à une organisation qui dysfonctionne, les gens ont deux options — voice (alerter) ou exit (partir). Les développeurs qui voient la dette essaient d'abord de la signaler. Quand personne n'écoute, les meilleurs s'en vont. Ils ont le choix. Restent ceux qui s'accommodent — ou qui n'ont pas vu le problème.
 
-Certes, aucun de ces signaux pris isolement ne prouve une dette technique massive. Un retard peut avoir dix causes. Mais quand trois ou quatre de ces signaux coexistent, le diagnostic devient difficile a ignorer. Chaque livraison ajoute du poids sur des fondations qui n'ont jamais ete prevues pour le porter.
+Certes, aucun de ces signaux pris isolément ne prouve une dette technique massive. Un retard peut avoir dix causes. Mais quand trois ou quatre de ces signaux coexistent, le diagnostic devient difficile à ignorer. Chaque livraison ajoute du poids sur des fondations qui n'ont jamais été prévues pour le porter.
 
-## Voir, c'est deja decider
+## Voir, c'est déjà décider
 
-On ne resout pas la dette technique en une semaine. On la pilote -- comme on pilote une tresorerie ou un carnet de commandes. La premiere etape n'est pas de corriger. C'est de cartographier.
+On ne résout pas la dette technique en une semaine. On la pilote — comme on pilote une trésorerie ou un carnet de commandes. La première étape n'est pas de corriger. C'est de cartographier.
 
-Nommer ce qui porte. Nommer ce qui fait semblant. Savoir ou sont les murs porteurs et ou sont les cloisons. Un Sprint de deux semaines suffit pour poser ce diagnostic : qu'est-ce qui tient, qu'est-ce qui menace, et par ou commencer.
+Nommer ce qui porte. Nommer ce qui fait semblant. Savoir où sont les murs porteurs et où sont les cloisons. Un Sprint de deux semaines suffit pour poser ce diagnostic : qu'est-ce qui tient, qu'est-ce qui menace, et par où commencer.
 
-Mais rien de tout ca ne demarre tant que le dirigeant ne regarde pas. La dette technique est invisible par conception -- elle vit sous la surface, dans les couches que personne ne montre en comite de direction. La rendre visible, c'est deja reprendre la main.
+Ce diagnostic change la conversation. Le dirigeant qui sait que son module de tarification est codé en dur ne prend plus le devis de 45 jours comme un affront — il le prend comme un signal d'investissement. Celui qui sait que ses meilleurs développeurs alertent depuis six mois cesse de s'étonner quand ils partent. Le diagnostic ne résout rien en soi. Mais il transforme des surprises en décisions.
 
-Les fondations ne se montrent pas en comite. Mais elles lachent en silence.
+Et il y a un effet secondaire qu'on sous-estime : une fois la carte posée, l'équipe technique respire. Elle n'est plus seule à porter le poids. Le sujet monte au bon niveau. La dette cesse d'être un problème de devs et devient un arbitrage de direction — ce qu'elle a toujours été.
+
+Mais rien de tout ça ne démarre tant que le dirigeant ne regarde pas. La dette technique est invisible par conception — elle vit sous la surface, dans les couches que personne ne montre en comité de direction. La rendre visible, c'est déjà reprendre la main.
+
+Les fondations ne se montrent pas en comité. Mais elles lâchent en silence.

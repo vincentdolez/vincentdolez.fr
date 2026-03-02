@@ -9,48 +9,48 @@ author: "Vincent Dolez"
 
 # Sept grains de sable dans l'engrenage
 
-Demandez a GPT-4 de multiplier deux nombres de quatre chiffres. Le taux de reussite chute sous les 30 %. Un calcul qu'un collegien pose en trente secondes sur une feuille. Ce n'est pas un bug. Ce n'est pas un modele trop petit. C'est un indice sur la mecanique reelle de la machine.
+Demandez à GPT-4 de multiplier deux nombres de quatre chiffres. Le taux de réussite tourne autour de 30 %. Un calcul qu'un collégien pose en trente secondes sur une feuille. Ce n'est pas un bug. Ce n'est pas un modèle trop petit. C'est un indice sur la mécanique réelle de la machine.
 
-On l'a tous observe. On reformule un prompt, on ajoute une numerotation, on decoupe une instruction -- et la sortie s'ameliore. On appelle ca "prompt engineering". En realite, on compense une faiblesse structurelle qu'on n'a jamais nommee.
+On l'a tous observé. On reformule un prompt, on ajoute une numérotation, on découpe une instruction — et la sortie s'améliore. On appelle ça « prompt engineering ». En réalité, on compense une faiblesse structurelle qu'on n'a jamais nommée.
 
 ## Un seul outil pour tout faire
 
-Un transformer n'a qu'un seul mecanisme pour traiter l'information : l'attention. Pas de module de calcul. Pas de compteur. Pas de verificateur de coherence. Tout -- absolument tout -- passe par le meme goulot : des matrices d'attention qui comparent chaque token a tous les autres.
+Un transformer n'a qu'un seul mécanisme pour traiter l'information : l'attention. Pas de module de calcul. Pas de compteur. Pas de vérificateur de cohérence. Tout — absolument tout — passe par le même goulot : des matrices d'attention qui comparent chaque token à tous les autres.
 
-Le cout ? Quadratique. O(n^2) en nombre de tokens, pour reprendre la notation de Vaswani et al. Mais le vrai probleme n'est pas la taille du contexte. C'est la nature des operations qu'on demande.
+Le coût ? Quadratique. O(n^2) en nombre de tokens, pour reprendre la notation de Vaswani et al. Mais le vrai problème n'est pas la taille du contexte. C'est la nature des opérations qu'on demande.
 
 Sept d'entre elles paraissent triviales pour un humain. Elles sont catastrophiques pour un transformer.
 
-**Comptage et ordonnancement.** "Combien de fois ai-je mentionne ce point ?" Le modele n'a pas de compteur. Il emule le denombrement par pattern matching attentionnel, token par token. Le benchmark MRCR (OpenAI, 2025) le confirme : quand on augmente le nombre d'aiguilles a retrouver dans un contexte long, la performance chute -- le modele perd le fil du "combien".
+**Comptage et ordonnancement.** « Combien de fois ai-je mentionné ce point ? » Le modèle n'a pas de compteur. Il émule le dénombrement par pattern matching attentionnel, token par token. Le benchmark MRCR (OpenAI, 2025) le confirme : quand on augmente le nombre d'aiguilles à retrouver dans un contexte long, la performance chute — le modèle perd le fil du « combien ».
 
-**Resolution de coreferences.** "Le client mentionne en paragraphe 3" -- lequel ? Chaque reference ambigue force le modele a maintenir des chaines de dependances croisees a travers tout le contexte. Sature l'attention.
+**Résolution de coréférences.** « Le client mentionné en paragraphe 3 » — lequel ? Chaque référence ambiguë force le modèle à maintenir des chaînes de dépendances croisées à travers tout le contexte. Sature l'attention.
 
-**Negation et exclusion.** "Tous les elements sauf X." Les representations vectorielles continues ne codent pas naturellement l'absence. Alhamoud et al. (CVPR 2025) le montrent sur les modeles vision-langage : face a une negation, le modele ignore le "ne...pas" et repond comme s'il n'existait pas. Le probleme est structurel.
+**Négation et exclusion.** « Tous les éléments sauf X. » Les représentations vectorielles continues ne codent pas naturellement l'absence. Alhamoud et al. (CVPR 2025) le montrent sur les modèles vision-langage : face à une négation, le modèle ignore le « ne...pas » et répond comme s'il n'existait pas. Le problème est structurel.
 
-**Verification de coherence.** Comparer chaque element a tous les autres pour detecter une contradiction -- c'est la definition meme du cout quadratique. Plus le document est long, plus les incoherences passent.
+**Vérification de cohérence.** Comparer chaque élément à tous les autres pour détecter une contradiction — c'est la définition même du coût quadratique. Plus le document est long, plus les incohérences passent.
 
-**Conformite de format.** "Respecte ce schema JSON, ces contraintes de champs, ce format de date." Chaque regle de format est une contrainte supplementaire que le modele maintient en parallele de la tache principale. Le headroom fond. J'ai vu un pipeline perdre 40 minutes de debugging parce qu'un champ date oscillait entre ISO 8601 et format francais -- au sein du meme batch.
+**Conformité de format.** « Respecte ce schéma JSON, ces contraintes de champs, ce format de date. » Chaque règle de format est une contrainte supplémentaire que le modèle maintient en parallèle de la tâche principale. Le headroom fond. Un cas classique : un pipeline d'extraction de factures dont le champ date oscille entre ISO 8601 et format local selon la langue du document source — au sein du même batch. On ne sait pas à l'avance quel format sortira. Et le modèle ne le « choisit » pas : il échantillonne.
 
-**Reversal curse.** Berglund et al. l'ont demontre a l'ICLR 2024 : un modele entraine sur "A est B" ne generalise pas a "B est A". La vraisemblance de la reponse correcte ? Pas superieure au hasard. L'information est la. Le chemin inverse n'existe pas.
+**Reversal curse.** Berglund et al. l'ont démontré à l'ICLR 2024 : un modèle entraîné sur « A est B » ne généralise pas à « B est A ». La vraisemblance de la réponse correcte ? Pas supérieure au hasard. L'information est là. Le chemin inverse n'existe pas.
 
-**Deduplication semantique.** Pas les doublons de texte -- ceux-la, un `diff` les trouve. Les doublons de *sens*. Comparer chaque element a tous les autres sur un espace semantique. Quadratique, encore.
+**Déduplication sémantique.** Pas les doublons de texte — ceux-là, un `diff` les trouve. Les doublons de *sens*. Comparer chaque élément à tous les autres sur un espace sémantique. Quadratique, encore.
 
 ## Un seul rouage. Sept grains de sable. L'engrenage grippe.
 
-Richard Sennett, dans *Ce que sait la main*, decrit l'artisan qui connait les limites de son outil. Pas pour le mepriser -- pour adapter son geste. Le menuisier n'utilise pas un rabot pour visser. Le praticien IA ne devrait pas demander a l'attention de compter.
+Richard Sennett, dans *Ce que sait la main*, décrit l'artisan qui connaît les limites de son outil. Pas pour le mépriser — pour adapter son geste. Le menuisier n'utilise pas un rabot pour visser. Le praticien IA ne devrait pas demander à l'attention de compter.
 
-Certes, les modeles progressent. Les benchmarks montent. La fenetre de contexte s'agrandit. Mais l'architecture fondamentale reste la meme : un mecanisme unique, universel, couteux. Doubler la fenetre de contexte, c'est quadrupler le cout attentionnel -- les dependances croisees ne se dissolvent pas dans l'espace, elles s'y noient.
+Certes, les modèles progressent. Les benchmarks montent. La fenêtre de contexte s'agrandit. Mais l'architecture fondamentale reste la même : un mécanisme unique, universel, coûteux. Doubler la fenêtre de contexte, c'est quadrupler le coût attentionnel — les dépendances croisées ne se dissolvent pas dans l'espace, elles s'y noient.
 
-La reponse n'est pas de renoncer. Elle est de decharger.
+La réponse n'est pas de renoncer. Elle est de décharger.
 
-La philosophie est vieille. UNIX l'a formalisee il y a cinquante ans : *do one thing and do it well*. Chaque outil fait une chose. On les compose. Appliquee aux pipelines IA, la logique est identique. Numeroter les lignes en amont, c'est externaliser le comptage. Decomposer une tache complexe en etapes, c'est reduire les dependances croisees par step. Forcer un chain-of-thought, c'est creer du headroom intermediaire.
+La philosophie est vieille. UNIX l'a formalisée il y a cinquante ans : *do one thing and do it well*. Chaque outil fait une chose. On les compose. Appliquée aux pipelines IA, la logique est identique. Numéroter les lignes en amont, c'est externaliser le comptage. Décomposer une tâche complexe en étapes, c'est réduire les dépendances croisées par step. Forcer un chain-of-thought, c'est créer du headroom intermédiaire.
 
-Ce ne sont pas des incantations. Ce sont des strategies de decharge attentionnelle. Et elles ont un nom technique : on retire des grains de sable de l'engrenage avant de le faire tourner.
+Ce ne sont pas des incantations. Ce sont des stratégies de décharge attentionnelle. Et elles ont un nom technique : on retire des grains de sable de l'engrenage avant de le faire tourner.
 
 ## Concevoir au lieu de corriger
 
-Chaque step d'un pipeline qui force une de ces sept operations sans la decharger est un consommateur silencieux de qualite. Le modele "voit" l'information. Il echoue a raisonner dessus. Et nous, on blame le modele.
+Chaque step d'un pipeline qui force une de ces sept opérations sans la décharger est un consommateur silencieux de qualité. Le modèle « voit » l'information. Il échoue à raisonner dessus. Et nous, on blâme le modèle.
 
-La grille de diagnostic tient en une question : avant d'ajouter de l'IA a un step, demander *quelle operation je force ?* Si la reponse est comptage, coherence, negation, format, coreference, inversion ou deduplication semantique -- decharger d'abord. Outillage externe, pretraitement, decomposition.
+La grille de diagnostic tient en une question : avant d'ajouter de l'IA à un step, demander *quelle opération je force ?* Si la réponse est comptage, cohérence, négation, format, coréférence, inversion ou déduplication sémantique — décharger d'abord. Outillage externe, prétraitement, décomposition.
 
-La prochaine fois qu'un prompt "corrige" ameliore le resultat, on saura pourquoi. On ne corrige plus. On concoit. Rouage par rouage.
+La prochaine fois qu'un prompt « corrigé » améliore le résultat, on saura pourquoi. On ne corrige plus. On conçoit. Rouage par rouage.
