@@ -48,7 +48,7 @@ export async function sendContactEmail(payload: ContactPayload) {
         "Merci pour votre message. Je l'ai bien reçu et vous répondrai sous 48 heures.",
         "",
         "En attendant, vous pouvez me retrouver sur :",
-        "— LinkedIn : https://linkedin.com/in/dolez",
+        "— LinkedIn : https://www.linkedin.com/in/vincentdolez",
         "— Site : https://vincentdolez.fr",
         "",
         "À très vite,",

@@ -43,12 +43,12 @@ export default function ContactPage() {
               <li>
                 <span className="font-medium text-text">LinkedIn :</span>{" "}
                 <a
-                  href="https://linkedin.com/in/dolez"
+                  href="https://www.linkedin.com/in/vincentdolez"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent transition-colors duration-[var(--duration-default)] hover:text-accent/80"
                 >
-                  linkedin.com/in/dolez
+                  linkedin.com/in/vincentdolez
                 </a>
               </li>
               <li>
