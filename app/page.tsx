@@ -16,7 +16,7 @@ export default function HomePage() {
       />
 
       <Hero
-        title={`Automatiser d'abord.\nIA quand nécessaire.\nToujours pilotable.`}
+        title={`Comprendre d'abord.\nStructurer.\nPuis accélérer.`}
         subtitle="J'aide les dirigeants de PME à débloquer l'exécution, rationaliser les outils et tirer parti de l'IA — sans perdre le contrôle."
         primaryCTA={{ label: "Découvrir l'approche", href: "/offres" }}
         secondaryCTA={{ label: "Prendre rendez-vous", href: "/contact" }}

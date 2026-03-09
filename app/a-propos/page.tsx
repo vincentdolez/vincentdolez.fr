@@ -48,7 +48,7 @@ export default function AboutPage() {
         title="Mes convictions"
         convictions={[
           {
-            title: "Automatiser d'abord, IA ensuite",
+            title: "Comprendre d'abord. Structurer. Puis accélérer.",
             description:
               "La majorité des gains se trouvent dans l'automation simple. L'IA intervient quand le socle est fiable.",
           },
