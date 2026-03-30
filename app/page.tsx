@@ -16,31 +16,31 @@ export default function HomePage() {
       />
 
       <Hero
-        title={`Comprendre d'abord.\nStructurer.\nPuis accélérer.`}
-        subtitle="J'aide les dirigeants de PME à débloquer l'exécution, rationaliser les outils et tirer parti de l'IA — sans perdre le contrôle."
-        primaryCTA={{ label: "Découvrir l'approche", href: "/offres" }}
+        title={`Je vois où vous voulez aller.\nEt je sais le construire.`}
+        subtitle="Co-fondateur temporaire pour dirigeants qui ont une ambition concrète, un projet bloqué ou une idée dormante — et qui cherchent quelqu'un qui s'y engage autant qu'eux."
+        primaryCTA={{ label: "Voir comment ça marche", href: "/offres" }}
         secondaryCTA={{ label: "Prendre rendez-vous", href: "/contact" }}
       />
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
       <ProblemGrid
-        intro="Votre entreprise tourne. Mais elle n'avance pas aussi vite qu'elle le devrait."
+        intro="Vous avez l'ambition. Il vous manque quelqu'un pour la construire."
         problems={[
           {
-            title: "Outils dépassés",
+            title: "Une idée qui attend",
             description:
-              "Le socle technique a suivi la croissance un temps. Aujourd'hui, il la freine.",
+              "Vous avez un projet depuis des mois. Personne en interne pour le concrétiser, aucun prestataire qui y croit vraiment.",
           },
           {
-            title: "Process manuels",
+            title: "Marre des slides",
             description:
-              "Trop de tâches reposent sur des personnes. Pas assez sur des systèmes.",
+              "Le dernier consultant a livré un rapport. Vous cherchez quelqu'un qui livre un système qui tourne.",
           },
           {
-            title: "IA sans plan",
+            title: "L'IA, levier ou mirage",
             description:
-              "Tout le monde en parle. Personne ne sait par où commencer concrètement.",
+              "L'IA pourrait rendre faisable ce qui ne l'était pas. Encore faut-il quelqu'un qui sache la mettre au service de votre vision.",
           },
         ]}
       />
