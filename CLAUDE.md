@@ -2,8 +2,8 @@
 
 ## What
 
-Personal website for Vincent Dolez — AI Operating Partner.
-5 pages: accueil, à propos, offres, blog, contact.
+Personal website for Vincent Dolez — Référent IA externalisé pour PME-PMI.
+6 pages: accueil, à propos, offres, IA Act, blog, contact.
 
 ## Stack
 
