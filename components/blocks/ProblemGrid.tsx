@@ -21,7 +21,7 @@ export function ProblemGrid({ intro, problems }: ProblemGridProps) {
         {problems.map((problem, index) => (
           <Reveal key={index} delay={index * 100}>
             <div className="rounded-lg border border-border bg-bg p-6 shadow-sm transition-shadow duration-[var(--duration-default)] hover:shadow-md">
-              <h3 className="mb-2 font-serif text-xl leading-snug tracking-display">
+              <h3 className="mb-2 font-heading text-xl leading-snug tracking-display">
                 {problem.title}
               </h3>
               <p className="text-sm leading-normal text-muted">

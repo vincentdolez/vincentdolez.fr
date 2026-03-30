@@ -4,13 +4,13 @@ export const mdxComponents: Record<string, (props: any) => React.ReactNode> = {
   h1: () => null,
   h2: (props: any) => (
     <h2
-      className="gradient-text mb-4 mt-12 font-serif text-2xl leading-snug tracking-tight"
+      className="gradient-text mb-4 mt-12 font-heading text-2xl leading-snug tracking-tight"
       {...props}
     />
   ),
   h3: (props: any) => (
     <h3
-      className="mb-3 mt-8 font-serif text-xl leading-snug tracking-tight"
+      className="mb-3 mt-8 font-heading text-xl leading-snug tracking-tight"
       {...props}
     />
   ),

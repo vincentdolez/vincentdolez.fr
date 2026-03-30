@@ -11,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
 export default function MentionsLegalesPage() {
   return (
     <Section variant="white" maxWidth="content" className="pt-32">
-      <h1 className="gradient-text font-serif text-4xl leading-tight tracking-display">
+      <h1 className="gradient-text font-heading text-4xl leading-tight tracking-display">
         Mentions légales
       </h1>
 

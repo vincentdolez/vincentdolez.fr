@@ -15,7 +15,7 @@ export function ConvictionGrid({ title, convictions }: ConvictionGridProps) {
   return (
     <Section variant="surface">
       <Reveal>
-        <h2 className="gradient-text mt-4 mb-16 font-serif text-3xl leading-tight tracking-display">
+        <h2 className="gradient-text mt-4 mb-16 font-heading text-3xl leading-tight tracking-display">
           {title}
         </h2>
       </Reveal>
@@ -23,7 +23,7 @@ export function ConvictionGrid({ title, convictions }: ConvictionGridProps) {
         {convictions.map((conviction, index) => (
           <Reveal key={index} delay={index * 100}>
             <div className="rounded-lg border border-border bg-bg p-6 shadow-sm transition-shadow duration-[var(--duration-default)] hover:shadow-md">
-              <h3 className="mb-2 font-serif text-xl leading-snug tracking-display">
+              <h3 className="mb-2 font-heading text-xl leading-snug tracking-display">
                 {conviction.title}
               </h3>
               <p className="text-sm leading-normal text-muted">

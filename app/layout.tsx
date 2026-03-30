@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ViewTransition } from "react";
-import { DM_Serif_Display, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Jost, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
@@ -8,16 +8,11 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./globals.css";
 
-const dmSerifDisplay = DM_Serif_Display({
-  weight: "400",
+// Jost = Google Fonts fallback for Museo (headings) & Futura (body)
+// TODO: self-host Museo (.woff2) via next/font/local when font files available
+const jost = Jost({
   subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-jost",
   display: "swap",
 });
 
@@ -29,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Vincent Dolez — AI Operating Partner",
+    default: "Vincent Dolez — Référent IA externalisé",
     template: "%s — Vincent Dolez",
   },
   description:
@@ -42,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Vincent Dolez",
     images: [
       {
-        url: "/og?title=Vincent+Dolez&description=AI+Operating+Partner",
+        url: "/og?title=Vincent+Dolez&description=Référent+IA+externalisé",
         width: 1200,
         height: 630,
       },
@@ -58,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${dmSerifDisplay.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
+      className={`${jost.variable} ${jetbrainsMono.variable}`}
     >
       <body className="pb-20 font-sans antialiased md:pb-0" suppressHydrationWarning>
         <Header />

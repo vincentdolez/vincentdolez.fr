@@ -18,7 +18,7 @@ export function ProgressionBar() {
             )}
             <span className="font-mono text-xs text-muted">{step.number}</span>
             <div>
-              <div className="font-serif text-2xl tracking-display text-text md:mt-2">
+              <div className="font-heading text-2xl tracking-display text-text md:mt-2">
                 {step.label}
               </div>
               <div className="mt-1 flex gap-3 text-sm text-muted">

@@ -77,14 +77,14 @@ function CountUp({ value }: { value: string }) {
 
   if (number === 0) {
     return (
-      <div ref={ref} className="font-serif text-5xl leading-tight tracking-display text-text md:text-6xl">
+      <div ref={ref} className="font-heading text-5xl leading-tight tracking-display text-text md:text-6xl">
         {value}
       </div>
     );
   }
 
   return (
-    <div ref={ref} className="font-serif text-5xl leading-tight tracking-display text-text md:text-6xl">
+    <div ref={ref} className="font-heading text-5xl leading-tight tracking-display text-text md:text-6xl">
       {prefix}
       {current}
       {suffix}
@@ -96,7 +96,7 @@ export function MetricRow({ title, metrics, note }: MetricRowProps) {
   return (
     <Section variant="surface">
       <Reveal>
-        <h2 className="gradient-text mt-4 mb-16 text-center font-serif text-3xl leading-tight tracking-display">
+        <h2 className="gradient-text mt-4 mb-16 text-center font-heading text-3xl leading-tight tracking-display">
           {title}
         </h2>
       </Reveal>

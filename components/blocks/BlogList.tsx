@@ -31,7 +31,7 @@ export function BlogList({ posts }: BlogListProps) {
             <time dateTime={post.date}>{formatDate(post.date)}</time>
             {post.readingTime && <span>{post.readingTime} min</span>}
           </div>
-          <h2 className="mt-2 font-serif text-xl leading-snug tracking-tight">
+          <h2 className="mt-2 font-heading text-xl leading-snug tracking-tight">
             <Link
               href={`/blog/${post.slug}`}
               className="transition-colors duration-[var(--duration-default)] hover:text-accent"

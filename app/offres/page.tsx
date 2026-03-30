@@ -42,7 +42,7 @@ export default function OffersPage() {
     <>
       {/* Hero + Progression intégrée */}
       <Section variant="white" className="pt-32 pb-12">
-        <h1 className="gradient-text font-serif text-4xl leading-tight tracking-display">
+        <h1 className="gradient-text font-heading text-4xl leading-tight tracking-display">
           Trois façons de travailler ensemble
         </h1>
         <p className="mt-3 max-w-xl text-xl text-muted text-balance">
@@ -115,7 +115,7 @@ export default function OffersPage() {
 
       <Section variant="white">
         <Reveal>
-          <h2 className="gradient-text mb-8 font-serif text-3xl leading-tight tracking-display">
+          <h2 className="gradient-text mb-8 font-heading text-3xl leading-tight tracking-display">
             Vous vous demandez peut-être...
           </h2>
         </Reveal>

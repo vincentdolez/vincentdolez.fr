@@ -52,7 +52,7 @@ export function OfferCard({
               )}
               <div className="flex-1">
                 <div className="flex items-center gap-3">
-                  <h3 className="gradient-text font-serif text-2xl leading-tight tracking-display">
+                  <h3 className="gradient-text font-heading text-2xl leading-tight tracking-display">
                     {title}
                   </h3>
                   {highlighted && (

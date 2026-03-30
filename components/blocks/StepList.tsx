@@ -24,7 +24,7 @@ export function StepList({
   return (
     <Section variant={variant}>
       <Reveal>
-        <h2 className="gradient-text mt-4 mb-16 text-center font-serif text-3xl leading-tight tracking-display">
+        <h2 className="gradient-text mt-4 mb-16 text-center font-heading text-3xl leading-tight tracking-display">
           {title}
         </h2>
       </Reveal>
@@ -36,7 +36,7 @@ export function StepList({
                 index < steps.length - 1 ? "border-b border-border/50" : ""
               }`}
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border font-serif text-lg text-muted">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border font-heading text-lg text-muted">
                 {index + 1}
               </div>
               <div>

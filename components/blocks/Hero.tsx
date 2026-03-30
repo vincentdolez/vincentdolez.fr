@@ -15,7 +15,7 @@ export function Hero({ title, subtitle, primaryCTA, secondaryCTA }: HeroProps) {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-32 pb-24">
       <HeroCanvasLazy />
       <div className="relative z-10 mx-auto max-w-[var(--width-wide)] px-6 text-center">
-        <h1 className="mx-auto max-w-3xl font-serif leading-tight tracking-display">
+        <h1 className="mx-auto max-w-3xl font-heading leading-tight tracking-display">
           {lines.map((line, i) => (
             <span
               key={i}

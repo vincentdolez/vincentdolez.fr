@@ -17,7 +17,7 @@ export default function BlogPage() {
   return (
     <>
       <Section variant="white" className="pt-32">
-        <h1 className="gradient-text font-serif text-4xl leading-tight tracking-display">
+        <h1 className="gradient-text font-heading text-4xl leading-tight tracking-display">
           Articles
         </h1>
         <p className="mt-3 text-xl text-muted text-balance">

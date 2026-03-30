@@ -71,7 +71,7 @@ export default async function BlogPostPage({ params }: Params) {
           <span>{post.readingTime} min de lecture</span>
         </div>
 
-        <h1 className="gradient-text mt-4 font-serif text-4xl leading-tight tracking-tight">
+        <h1 className="gradient-text mt-4 font-heading text-4xl leading-tight tracking-tight">
           {post.title}
         </h1>
 
