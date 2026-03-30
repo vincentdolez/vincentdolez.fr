@@ -77,7 +77,7 @@ export function Header() {
             ))}
             <Link
               href="/contact"
-              className="rounded-md bg-accent px-4 py-2 text-sm text-white transition-all duration-[var(--duration-default)] hover:bg-accent/90"
+              className="rounded-md bg-accent px-4 py-2 text-sm text-stone-700 transition-all duration-[var(--duration-default)] hover:bg-accent/90"
             >
               Contact
             </Link>
@@ -131,7 +131,7 @@ export function Header() {
             ))}
             <Link
               href="/contact"
-              className="mt-4 rounded-md bg-accent px-8 py-3 text-base font-medium text-white transition-all duration-[var(--duration-default)] hover:bg-accent/90"
+              className="mt-4 rounded-md bg-accent px-8 py-3 text-base font-medium text-stone-700 transition-all duration-[var(--duration-default)] hover:bg-accent/90"
             >
               Prendre rendez-vous
             </Link>

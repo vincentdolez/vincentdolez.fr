@@ -12,7 +12,7 @@ export function StickyMobileCTA() {
     <div className="fixed bottom-0 left-0 right-0 z-40 p-4 md:hidden">
       <Link
         href="/contact"
-        className="flex h-12 w-full items-center justify-center rounded-md bg-accent text-sm font-medium text-white shadow-lg transition-all duration-[var(--duration-default)] hover:bg-accent/90"
+        className="flex h-12 w-full items-center justify-center rounded-md bg-accent text-sm font-medium text-stone-700 shadow-lg transition-all duration-[var(--duration-default)] hover:bg-accent/90"
       >
         Prendre contact
       </Link>

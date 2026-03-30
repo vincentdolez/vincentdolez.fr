@@ -22,7 +22,7 @@ export function Button({
     "inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-medium transition-all duration-[var(--duration-default)] ease-[var(--ease-default)]";
 
   const variants = {
-    primary: "bg-accent text-white hover:bg-accent/90 hover:shadow-md",
+    primary: "bg-accent text-stone-700 hover:bg-accent/90 hover:shadow-md",
     secondary:
       "border border-border text-text font-medium hover:bg-surface hover:border-transparent",
   };
