@@ -26,8 +26,9 @@ export default function AboutPage() {
               Mon premier ordinateur, c&apos;était un 8088 avec un écran
               Hercules. J&apos;avais DOS, BASIC, Pascal. J&apos;y passais des
               journées entières, sans trop savoir quoi en faire, mais en
-              devinant la puissance de l&apos;outil. Aujourd&apos;hui, je crée
-              le même lien avec l&apos;IA.
+              devinant la puissance de l&apos;outil. Quarante ans plus
+              tard, l&apos;IA m&apos;a redonné cette même intuition : quelque
+              chose de puissant est là, et peu de gens savent quoi en faire.
             </p>
           </Reveal>
           <Reveal delay={100}>
