@@ -72,7 +72,7 @@ export const organizationJsonLd = {
   name: "Vincent Dolez",
   url: BASE_URL,
   description:
-    "AI Operating Partner — J'aide les dirigeants de PME à débloquer l'exécution et tirer parti de l'IA.",
+    "Référent IA externalisé — Je construis le logiciel métier qui manque ou je restructure celui qui existe. Vous repartez autonomes.",
   founder: {
     "@type": "Person",
     name: "Vincent Dolez",

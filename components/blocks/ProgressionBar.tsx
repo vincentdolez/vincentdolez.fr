@@ -3,7 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 const steps = [
   { number: "01", label: "Quickscan", duration: "Jours", signal: "Confiance" },
   { number: "02", label: "Sprint", duration: "Semaines", signal: "Preuve" },
-  { number: "03", label: "Partner", duration: "Mois", signal: "Récurrence" },
+  { number: "03", label: "Partnership", duration: "Mois", signal: "Récurrence" },
 ];
 
 export function ProgressionBar() {

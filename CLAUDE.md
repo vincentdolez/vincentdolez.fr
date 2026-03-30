@@ -29,7 +29,7 @@ Personal website for Vincent Dolez — Référent IA externalisé pour PME-PMI.
 - Commits: conventional format (`feat:`, `fix:`, `docs:`, `chore:`)
 - Design tokens defined in `app/globals.css` via `@theme inline`
 - No UI libraries — custom components aligned to design tokens
-- No dark mode, no i18n
+- Dark mode supported (prefers-color-scheme), no i18n
 
 ## Key directories
 

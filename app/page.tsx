@@ -1,8 +1,10 @@
 import { Hero } from "@/components/blocks/Hero";
 import { ProblemGrid } from "@/components/blocks/ProblemGrid";
 import { StepList } from "@/components/blocks/StepList";
-import { MetricRow } from "@/components/blocks/MetricRow";
+import { ConvictionGrid } from "@/components/blocks/ConvictionGrid";
 import { CTASection } from "@/components/blocks/CTASection";
+import { Section } from "@/components/layout/Section";
+import { Reveal } from "@/components/ui/Reveal";
 import { organizationJsonLd } from "@/lib/metadata";
 
 export default function HomePage() {
@@ -16,31 +18,31 @@ export default function HomePage() {
       />
 
       <Hero
-        title={`Je vois où vous voulez aller.\nEt je sais le construire.`}
-        subtitle="Co-fondateur temporaire pour dirigeants qui ont une ambition concrète, un projet bloqué ou une idée dormante — et qui cherchent quelqu'un qui s'y engage autant qu'eux."
-        primaryCTA={{ label: "Voir comment ça marche", href: "/offres" }}
+        title={`Votre boîte dépend d'un type.\nC'est réparable.`}
+        subtitle="Les doubles saisies, le logiciel que personne ne comprend, le fichier Excel qui fait tourner la prod — tout ça, c'est de la dépendance. L'IA change la donne."
+        primaryCTA={{ label: "Ce que je fais", href: "/offres" }}
         secondaryCTA={{ label: "Prendre rendez-vous", href: "/contact" }}
       />
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
       <ProblemGrid
-        intro="Vous avez l'ambition. Il vous manque quelqu'un pour la construire."
+        intro="Vous le sentez tous les jours."
         problems={[
           {
-            title: "Une idée qui attend",
+            title: "Le gars qui sait",
             description:
-              "Vous avez un projet depuis des mois. Personne en interne pour le concrétiser, aucun prestataire qui y croit vraiment.",
+              "Marc est le seul à maintenir le logiciel maison. Le jour où il s'en va, la prod s'arrête.",
           },
           {
-            title: "Marre des slides",
+            title: "Le fichier Excel",
             description:
-              "Le dernier consultant a livré un rapport. Vous cherchez quelqu'un qui livre un système qui tourne.",
+              "Il fait tourner la compta, le planning ou le suivi client. Personne n'ose y toucher.",
           },
           {
-            title: "L'IA, levier ou mirage",
+            title: "L'IA, gadget ou levier",
             description:
-              "L'IA pourrait rendre faisable ce qui ne l'était pas. Encore faut-il quelqu'un qui sache la mettre au service de votre vision.",
+              "ChatGPT ne remplacera pas Marc. Mais l'IA peut livrer un système qui ne dépend plus de personne.",
           },
         ]}
       />
@@ -53,22 +55,17 @@ export default function HomePage() {
           {
             label: "Diagnostic",
             description:
-              "Identifier les freins réels — tech, orga, culture.",
+              "Je rentre dans votre système, j'ouvre les fichiers, je comprends comment l'info circule vraiment.",
           },
           {
-            label: "Plan actionnable",
+            label: "Construction",
             description:
-              "Prioriser ce qui a un ROI clair, en 90 jours.",
+              "Je construis le logiciel métier qui manque — ou je restructure celui qui existe.",
           },
           {
-            label: "Livraison",
+            label: "Transfert",
             description:
-              "Implémenter, mesurer, documenter. Résultats concrets.",
-          },
-          {
-            label: "Capitalisation",
-            description:
-              "Chaque intervention laisse des actifs. Vous gardez tout.",
+              "Je forme vos équipes pour qu'elles fassent évoluer le système elles-mêmes.",
           },
         ]}
         cta={{ label: "Voir les offres", href: "/offres" }}
@@ -76,18 +73,43 @@ export default function HomePage() {
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
-      <MetricRow
-        title="Résultats observés"
-        metrics={[
-          { value: "-40%", label: "de délai sur les cycles de livraison" },
-          { value: "x3", label: "de débit sur les process automatisés" },
-          { value: "< 90 jours", label: "pour un ROI mesurable" },
+      <ConvictionGrid
+        title="4 systèmes. 4 business qui durent."
+        convictions={[
+          {
+            title: "Arkea",
+            description:
+              "D'une graine (animer des images 3D), un produit + ERP + portail client.",
+          },
+          {
+            title: "Manganelli",
+            description:
+              "Boîtier obsolète → logiciel de pilotage d'écrans. Leader du marché.",
+          },
+          {
+            title: "Jackpot.io",
+            description:
+              "Plateforme from scratch, circuit financier complet. 5 ans, revente propre.",
+          },
+          {
+            title: "iRaiser",
+            description:
+              "Migration bloquée depuis 3 ans. Extraction DDD + IA. Terminé.",
+          },
         ]}
-        note="Estimations basées sur des missions passées auprès de PME de services (50 à 200 personnes). Chaque contexte produit des résultats différents — ces ordres de grandeur illustrent le potentiel, pas une promesse."
       />
 
+      <Section variant="white">
+        <Reveal>
+          <p className="mx-auto max-w-xl text-center text-muted">
+            Le pattern : le client arrive avec un problème. Il repart avec
+            quelque chose de plus grand que ce qu&apos;il demandait.
+          </p>
+        </Reveal>
+      </Section>
+
       <CTASection
-        text="Un échange de 30 minutes pour voir si ça matche."
+        text="Je ne reste pas. Je construis pour ne plus être nécessaire."
         primaryCTA={{ label: "Prendre rendez-vous", href: "/contact" }}
       />
     </>

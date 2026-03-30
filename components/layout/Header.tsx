@@ -8,6 +8,7 @@ import { useState, useEffect, startTransition } from "react";
 const navLinks = [
   { href: "/a-propos", label: "À propos" },
   { href: "/offres", label: "Offres" },
+  { href: "/ia-act", label: "IA Act" },
   { href: "/blog", label: "Blog" },
 ];
 

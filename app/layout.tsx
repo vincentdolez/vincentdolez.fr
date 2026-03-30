@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s — Vincent Dolez",
   },
   description:
-    "Co-fondateur temporaire pour dirigeants PME. Je vois où vous voulez aller, et je le construis.",
+    "Référent IA externalisé pour dirigeants PME. Je construis le logiciel métier qui manque — ou je restructure celui qui existe. Vous repartez autonomes.",
   metadataBase: new URL("https://vincentdolez.fr"),
   alternates: { canonical: "https://vincentdolez.fr" },
   openGraph: {
