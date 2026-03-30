@@ -41,8 +41,9 @@ export default function IAActPage() {
           Ce que ça change pour votre PME.
         </h1>
         <p className="mt-4 max-w-xl text-xl text-muted text-balance">
-          Vos équipes utilisent ChatGPT, Copilot ou un outil IA ? Vous avez des
-          obligations depuis février 2025. Les sanctions arrivent en août 2026.
+          Vos équipes utilisent ChatGPT, Copilot ou un outil IA ? Savez-vous si
+          votre entreprise est concernée ? S&apos;il y a une législation,
+          c&apos;est qu&apos;il y a un risque, et une veille à assurer.
         </p>
       </Section>
 
@@ -61,7 +62,7 @@ export default function IAActPage() {
               L&apos;article 4 de l&apos;IA Act impose une{" "}
               <strong>obligation de compétence IA</strong> (AI literacy) à toute
               entreprise qui déploie un système d&apos;IA. En clair : vos
-              équipes doivent comprendre les outils IA qu&apos;elles utilisent —
+              équipes doivent comprendre les outils IA qu&apos;elles utilisent :
               leurs capacités, leurs limites, leurs risques.
             </p>
           </Reveal>
@@ -140,23 +141,26 @@ export default function IAActPage() {
       <Section variant="surface">
         <Reveal>
           <h2 className="gradient-text font-heading text-3xl leading-tight tracking-display">
-            Août 2026 : les sanctions tombent.
+            Août 2026 : le cadre se durcit.
           </h2>
         </Reveal>
         <div className="mt-8 max-w-[var(--width-content)] space-y-4 leading-normal text-text">
           <Reveal delay={100}>
             <p>
-              Les articles 26 et 99 de l&apos;IA Act prévoient des sanctions
-              pour les déployeurs de systèmes IA à haut risque non conformes.
-              Jusqu&apos;à <strong>15 millions d&apos;euros</strong> ou{" "}
-              <strong>3% du chiffre d&apos;affaires</strong> mondial.
+              Les obligations de conformité pour les usages à risque entrent en
+              vigueur. Sanctions jusqu&apos;à{" "}
+              <strong>15 millions d&apos;euros</strong> ou{" "}
+              <strong>3% du chiffre d&apos;affaires</strong> mondial. Mais le
+              vrai sujet n&apos;est pas l&apos;amende.
             </p>
           </Reveal>
           <Reveal delay={200}>
             <p>
-              Pour une PME, le risque n&apos;est pas l&apos;amende maximale.
-              C&apos;est le contrôle qui révèle que personne ne sait quels
-              outils IA sont utilisés, comment, et avec quelles données.
+              Le vrai sujet, c&apos;est de savoir si vous êtes concerné. Et
+              aujourd&apos;hui, la plupart des dirigeants ne le savent pas. Quels
+              outils IA sont utilisés dans votre entreprise ? Comment ? Avec
+              quelles données ? Si vous ne pouvez pas répondre, vous avez besoin
+              de clarté.
             </p>
           </Reveal>
         </div>
@@ -179,7 +183,7 @@ export default function IAActPage() {
                 Formation
               </h3>
               <p className="mt-3 text-sm text-muted">
-                1 jour — maîtrise des outils IA + conformité réglementaire.
+                1 jour : maîtrise des outils IA + conformité réglementaire.
                 Finançable OPCO. Vos équipes comprennent ce qu&apos;elles
                 utilisent.
               </p>
