@@ -1,6 +1,6 @@
 # Roadmap — vincentdolez.fr
 
-> État : Sprint 2 terminé. Page transitions, link underline, OG images, favicon, canonical URLs en place.
+> État : Sprint 3 en cours. Site en production. Reste : articles piliers (×3), lien de réservation Google Agenda.
 
 ---
 
@@ -119,14 +119,14 @@
 - [ ] **Article Delivery** — retour de terrain
 - [ ] **Article Démos** — walk-through technique
 - [x] **Page Mentions légales** — créée
-- [ ] **Lien Calendly réel** — remplacer placeholder
+- [ ] **Lien de réservation** — Google Appointment Scheduling (inclus Workspace) → remplacer placeholder
 
 ---
 
 ## Infra & CI
 
 - [x] **CI GitHub Actions** — lint + build sur PR
-- [x] **Déploiement Vercel** — preview + production
+- [x] **Déploiement Vercel** — preview + production (site en prod ✅)
 - [x] **Dark mode auto** — `prefers-color-scheme` avec tokens sémantiques
 
 ---
@@ -134,13 +134,13 @@
 ## Ordre de priorité
 
 ```
-Sprint 1 (terminé ✅)                Sprint 2 (terminé ✅)                Sprint 3 (contenu + polish)
+Sprint 1 (terminé ✅)                Sprint 2 (terminé ✅)                Sprint 3 (en cours 🔵)
 ─────────────────────────────        ──────────────────────────           ─────────────────────────────
 ✅ P0 bugs fonctionnels              ✅ Page transitions                   ○ Articles piliers (×3)
-✅ P1 proportions & espacement       ✅ Link underline animation           ○ CTA sticky mobile
-✅ P2 micro-détails typo             ✅ OG image + Favicon                 ○ Touch targets audit
+✅ P1 proportions & espacement       ✅ Link underline animation           ✅ CTA sticky mobile
+✅ P2 micro-détails typo             ✅ OG image + Favicon                 ✅ Touch targets audit
 ✅ P3 composants sophistiqués        ✅ Canonical URLs                     ○ Calendly réel
-✅ P4 animations (partiel)           ○ Core Web Vitals (post-deploy)      ○ Deploy production final
+✅ P4 animations (partiel)           ✅ Core Web Vitals (SpeedInsights)   ✅ Deploy production final
 ✅ Dark mode auto
 ✅ Vercel Analytics
 ✅ CI GitHub
