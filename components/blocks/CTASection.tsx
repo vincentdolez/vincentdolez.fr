@@ -14,7 +14,7 @@ export function CTASection({ text, primaryCTA, secondaryCTA }: CTASectionProps) 
         <Reveal>
           <div className="text-center">
             <hr className="hairline-fade mx-auto mb-14 max-w-xs" />
-            <p className="mx-auto max-w-lg font-heading text-2xl leading-snug tracking-display text-text">
+            <p className="mx-auto max-w-lg font-heading text-2xl leading-snug tracking-display text-text whitespace-pre-line">
               {text}
             </p>
             <div className="mt-12 flex items-center justify-center gap-4">

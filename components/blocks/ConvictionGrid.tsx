@@ -26,7 +26,7 @@ export function ConvictionGrid({ title, convictions }: ConvictionGridProps) {
               <h3 className="mb-2 font-heading text-xl leading-snug tracking-display">
                 {conviction.title}
               </h3>
-              <p className="text-sm leading-normal text-muted">
+              <p className="text-sm leading-normal text-muted whitespace-pre-line">
                 {conviction.description}
               </p>
             </div>

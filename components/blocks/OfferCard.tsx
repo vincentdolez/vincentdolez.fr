@@ -14,6 +14,7 @@ type OfferCardProps = {
   number?: string;
   highlighted?: boolean;
   badge?: string;
+  badges?: string[];
 };
 
 export function OfferCard({
@@ -29,6 +30,7 @@ export function OfferCard({
   number,
   highlighted = false,
   badge,
+  badges,
 }: OfferCardProps) {
   return (
     <section
@@ -61,7 +63,7 @@ export function OfferCard({
                     </span>
                   )}
                 </div>
-                <p className="mt-2 text-lg text-muted">{hook}</p>
+                <p className="mt-2 text-lg text-muted whitespace-pre-line">{hook}</p>
 
                 {itemsLabel && (
                   <p className="mt-6 text-sm font-medium text-text">
@@ -89,13 +91,25 @@ export function OfferCard({
                   </span>
                   <span>
                     <span className="font-medium text-text">Livrable :</span>{" "}
-                    {deliverable}
+                    <span className="whitespace-pre-line">{deliverable}</span>
                   </span>
                 </div>
-                {badge && (
-                  <span className="mt-3 inline-block rounded-full border border-success/30 px-2.5 py-0.5 text-xs text-success">
-                    {badge}
-                  </span>
+                {(badge || badges) && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {badge && (
+                      <span className="inline-block rounded-full border border-success/30 px-2.5 py-0.5 text-xs text-success">
+                        {badge}
+                      </span>
+                    )}
+                    {badges?.map((b, i) => (
+                      <span
+                        key={i}
+                        className="inline-block rounded-full border border-success/30 px-2.5 py-0.5 text-xs text-success"
+                      >
+                        {b}
+                      </span>
+                    ))}
+                  </div>
                 )}
 
                 <div className="mt-6">

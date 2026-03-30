@@ -10,6 +10,7 @@ type HeroProps = {
 
 export function Hero({ title, subtitle, primaryCTA, secondaryCTA }: HeroProps) {
   const lines = title.split("\n");
+  const subLines = subtitle.split("\n");
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-32 pb-24">
@@ -25,7 +26,7 @@ export function Hero({ title, subtitle, primaryCTA, secondaryCTA }: HeroProps) {
             </span>
           ))}
         </h1>
-        <p className="mx-auto mt-8 max-w-xl text-xl leading-normal text-muted">
+        <p className="mx-auto mt-8 max-w-xl text-xl leading-normal text-muted whitespace-pre-line">
           {subtitle}
         </p>
         <div className="mt-10 flex items-center justify-center gap-4">
