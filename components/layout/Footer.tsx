@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { EmailLink } from "@/components/ui/EmailLink";
 
@@ -5,7 +6,10 @@ export function Footer() {
   return (
     <footer style={{ viewTransitionName: "footer" }} className="mt-24 border-t border-border py-12">
       <div className="mx-auto flex max-w-[var(--width-wide)] flex-col items-center justify-between gap-4 px-6 text-sm text-muted sm:flex-row">
-        <span>&copy; Vincent Dolez {new Date().getFullYear()} &middot; Vannes, Morbihan</span>
+        <span className="flex items-center gap-2">
+          <Image src="/logo.png" alt="Logo" width={24} height={24} />
+          &copy; Vincent Dolez {new Date().getFullYear()} &middot; Vannes, Morbihan
+        </span>
 
         <div className="flex items-center gap-6">
           <a

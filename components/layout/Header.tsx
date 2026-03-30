@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, startTransition } from "react";
@@ -48,9 +49,12 @@ export function Header() {
         <nav className="mx-auto flex max-w-[var(--width-wide)] items-center justify-between px-6 py-4">
           <Link
             href="/"
-            className="font-serif text-xl tracking-display text-text opacity-80 transition-opacity duration-[var(--duration-default)] hover:opacity-100"
+            className="flex items-center gap-2 opacity-80 transition-opacity duration-[var(--duration-default)] hover:opacity-100"
           >
-            Vincent Dolez
+            <Image src="/logo.png" alt="Logo" width={32} height={32} />
+            <span className="font-heading text-xl tracking-display text-text">
+              Vincent Dolez
+            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -116,7 +120,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-serif text-2xl tracking-display transition-colors duration-[var(--duration-default)] ${
+                className={`font-heading text-2xl tracking-display transition-colors duration-[var(--duration-default)] ${
                   pathname === link.href
                     ? "text-text"
                     : "text-muted hover:text-text"
