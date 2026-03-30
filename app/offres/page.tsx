@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
-import { ProgressionBar } from "@/components/blocks/ProgressionBar";
-import { OfferCard } from "@/components/blocks/OfferCard";
 import { StepList } from "@/components/blocks/StepList";
+import { OfferCard } from "@/components/blocks/OfferCard";
 import { Accordion } from "@/components/ui/Accordion";
 import { CTASection } from "@/components/blocks/CTASection";
 import { Reveal } from "@/components/ui/Reveal";
@@ -11,7 +10,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "Offres",
   description:
-    "Deux réponses au même problème : construire le système qui manque ou restructurer celui qui existe. Quickscan, Sprint, Partnership.",
+    "L'IA rend votre boîte libre. Logiciel métier, connexion données, réécriture legacy, formation IA Act. Quickscan, Sprint.",
   path: "/offres",
 });
 
@@ -34,7 +33,7 @@ const faqItems = [
   {
     question: "On a déjà essayé avec un prestataire.",
     answer:
-      "La différence : je ne vends pas un projet puis je disparais. Je livre par itérations courtes, je mesure, et je forme vos équipes pour qu'elles continuent sans moi.",
+      "La différence : je livre par itérations courtes, je mesure, et je forme vos équipes pour qu'elles continuent sans moi. Et le code est construit pour être repris, par un humain ou par une IA.",
   },
 ];
 
@@ -44,174 +43,156 @@ export default function OffersPage() {
       {/* Section 1 — Intro */}
       <Section variant="white" className="pt-32 pb-12">
         <h1 className="gradient-text font-heading text-4xl leading-tight tracking-display">
-          Deux réponses au même problème.
+          L&apos;IA rend votre boîte libre. Voici comment.
         </h1>
-        <p className="mt-3 max-w-xl text-xl text-muted text-balance">
-          Votre boîte dépend d&apos;un type — ou d&apos;un fichier, ou
-          d&apos;un logiciel que personne ne comprend. Je construis le système
-          qui manque, ou je restructure celui qui existe. Dans les deux cas,
-          vous repartez autonomes.
-        </p>
       </Section>
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
-      {/* Section 2 — Le triptyque */}
+      {/* Section 2 — 4 offres */}
+      <OfferCard
+        id="logiciel-metier"
+        number="01"
+        title="Logiciel métier sur mesure"
+        hook="Un process critique tracé dans des feuilles Excel éparses ? Un soft fait par un freelance il y a 10 ans ?"
+        itemsLabel="Ce que je livre :"
+        items={[
+          "Un logiciel taillé pour votre activité, connecté à vos données, pilotable en français",
+          "L'IA intégrée dans l'administration : vous pilotez l'évolution en français",
+          "Alignement sur votre réalité dès le premier jour",
+        ]}
+        engagement="Semaines à mois"
+        deliverable="Un logiciel métier souverain : le code, la machine et les données sont à vous."
+        cta={{ label: "En parler", href: "/contact" }}
+        variant="surface"
+      />
+
+      <OfferCard
+        id="connexion-donnees"
+        number="02"
+        title="Connexion données et tableaux de bord"
+        hook="Vous aimeriez consolider activité commerciale, production et cash flow dans une même vue ?"
+        itemsLabel="Ce que je livre :"
+        items={[
+          "Connecteurs entre vos outils existants, plus de ressaisie",
+          "Vue consolidée de votre activité, interrogeable",
+          "Tableaux de bord en temps réel, plus d'angles morts",
+        ]}
+        engagement="Semaines"
+        deliverable="Vos données connectées, visibles, exploitables."
+        cta={{ label: "En parler", href: "/contact" }}
+        variant="white"
+        highlighted
+      />
+
+      <OfferCard
+        id="reecriture-legacy"
+        number="03"
+        title="Réécriture legacy"
+        hook="Une équipe dev enlisée dans un code daté ? Un logiciel que personne ne maîtrise ?"
+        itemsLabel="Ce que je livre :"
+        items={[
+          "Extraction du modèle métier enfoui dans le code existant",
+          "Restructuration sur des fondations solides, architecture aux meilleurs standards",
+          "Formation de l'équipe à maintenir et faire évoluer avec l'IA",
+        ]}
+        engagement="Semaines à mois"
+        deliverable="Un code restructuré, documenté, que votre équipe ou une IA peut reprendre."
+        cta={{ label: "En parler", href: "/contact" }}
+        variant="surface"
+        badge="Éligible CII"
+      />
+
+      <OfferCard
+        id="formation-ia"
+        number="04"
+        title="Formation & IA Act"
+        hook="L'IA Act est en vigueur. Savez-vous si votre entreprise est concernée ?"
+        itemsLabel="Ce que vous obtenez :"
+        items={[
+          "Comprendre le texte, ses obligations et ce qu'il implique pour votre activité",
+          "Cartographie de vos usages IA et de leur niveau de risque",
+          "S'il y a une législation, c'est qu'il y a un risque à ignorer, et une veille à assurer",
+        ]}
+        engagement="1 à 2 jours"
+        deliverable="La clarté sur vos obligations, et une longueur d'avance."
+        cta={{ label: "En parler", href: "/contact" }}
+        variant="white"
+        badges={["Qualiopi", "Finançable OPCO"]}
+      />
+
+      <hr className="hairline-fade mx-auto max-w-xs" />
+
+      {/* Section 3 — La méthode */}
       <StepList
-        title="Ce que je fais, concrètement"
+        title="Une méthode, quel que soit le terrain."
         variant="surface"
         steps={[
           {
             label: "Diagnostic",
             description:
-              "Je rentre dans votre système, j'ouvre les fichiers, je comprends comment l'info circule vraiment.",
+              "Je comprends comment votre boîte fonctionne vraiment. Quelques jours.",
           },
           {
-            label: "Construction / Restructuration",
+            label: "Spécification de la cible",
             description:
-              "Je construis le logiciel métier qui manque — ou je restructure celui qui existe. L'IA est dans les fondations.",
+              "On définit ensemble ce que le système doit faire.",
+          },
+          {
+            label: "Réalisation",
+            description: "Je construis, je livre, je mesure. Quelques semaines.",
           },
           {
             label: "Formation",
-            description:
-              "Je forme vos équipes pour qu'elles fassent évoluer le système elles-mêmes. L'outil qui a servi à construire devient l'outil du quotidien.",
+            description: "Vos équipes prennent la main.",
           },
         ]}
       />
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
-      {/* Section 3 — Niveaux d'engagement */}
-      <Section variant="white" className="pb-4">
-        <Reveal>
-          <h2 className="gradient-text font-heading text-3xl leading-tight tracking-display">
-            Comment on travaille ensemble
-          </h2>
-        </Reveal>
-        <div className="mt-12">
-          <ProgressionBar />
-        </div>
-      </Section>
-
-      <OfferCard
-        id="quickscan"
-        number="01"
-        title="Quickscan"
-        hook="Comprendre ce qui bloque — en quelques jours."
-        itemsLabel="Ce que vous obtenez :"
-        items={[
-          "Je m'assieds avec vos équipes, j'écoute, j'ouvre les fichiers",
-          "Cartographie du fonctionnement réel : outils, flux, dépendances",
-          "Plan d'action priorisé avec estimation d'effort et gains attendus",
-        ]}
-        engagement="Jours"
-        deliverable="Un plan clair, que vous pouvez exécuter avec ou sans moi."
-        cta={{ label: "En savoir plus", href: "/contact" }}
-        variant="surface"
-      />
-
-      <OfferCard
-        id="sprint"
-        number="02"
-        title="Sprint de déverrouillage"
-        hook="2 à 3 livraisons mesurables en quelques semaines."
-        itemsLabel="Ce que vous obtenez :"
-        items={[
-          "Implémentations concrètes sur vos priorités",
-          "Résultats mesurables — avant/après documenté",
-          "Transfert de compétences aux équipes",
-        ]}
-        engagement="Semaines"
-        deliverable="Des résultats démontrables et des équipes qui savent continuer."
-        cta={{ label: "En savoir plus", href: "/contact" }}
-        variant="white"
-        highlighted
-        badge="Éligible CII"
-      />
-
-      <OfferCard
-        id="partnership"
-        number="03"
-        title="Partnership"
-        hook="Récurrence — chaque mois, on avance."
-        itemsLabel="Chaque mois :"
-        items={[
-          "Priorisation, livraisons, mesure",
-          "Connecteurs progressifs — plus de double saisie",
-          "Le système gagne en couverture à chaque cycle",
-        ]}
-        engagement="Mois"
-        deliverable="Un système qui couvre de plus en plus votre métier."
-        cta={{ label: "En savoir plus", href: "/contact" }}
-        variant="surface"
-        badge="Éligible CII"
-      />
-
-      <hr className="hairline-fade mx-auto max-w-xs" />
-
-      {/* Section 4 — Produit teaser */}
-      <Section variant="surface">
-        <Reveal>
-          <h2 className="gradient-text font-heading text-3xl leading-tight tracking-display">
-            Et si le logiciel suivait votre métier — sans dev, sans attente ?
-          </h2>
-        </Reveal>
-        <div className="mt-6 max-w-[var(--width-content)] space-y-4 leading-normal text-text">
-          <Reveal delay={100}>
-            <p>
-              Un logiciel métier sur mesure. Construit sur votre modèle. Hébergé
-              chez vous. Vous demandez en français, le système propose, vous
-              validez. Le code et la machine sont à vous.
-            </p>
-          </Reveal>
-          <Reveal delay={200}>
-            <p className="text-muted">
-              Ce n&apos;est pas un projet. C&apos;est la direction dans laquelle
-              tout converge. Chaque Quickscan, chaque Sprint vous en rapproche.
-            </p>
-          </Reveal>
-        </div>
-      </Section>
-
-      <hr className="hairline-fade mx-auto max-w-xs" />
-
-      {/* Section 5 — Formation IA Act */}
+      {/* Section 4 — Le livrable */}
       <Section variant="white">
         <Reveal>
           <h2 className="gradient-text font-heading text-3xl leading-tight tracking-display">
-            Formation IA &amp; conformité
+            Ce que vous obtenez
           </h2>
         </Reveal>
-        <div className="mt-6 max-w-[var(--width-content)] space-y-4 leading-normal text-text">
+        <div className="mt-8 max-w-[var(--width-content)] space-y-6 leading-normal text-text">
           <Reveal delay={100}>
-            <p>
-              L&apos;IA Act est en vigueur depuis février 2025. Vos équipes
-              doivent maîtriser l&apos;IA qu&apos;elles utilisent. Les
-              sanctions sur les usages à risque arrivent en août 2026.
+            <p className="text-lg">
+              Un code sur mesure, piloté par les spécifications de votre
+              métier. Architecture aux meilleurs standards. Hébergé où vous
+              voulez, chez vous ou dans le cloud.
             </p>
           </Reveal>
           <Reveal delay={200}>
-            <ul className="mt-4 space-y-2 text-text">
-              <li className="flex items-start gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                1 jour — maîtrise des outils IA + conformité réglementaire
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                Cartographie de vos usages et de leur niveau de risque
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                Finançable OPCO
-              </li>
-            </ul>
+            <p>
+              Et surtout : les fichiers d&apos;instructions qui permettent à
+              une IA de reprendre le code, le comprendre, le faire évoluer.
+              Votre logiciel n&apos;est pas un livrable figé ; c&apos;est un
+              système vivant que n&apos;importe quel développeur, ou une IA,
+              peut reprendre demain.
+            </p>
+          </Reveal>
+          <Reveal delay={300}>
+            <p>
+              Pour les logiciels métier neufs : l&apos;IA est directement
+              intégrée dans l&apos;interface d&apos;administration. Vous
+              pilotez l&apos;évolution en français.
+            </p>
+          </Reveal>
+          <Reveal delay={400}>
+            <p className="font-medium text-accent">
+              Pas de dépendance. Ni à un prestataire, ni à un éditeur.
+            </p>
           </Reveal>
         </div>
       </Section>
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
-      {/* Section 6 — Financement */}
+      {/* Section 5 — Financement */}
       <Section variant="surface">
         <Reveal>
           <h2 className="gradient-text font-heading text-3xl leading-tight tracking-display">
@@ -225,8 +206,8 @@ export default function OffersPage() {
                 CII
               </h3>
               <p className="mt-2 text-muted">
-                Vincent est agréé CII. 20% de vos dépenses d&apos;innovation
-                remboursées par l&apos;État.
+                Vincent est agréé Crédit Impôt Innovation. 20% de vos
+                dépenses d&apos;innovation remboursées par l&apos;État.
               </p>
             </div>
           </Reveal>
@@ -245,7 +226,7 @@ export default function OffersPage() {
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
-      {/* Section 7 — FAQ */}
+      {/* Section 6 — FAQ */}
       <Section variant="white">
         <Reveal>
           <h2 className="gradient-text mb-8 font-heading text-3xl leading-tight tracking-display">
@@ -257,7 +238,7 @@ export default function OffersPage() {
         </div>
       </Section>
 
-      {/* Section 8 — CTA */}
+      {/* Section 7 — CTA */}
       <CTASection
         text="Le plus simple : un échange de 30 minutes."
         primaryCTA={{ label: "Prendre rendez-vous", href: "/contact" }}
