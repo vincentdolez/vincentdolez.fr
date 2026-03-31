@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
+import { Button } from "@/components/ui/Button";
 import { CTASection } from "@/components/blocks/CTASection";
 import { Reveal } from "@/components/ui/Reveal";
 import { buildMetadata } from "@/lib/metadata";
@@ -45,6 +46,9 @@ export default function IAActPage() {
           votre entreprise est concernée ? S&apos;il y a une législation,
           c&apos;est qu&apos;il y a un risque, et une veille à assurer.
         </p>
+        <div className="mt-8">
+          <Button href="/contact">Demander un diagnostic gratuit</Button>
+        </div>
       </Section>
 
       <hr className="hairline-fade mx-auto max-w-xs" />
