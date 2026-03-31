@@ -66,7 +66,7 @@ export function OfferCard({
                 <p className="mt-2 text-lg text-muted whitespace-pre-line">{hook}</p>
 
                 {itemsLabel && (
-                  <p className="mt-6 text-sm font-medium text-text">
+                  <p className="mt-6 text-base font-medium text-text">
                     {itemsLabel}
                   </p>
                 )}
@@ -74,15 +74,15 @@ export function OfferCard({
                   {items.map((item, index) => (
                     <li
                       key={index}
-                      className="flex items-start gap-2 text-muted"
+                      className="flex items-start gap-2 text-text"
                     >
                       <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-border" />
-                      <span className="text-sm leading-normal">{item}</span>
+                      <span className="text-base leading-normal">{item}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-6 flex flex-wrap gap-6 text-sm text-muted">
+                <div className="mt-6 flex flex-wrap gap-6 text-base text-muted">
                   <span>
                     <span className="font-medium text-text">
                       Engagement :

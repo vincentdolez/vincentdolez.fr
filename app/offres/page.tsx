@@ -205,7 +205,7 @@ export default function OffersPage() {
               <h3 className="font-heading text-xl tracking-display text-text">
                 CII
               </h3>
-              <p className="mt-2 text-muted">
+              <p className="mt-2 text-text">
                 Vincent est agréé Crédit Impôt Innovation. 20% de vos
                 dépenses d&apos;innovation remboursées par l&apos;État.
               </p>
@@ -216,7 +216,7 @@ export default function OffersPage() {
               <h3 className="font-heading text-xl tracking-display text-text">
                 OPCO
               </h3>
-              <p className="mt-2 text-muted">
+              <p className="mt-2 text-text">
                 Les formations sont finançables via votre budget formation.
               </p>
             </div>

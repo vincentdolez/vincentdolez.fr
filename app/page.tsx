@@ -59,7 +59,7 @@ export default function HomePage() {
         </Reveal>
         <div className="mx-auto max-w-3xl space-y-8">
           <Reveal>
-            <p className="leading-normal text-muted">
+            <p className="leading-normal text-text">
               <span className="mr-1 font-heading text-text">&rarr;</span> Je
               construis le logiciel métier qui manque, taillé pour votre
               business, connecté à vos données, pilotable en français. Et je
@@ -67,7 +67,7 @@ export default function HomePage() {
             </p>
           </Reveal>
           <Reveal delay={100}>
-            <p className="leading-normal text-muted">
+            <p className="leading-normal text-text">
               <span className="mr-1 font-heading text-text">&rarr;</span>{" "}
               J&apos;applique les mêmes technologies pour débloquer vos systèmes
               existants. Migration bloquée, code que personne ne comprend,
@@ -76,7 +76,7 @@ export default function HomePage() {
             </p>
           </Reveal>
           <Reveal delay={200}>
-            <p className="leading-normal text-muted">
+            <p className="leading-normal text-text">
               <span className="mr-1 font-heading text-text">&rarr;</span> Je
               forme vos équipes à l&apos;IA : maîtrise des outils, conformité IA
               Act, autonomie. Le savoir reste chez vous.

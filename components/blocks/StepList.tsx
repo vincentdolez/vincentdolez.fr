@@ -41,11 +41,11 @@ export function StepList({
               </div>
               <div>
                 <h3 className="font-medium text-text">{step.label}</h3>
-                <p className="mt-1 leading-normal text-muted whitespace-pre-line">
+                <p className="mt-1 leading-normal text-text whitespace-pre-line">
                   {step.description}
                 </p>
                 {step.deliverable && (
-                  <p className="mt-1 text-sm text-muted/70">
+                  <p className="mt-1 text-base text-muted">
                     Livrable : {step.deliverable}
                   </p>
                 )}

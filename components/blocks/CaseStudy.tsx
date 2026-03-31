@@ -21,7 +21,7 @@ export function CaseStudy({
           <h3 className="mb-6 font-heading text-2xl leading-snug tracking-display">
             {title}
           </h3>
-          <div className="space-y-4 leading-normal text-muted">
+          <div className="space-y-4 leading-normal text-text">
             {paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
@@ -30,7 +30,7 @@ export function CaseStudy({
         </div>
       </Reveal>
       <Reveal delay={200}>
-        <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-normal text-muted">
+        <p className="mx-auto mt-10 max-w-2xl text-center text-base leading-normal text-muted">
           {footnote}
         </p>
       </Reveal>

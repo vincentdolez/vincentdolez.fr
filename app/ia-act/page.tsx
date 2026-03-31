@@ -98,7 +98,7 @@ export default function IAActPage() {
                   Risque minimal
                 </h3>
               </div>
-              <p className="mt-3 text-sm text-muted">
+              <p className="mt-3 text-base text-text">
                 Rédaction d&apos;emails, résumés de réunion, brainstorming.
                 Obligation : AI literacy (art. 4).
               </p>
@@ -112,7 +112,7 @@ export default function IAActPage() {
                   Risque élevé
                 </h3>
               </div>
-              <p className="mt-3 text-sm text-muted">
+              <p className="mt-3 text-base text-text">
                 Scoring de candidats, évaluation de solvabilité, triage de
                 dossiers. Annexe III de l&apos;IA Act. Sanctions en août 2026.
               </p>
@@ -126,7 +126,7 @@ export default function IAActPage() {
                   Interdit
                 </h3>
               </div>
-              <p className="mt-3 text-sm text-muted">
+              <p className="mt-3 text-base text-text">
                 Manipulation comportementale, notation sociale, surveillance
                 biométrique en temps réel. Interdit depuis février 2025.
               </p>
@@ -182,7 +182,7 @@ export default function IAActPage() {
               <h3 className="mt-2 font-heading text-xl tracking-display text-text">
                 Formation
               </h3>
-              <p className="mt-3 text-sm text-muted">
+              <p className="mt-3 text-base text-text">
                 1 jour : maîtrise des outils IA + conformité réglementaire.
                 Finançable OPCO. Vos équipes comprennent ce qu&apos;elles
                 utilisent.
@@ -195,7 +195,7 @@ export default function IAActPage() {
               <h3 className="mt-2 font-heading text-xl tracking-display text-text">
                 Diagnostic conformité
               </h3>
-              <p className="mt-3 text-sm text-muted">
+              <p className="mt-3 text-base text-text">
                 Cartographie de vos usages IA et de leur niveau de risque
                 (Annexe III). Vous savez où vous en êtes.
               </p>
@@ -207,7 +207,7 @@ export default function IAActPage() {
               <h3 className="mt-2 font-heading text-xl tracking-display text-text">
                 Mise en conformité
               </h3>
-              <p className="mt-3 text-sm text-muted">
+              <p className="mt-3 text-base text-text">
                 Gouvernance IA, documentation, registre des usages. Vous êtes
                 prêts pour un contrôle.
               </p>

@@ -77,8 +77,8 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal delay={200}>
-            <div className="rounded-xl border-l-4 border-accent bg-bg px-8 py-6 shadow-sm">
-              <p className="font-heading text-2xl leading-snug tracking-display text-text">
+            <div className="rounded-xl border-l-4 border-accent border-l-4 border-accent bg-bg px-8 py-6 shadow-sm">
+              <p className="font-heading text-lg leading-snug tracking-display text-text">
                 Dès l&apos;arrivée de ChatGPT, j&apos;ai vu l&apos;opportunité
                 de changer ça.
               </p>
@@ -96,8 +96,8 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal delay={400}>
-            <div className="rounded-xl border-l-4 border-accent bg-bg px-8 py-6 shadow-sm">
-              <p className="font-heading text-xl leading-snug tracking-display text-text">
+            <div className="rounded-xl border-l-4 border-accent border-l-4 border-accent bg-bg px-8 py-6 shadow-sm">
+              <p className="font-heading text-lg leading-snug tracking-display text-text">
                 Ce n&apos;est pas un changement d&apos;outil. C&apos;est un
                 changement de nature.
               </p>
@@ -105,10 +105,9 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal delay={500}>
-            <p className="text-lg leading-relaxed text-accent">
-              J&apos;y crois, je le construis, je le livre déjà. Chaque mission
-              me rapproche d&apos;un logiciel métier sur mesure que
-              n&apos;importe quel dirigeant pourrait piloter en français.
+            <p className="text-lg font-medium leading-relaxed text-stone-800">
+              J&apos;y crois, je le construis, je le livre déjà. Un logiciel
+              métier sur mesure, que le dirigeant pilote en français.
             </p>
           </Reveal>
         </div>

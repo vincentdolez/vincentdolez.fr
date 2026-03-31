@@ -20,7 +20,7 @@ export function ValueList({ values }: ValueListProps) {
               <h3 className="mb-2 font-heading text-xl leading-snug tracking-display">
                 &rarr; {value.title}
               </h3>
-              <p className="leading-normal text-muted">{value.description}</p>
+              <p className="leading-normal text-text">{value.description}</p>
             </div>
           </Reveal>
         ))}
