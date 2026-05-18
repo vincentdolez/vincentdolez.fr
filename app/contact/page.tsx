@@ -13,69 +13,64 @@ export const metadata: Metadata = buildMetadata({
 export default function ContactPage() {
   return (
     <>
-      <Section variant="white" className="pt-32">
-        <h1 className="gradient-text font-heading text-4xl leading-tight tracking-display">
-          Parlons de votre situation.
+      <Section variant="white" className="pt-32 pb-12">
+        <span className="eyebrow mb-6">Contact</span>
+        <h1 className="font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.0] tracking-[-0.04em] text-[color:var(--color-text-strong)] [font-variation-settings:'opsz'_96]">
+          Le plus simple : un échange de <em>30 minutes</em>.
         </h1>
-        <p className="mt-3 text-xl text-muted text-balance">
-          30 minutes pour comprendre vos freins et voir si je peux aider.
+        <p className="mt-6 max-w-2xl text-xl leading-[1.6] text-[color:var(--color-text)]">
+          Pour comprendre vos freins et voir si je peux aider. Pas de pitch
+          commercial. Si je ne suis pas la bonne personne, je vous le dirai.
         </p>
       </Section>
 
       <Section variant="white" className="pt-0">
         <div className="grid gap-12 md:grid-cols-2">
-          <div>
+          <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-8">
             <ContactForm />
           </div>
 
           <div>
-            <p className="mb-4 text-sm font-medium text-text">
-              Ou si vous préférez :
+            <p className="font-mono text-xs uppercase tracking-[0.12em] text-[color:var(--color-vd-moss)]">
+              Ou si vous préférez
             </p>
-            <ul className="space-y-3 text-sm text-muted">
+            <ul className="mt-5 space-y-4 text-[15px] leading-[1.6] text-[color:var(--color-text)]">
               <li>
-                <span className="font-medium text-text">Email :</span>{" "}
+                <span className="font-medium text-[color:var(--color-text-strong)]">Email :</span>{" "}
                 <EmailLink
                   showAddress
-                  className="text-accent transition-colors duration-[var(--duration-default)] hover:text-accent/80"
+                  className="link-underline text-[color:var(--color-vd-moss)]"
                 />
               </li>
               <li>
-                <span className="font-medium text-text">LinkedIn :</span>{" "}
+                <span className="font-medium text-[color:var(--color-text-strong)]">LinkedIn :</span>{" "}
                 <a
                   href="https://www.linkedin.com/in/vincentdolez"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent transition-colors duration-[var(--duration-default)] hover:text-accent/80"
+                  className="link-underline text-[color:var(--color-vd-moss)]"
                 >
                   linkedin.com/in/vincentdolez
                 </a>
               </li>
               <li>
-                <span className="font-medium text-text">Rendez-vous :</span>{" "}
+                <span className="font-medium text-[color:var(--color-text-strong)]">Rendez-vous :</span>{" "}
                 <a
                   href="https://calendar.app.google/7oruDED4KzKBwUUv7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent transition-colors duration-[var(--duration-default)] hover:text-accent/80"
+                  className="link-underline text-[color:var(--color-vd-moss)]"
                 >
                   Réserver un créneau directement
                 </a>
               </li>
               <li>
-                <span className="font-medium text-text">Basé à :</span>{" "}
+                <span className="font-medium text-[color:var(--color-text-strong)]">Basé à :</span>{" "}
                 Vannes, Morbihan
               </li>
             </ul>
           </div>
         </div>
-      </Section>
-
-      <Section variant="surface">
-        <p className="text-center text-muted">
-          Pas de pitch commercial. Un vrai échange sur vos enjeux. Si je ne suis
-          pas la bonne personne, je vous le dirai.
-        </p>
       </Section>
     </>
   );

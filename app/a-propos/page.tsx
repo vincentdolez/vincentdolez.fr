@@ -1,143 +1,157 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
-import { CTASection } from "@/components/blocks/CTASection";
+import { TrackRecord } from "@/components/blocks/TrackRecord";
 import { Reveal } from "@/components/ui/Reveal";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
   title: "À propos",
   description:
-    "20 ans de systèmes complets pour des dirigeants. Aujourd'hui, l'IA pour construire des logiciels métier qui n'ont plus besoin de moi.",
+    "20 ans à construire des systèmes complets pour des dirigeants. CTO indépendant, référent IA externalisé. D'un besoin, je fais une ambition.",
   path: "/a-propos",
 });
 
 export default function AboutPage() {
   return (
     <>
-      {/* Section 1 — Le récit */}
-      <Section variant="white" className="pt-32">
-        <h1 className="gradient-text font-heading text-4xl leading-tight tracking-display">
-          Vincent Dolez
-        </h1>
+      {/* Header section */}
+      <Section variant="white" className="pt-32 pb-12">
+        <Reveal>
+          <span className="eyebrow mb-6">À propos</span>
+          <h1 className="font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.0] tracking-[-0.04em] text-[color:var(--color-text-strong)] [font-variation-settings:'opsz'_96]">
+            Vincent Dolez
+          </h1>
+          <p className="mt-6 max-w-2xl text-xl leading-[1.6] text-[color:var(--color-text)]">
+            CTO indépendant · Référent IA externalisé · 20 ans de systèmes complets
+          </p>
+        </Reveal>
+      </Section>
 
-        <div className="mt-10 max-w-[var(--width-content)] space-y-6 text-lg leading-relaxed text-text">
+      {/* Personal story */}
+      <Section variant="white" className="py-12" maxWidth="content">
+        <div className="mx-auto max-w-[var(--width-content)] space-y-6 text-lg leading-[1.7] text-[color:var(--color-text)]">
           <Reveal>
             <p>
-              Mon premier ordinateur, c&apos;était un 8088 avec un écran
-              Hercules. J&apos;avais DOS, BASIC, Pascal. J&apos;y passais des
-              journées entières, sans trop savoir quoi en faire, mais en
-              devinant la puissance de l&apos;outil. Quarante ans plus
-              tard, l&apos;IA m&apos;a redonné cette même intuition : quelque
-              chose de puissant est là, et peu de gens savent quoi en faire.
+              Mon premier ordinateur, c&apos;était un 8088 avec un écran Hercules.
+              J&apos;avais DOS, BASIC, Pascal. J&apos;y passais des journées entières,
+              sans trop savoir quoi en faire, mais en devinant la puissance de l&apos;outil.
+              Quarante ans plus tard, l&apos;IA m&apos;a redonné cette même intuition :
+              quelque chose de puissant est là, et peu de gens savent quoi en faire.
             </p>
           </Reveal>
           <Reveal delay={100}>
             <p>
-              Depuis 20 ans, je construis des systèmes complets pour des
-              dirigeants. Le scénario se répète : un défi, un dirigeant qui
-              porte une idée, et moi qui embarque. À peine les premiers mots, le
-              cerveau va déjà à 200 à l&apos;heure. Chez Arka, c&apos;était une
-              graine, animer des images 3D. J&apos;étais au chômage. J&apos;ai
-              passé 3 jours à construire un prototype, sans contrat, et je suis
-              revenu avec mon ordinateur sous le bras : &ldquo;Regarde, ça
-              marche.&rdquo; Il a eu un produit, un ERP, un portail client. Un
-              business.
-            </p>
-          </Reveal>
-          <Reveal delay={200}>
-            <p>
-              Après : des plateformes financières, du pilotage industriel, des
-              produits from scratch. À chaque fois, un système complet livré, un
-              business qui dure. Mon interlocuteur, c&apos;est toujours le
-              dirigeant. Je ne peux pas construire sans comprendre le pourquoi
-              stratégique. Je ne peux pas penser la stratégie sans la construire.
+              Depuis 20 ans, je construis des systèmes complets pour des dirigeants.
+              Le scénario se répète : un défi, un dirigeant qui porte une idée, et moi qui embarque.
             </p>
           </Reveal>
         </div>
       </Section>
 
-      <hr className="hairline-fade mx-auto max-w-xs" />
+      <hr className="divider-rule mx-auto max-w-2xl" />
 
-      {/* Section 2 — Ma conviction */}
-      <Section variant="surface">
+      {/* Track record */}
+      <TrackRecord
+        eyebrow="Le pattern"
+        title="4 systèmes, 4 dirigeants, 4 business qui durent."
+        systems={[
+          {
+            client: "Arkea",
+            context: "D'une graine — animer des images 3D — un produit + ERP + portail client.",
+            outcome: "Enrichissement du fondateur. Business durable.",
+          },
+          {
+            client: "Manganelli",
+            context: "Boîtier obsolète transformé en logiciel de pilotage d'écrans.",
+            outcome: "Leader du marché.",
+          },
+          {
+            client: "Jackpot.io",
+            context: "Plateforme from scratch, circuit financier complet.",
+            outcome: "5 ans d'exploitation, revente propre.",
+          },
+          {
+            client: "iRaiser",
+            context: "Migration bloquée 3 ans. Extraction DDD + réécriture IA.",
+            outcome: "Terminé. Talk Let It Ship.",
+          },
+        ]}
+        footnote="Le client arrive avec un problème technique. Il repart avec quelque chose de plus grand."
+      />
+
+      <hr className="divider-rule mx-auto max-w-2xl" />
+
+      {/* Approche — Congruence */}
+      <Section variant="surface" maxWidth="content">
         <Reveal>
-          <h2 className="gradient-text font-heading text-3xl leading-tight tracking-display">
-            Ma conviction
+          <span className="eyebrow mb-4">Approche</span>
+          <h2 className="font-heading text-3xl font-semibold leading-tight tracking-[-0.04em] text-[color:var(--color-text-strong)] text-balance md:text-4xl">
+            Stratège + bâtisseur dans le même <em>geste</em>.
           </h2>
         </Reveal>
-
-        <div className="mt-10 max-w-[var(--width-content)] space-y-8">
+        <div className="mt-10 space-y-6 text-lg leading-[1.7] text-[color:var(--color-text)]">
           <Reveal delay={100}>
-            <p className="text-lg leading-relaxed text-text">
-              Le tissu économique français croule sous la dette informatique. Des
-              logiciels que personne ne comprend, des données enfermées dans des
-              silos, des éditeurs dont on ne peut pas sortir. Des dirigeants qui
-              pilotent à l&apos;aveugle et qui le savent.
+            <p>
+              Mon interlocuteur, c&apos;est toujours le fondateur. Je ne peux pas
+              construire sans comprendre le pourquoi stratégique. Je ne peux pas
+              penser la stratégie sans la construire.
             </p>
           </Reveal>
-
           <Reveal delay={200}>
-            <div className="rounded-xl border-l-4 border-accent border-l-4 border-accent bg-bg px-8 py-6 shadow-sm">
-              <p className="font-heading text-lg leading-snug tracking-display text-text">
-                Dès l&apos;arrivée de ChatGPT, j&apos;ai vu l&apos;opportunité
-                de changer ça.
-              </p>
-            </div>
+            <p>
+              Le fondateur n&apos;a pas besoin de traduire entre consultant et équipe
+              technique. Je parle les deux langues — 15 ans CTO, 20 ans de terrain.
+            </p>
           </Reveal>
-
           <Reveal delay={300}>
-            <p className="text-lg leading-relaxed text-text">
-              L&apos;IA et le code font corps. Le modèle métier est dans le
-              code, l&apos;IA raisonne à travers le code ; plus de dérive entre
-              ce qu&apos;on croit que le système fait et ce qu&apos;il fait
-              vraiment. Plus de connaissance enfermée dans une tête. Un logiciel
-              qui suit le métier sans dépendre d&apos;une personne.
-            </p>
-          </Reveal>
-
-          <Reveal delay={400}>
-            <div className="rounded-xl border-l-4 border-accent border-l-4 border-accent bg-bg px-8 py-6 shadow-sm">
-              <p className="font-heading text-lg leading-snug tracking-display text-text">
-                Ce n&apos;est pas un changement d&apos;outil. C&apos;est un
-                changement de nature.
+            <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-bg)] px-8 py-6">
+              <p className="font-heading text-xl font-semibold leading-snug tracking-tight text-[color:var(--color-text-strong)]">
+                Je ne pars pas du prompt. <em>Je pars du modèle.</em>
+              </p>
+              <p className="mt-3 text-base leading-[1.6] text-[color:var(--color-text)]">
+                L&apos;IA est la contrainte — fixée, opaque. Le framework est la
+                variable — contrôlable, documentable. On aligne le framework sur
+                les capacités du modèle.
               </p>
             </div>
-          </Reveal>
-
-          <Reveal delay={500}>
-            <p className="text-lg font-medium leading-relaxed text-stone-800">
-              J&apos;y crois, je le construis, je le livre déjà. Un logiciel
-              métier sur mesure, que le dirigeant pilote en français.
-            </p>
           </Reveal>
         </div>
       </Section>
 
-      <hr className="hairline-fade mx-auto max-w-xs" />
+      <hr className="divider-rule mx-auto max-w-2xl" />
 
-      {/* Section 3 — Signature + CTA */}
-      <Section variant="white">
+      {/* Conviction */}
+      <Section variant="white" maxWidth="content">
         <Reveal>
-          <div className="text-center">
-            <p className="font-heading text-2xl leading-snug tracking-display text-text">
-              D&apos;un besoin, je fais une ambition.
-            </p>
-            <p className="mt-2 font-heading text-2xl leading-snug tracking-display text-text">
-              Je construis pour ne plus être nécessaire.
-            </p>
-            <p className="mt-4 text-muted">
-              Vannes. Bretagne. France entière.
-            </p>
-          </div>
+          <span className="eyebrow mb-4">Conviction</span>
+          <h2 className="font-heading text-3xl font-semibold leading-tight tracking-[-0.04em] text-[color:var(--color-text-strong)] text-balance md:text-4xl">
+            Anti-rentier de la <em>connaissance</em>.
+          </h2>
         </Reveal>
+        <div className="mt-10 space-y-6 text-lg leading-[1.7] text-[color:var(--color-text)]">
+          <Reveal delay={100}>
+            <p>
+              Le tissu économique français croule sous la dette informatique. Des
+              logiciels que personne ne comprend, des données enfermées dans des silos,
+              des éditeurs dont on ne peut pas sortir. Des dirigeants qui pilotent
+              à l&apos;aveugle et qui le savent.
+            </p>
+          </Reveal>
+          <Reveal delay={200}>
+            <p>
+              Dès l&apos;arrivée de ChatGPT, j&apos;ai vu l&apos;opportunité de changer ça.
+              L&apos;IA et le code font corps. Le modèle métier est dans le code,
+              l&apos;IA raisonne à travers le code — plus de dérive entre ce qu&apos;on
+              croit que le système fait et ce qu&apos;il fait vraiment.
+            </p>
+          </Reveal>
+          <Reveal delay={300}>
+            <p className="font-heading text-2xl font-medium italic leading-tight tracking-tight text-[color:var(--color-vd-moss)]">
+              Ce n&apos;est pas un changement d&apos;outil. C&apos;est un changement de nature.
+            </p>
+          </Reveal>
+        </div>
       </Section>
-
-      {/* CTA */}
-      <CTASection
-        text="Envie d'en discuter ?"
-        primaryCTA={{ label: "Prendre rendez-vous", href: "/contact" }}
-        secondaryCTA={{ label: "Voir les offres", href: "/offres" }}
-      />
     </>
   );
 }
