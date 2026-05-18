@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/Button";
 
 type HeroProps = {
   title: ReactNode;
-  subtitle: string;
+  subtitle: ReactNode;
   eyebrow?: string;
   pulse?: boolean;
   primaryCTA: { label: string; href: string };
@@ -39,9 +39,9 @@ export function Hero({
             {title}
           </h1>
 
-          <p className="mt-8 max-w-[38rem] text-xl leading-[1.6] text-[color:var(--color-text)] text-pretty">
+          <div className="mt-8 max-w-[38rem] text-xl leading-[1.6] text-[color:var(--color-text)] text-pretty">
             {subtitle}
-          </p>
+          </div>
 
           <div className={`mt-10 flex flex-wrap items-center gap-3 ${centered ? "justify-center" : ""}`}>
             <Button href={primaryCTA.href}>{primaryCTA.label}</Button>

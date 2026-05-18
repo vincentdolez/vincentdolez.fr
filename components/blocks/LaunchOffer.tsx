@@ -6,9 +6,10 @@ type LaunchOfferProps = {
   description: string;
   cta: { label: string; href: string };
   urgency?: string;
+  secondaryCTA?: { label: string; href: string };
 };
 
-export function LaunchOffer({ title, description, cta, urgency }: LaunchOfferProps) {
+export function LaunchOffer({ title, description, cta, urgency, secondaryCTA }: LaunchOfferProps) {
   return (
     <section className="px-6 py-16">
       <Reveal>
@@ -27,8 +28,13 @@ export function LaunchOffer({ title, description, cta, urgency }: LaunchOfferPro
               {urgency}
             </p>
           )}
-          <div className="mt-6">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Button href={cta.href}>{cta.label}</Button>
+            {secondaryCTA && (
+              <Button href={secondaryCTA.href} variant="secondary">
+                {secondaryCTA.label}
+              </Button>
+            )}
           </div>
         </div>
       </Reveal>

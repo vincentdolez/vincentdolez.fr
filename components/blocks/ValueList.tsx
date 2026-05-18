@@ -10,9 +10,10 @@ type ValueListProps = {
   values: Value[];
   eyebrow?: string;
   heading?: string;
+  closingLine?: string;
 };
 
-export function ValueList({ values, eyebrow, heading }: ValueListProps) {
+export function ValueList({ values, eyebrow, heading, closingLine }: ValueListProps) {
   return (
     <Section variant="surface">
       <div className="mx-auto max-w-3xl">
@@ -44,6 +45,13 @@ export function ValueList({ values, eyebrow, heading }: ValueListProps) {
             </Reveal>
           ))}
         </div>
+        {closingLine && (
+          <Reveal delay={300}>
+            <p className="mt-8 text-[15px] leading-[1.6] text-[color:var(--color-muted)]">
+              {closingLine}
+            </p>
+          </Reveal>
+        )}
       </div>
     </Section>
   );
