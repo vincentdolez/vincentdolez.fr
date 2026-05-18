@@ -226,7 +226,10 @@ export default function IAActPage() {
       <CTASection
         text="Un échange de 30 minutes pour faire le point sur vos obligations."
         primaryCTA={{ label: "Prendre rendez-vous", href: "/contact" }}
-        secondaryCTA={{ label: "Voir les formations", href: "/formations" }}
+        secondaryCTA={{
+          label: "Voir le Quickscan PME",
+          href: "/quickscan-pme",
+        }}
       />
     </>
   );

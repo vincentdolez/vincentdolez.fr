@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { url: BASE_URL, lastModified: new Date(), priority: 1 },
     { url: `${BASE_URL}/legacy-rescue`, lastModified: new Date(), priority: 0.95 },
+    { url: `${BASE_URL}/quickscan-pme`, lastModified: new Date(), priority: 0.95 },
     { url: `${BASE_URL}/formations`, lastModified: new Date(), priority: 0.85 },
     { url: `${BASE_URL}/ia-act`, lastModified: new Date(), priority: 0.8 },
     { url: `${BASE_URL}/a-propos`, lastModified: new Date(), priority: 0.7 },
