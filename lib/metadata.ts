@@ -78,3 +78,24 @@ export const organizationJsonLd = {
     name: "Vincent Dolez",
   },
 };
+
+export const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Vincent Dolez",
+  url: BASE_URL,
+  jobTitle: "CTO indépendant · Référent IA externalisé",
+  description:
+    "20 ans à construire des systèmes complets pour des dirigeants. CTO indépendant, référent IA externalisé. Legacy rescue et Quickscan PME.",
+  knowsAbout: ["Intelligence Artificielle", "CTO externalisé", "Legacy rescue", "PME-PMI", "Next.js", "TypeScript"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Vannes",
+    addressRegion: "Bretagne",
+    addressCountry: "FR",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/vincentdolez",
+    "https://github.com/vincentdolez",
+  ],
+};

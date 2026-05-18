@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
 import { TrackRecord } from "@/components/blocks/TrackRecord";
 import { Reveal } from "@/components/ui/Reveal";
-import { buildMetadata } from "@/lib/metadata";
+import { buildMetadata, personJsonLd } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
   title: "À propos",
@@ -14,6 +14,10 @@ export const metadata: Metadata = buildMetadata({
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       {/* Header section */}
       <Section variant="white" className="pt-32 pb-12">
         <Reveal>

@@ -50,6 +50,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@vincentdolez",
+    creator: "@vincentdolez",
+  },
 };
 
 export const viewport: Viewport = {
