@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 type FormState = "idle" | "sending" | "success" | "error";
 
 const inputClasses =
-  "w-full rounded-md border border-border bg-bg px-4 pt-5 pb-2 text-sm text-text outline-none transition-all duration-[var(--duration-default)] placeholder:text-transparent focus:border-accent focus:ring-1 focus:ring-accent/20";
+  "w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-bg)] px-4 pt-5 pb-2 text-sm text-[color:var(--color-text)] outline-none transition-all duration-[var(--duration-default)] placeholder:text-transparent focus:border-[color:var(--color-vd-moss)] focus:ring-2 focus:ring-[color:var(--color-vd-acid-soft)]";
 
 export function ContactForm() {
   const [state, setState] = useState<FormState>("idle");
@@ -52,10 +52,12 @@ export function ContactForm() {
 
   if (state === "success") {
     return (
-      <div className="rounded-lg border border-success/30 bg-success/5 p-6 text-center">
-        <p className="font-medium text-success">Message envoyé.</p>
-        <p className="mt-2 text-sm text-muted">
-          Je vous réponds sous 48 heures.
+      <div className="rounded-2xl border border-[color:var(--color-vd-moss)]/40 bg-[color:var(--color-vd-bone)] p-6 text-center">
+        <p className="font-heading text-lg font-semibold text-[color:var(--color-text-strong)]">
+          Message envoyé.
+        </p>
+        <p className="mt-2 text-sm text-[color:var(--color-muted)]">
+          Je reviens vers vous sous 48 heures.
         </p>
       </div>
     );
@@ -102,10 +104,10 @@ export function ContactForm() {
           required
           minLength={10}
           rows={4}
-          placeholder="Message"
+          placeholder="Votre besoin, en deux phrases"
           className={inputClasses}
         />
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message">Votre besoin, en deux phrases</label>
       </div>
 
       <Turnstile
@@ -120,7 +122,7 @@ export function ContactForm() {
       />
 
       {state === "error" && (
-        <p className="text-sm text-error">{errorMessage}</p>
+        <p className="text-sm text-[color:var(--color-error)]">{errorMessage}</p>
       )}
 
       <Button

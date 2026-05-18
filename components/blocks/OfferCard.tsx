@@ -35,84 +35,70 @@ export function OfferCard({
   return (
     <section
       id={id}
-      className={`py-20 ${variant === "surface" ? "bg-surface" : "bg-bg"}`}
+      className={`px-6 py-20 ${variant === "surface" ? "bg-[color:var(--color-surface)]" : "bg-[color:var(--color-bg)]"}`}
     >
-      <div className="mx-auto max-w-[var(--width-wide)] px-6">
+      <div className="mx-auto max-w-[var(--width-wide)]">
         <Reveal>
           <div
-            className={`mx-auto max-w-3xl rounded-xl p-8 md:p-10 ${
+            className={`relative mx-auto max-w-3xl rounded-2xl p-8 md:p-10 ${
               highlighted
-                ? "border-2 border-accent/20 bg-bg shadow-md"
-                : "border border-border/60 bg-bg shadow-sm"
+                ? "border border-[color:var(--color-ink)] bg-[color:var(--color-bg)] shadow-md"
+                : "border border-[color:var(--color-border)] bg-[color:var(--color-bg)] shadow-sm"
             }`}
           >
-            <div className="flex items-start gap-4">
+            {highlighted && (
+              <span className="absolute -top-3 left-8 rounded-full bg-[color:var(--color-vd-acid)] px-3 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-[color:var(--color-vd-forest)]">
+                Recommandé
+              </span>
+            )}
+            <div className="flex items-start gap-5">
               {number && (
-                <span className="shrink-0 font-mono text-sm text-muted/50">
-                  {number}
-                </span>
+                <div className="step-badge shrink-0">{number}</div>
               )}
               <div className="flex-1">
-                <div className="flex items-center gap-3">
-                  <h3 className="gradient-text font-heading text-2xl leading-tight tracking-display">
-                    {title}
-                  </h3>
-                  {highlighted && (
-                    <span className="rounded-full bg-accent/10 px-3 py-0.5 text-xs font-medium text-accent">
-                      Recommandé
-                    </span>
-                  )}
-                </div>
-                <p className="mt-2 text-lg text-muted whitespace-pre-line">{hook}</p>
+                <h3 className="font-heading text-2xl font-semibold leading-tight tracking-tight text-[color:var(--color-text-strong)] text-balance">
+                  {title}
+                </h3>
+                <p className="mt-2 whitespace-pre-line text-lg leading-[1.6] text-[color:var(--color-text)]">
+                  {hook}
+                </p>
 
                 {itemsLabel && (
-                  <p className="mt-6 text-base font-medium text-text">
+                  <p className="mt-6 font-mono text-xs uppercase tracking-[0.08em] text-[color:var(--color-vd-moss)]">
                     {itemsLabel}
                   </p>
                 )}
-                <ul className="mt-3 space-y-2">
+                <ul className="list-arrow mt-3">
                   {items.map((item, index) => (
-                    <li
-                      key={index}
-                      className="flex items-start gap-2 text-text"
-                    >
-                      <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-border" />
-                      <span className="text-base leading-normal">{item}</span>
+                    <li key={index} className="text-[15px] text-[color:var(--color-text)]">
+                      {item}
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-6 flex flex-wrap gap-6 text-base text-muted">
+                <div className="mt-6 flex flex-col gap-1 border-t border-[color:var(--color-border)] pt-4 text-sm text-[color:var(--color-muted)]">
                   <span>
-                    <span className="font-medium text-text">
-                      Engagement :
-                    </span>{" "}
+                    <strong className="text-[color:var(--color-text-strong)]">Engagement :</strong>{" "}
                     {engagement}
                   </span>
                   <span>
-                    <span className="font-medium text-text">Livrable :</span>{" "}
+                    <strong className="text-[color:var(--color-text-strong)]">Livrable :</strong>{" "}
                     <span className="whitespace-pre-line">{deliverable}</span>
                   </span>
                 </div>
+
                 {(badge || badges) && (
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {badge && (
-                      <span className="inline-block rounded-full border border-success/30 px-2.5 py-0.5 text-xs text-success">
-                        {badge}
-                      </span>
-                    )}
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {badge && <span className="badge-acid">{badge}</span>}
                     {badges?.map((b, i) => (
-                      <span
-                        key={i}
-                        className="inline-block rounded-full border border-success/30 px-2.5 py-0.5 text-xs text-success"
-                      >
+                      <span key={i} className="badge-acid">
                         {b}
                       </span>
                     ))}
                   </div>
                 )}
 
-                <div className="mt-6">
+                <div className="mt-7">
                   <Button
                     href={cta.href}
                     variant={highlighted ? "primary" : "secondary"}

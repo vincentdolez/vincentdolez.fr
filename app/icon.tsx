@@ -13,11 +13,13 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontFamily: "serif",
-          fontSize: "20px",
+          background: "#0a3a1d",
+          color: "#c8ff3a",
+          fontFamily: "sans-serif",
+          fontSize: "16px",
           fontWeight: 700,
-          color: "#1A1A1A",
           letterSpacing: "-0.05em",
+          borderRadius: "6px",
         }}
       >
         VD

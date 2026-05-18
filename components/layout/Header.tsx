@@ -1,15 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, startTransition } from "react";
 
 const navLinks = [
-  { href: "/a-propos", label: "À propos" },
-  { href: "/offres", label: "Offres" },
+  { href: "/a-propos", label: "à propos" },
+  { href: "/legacy-rescue", label: "offres" },
   { href: "/ia-act", label: "IA Act" },
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "notes" },
 ];
 
 export function Header() {
@@ -41,46 +40,44 @@ export function Header() {
     <>
       <header
         style={{ viewTransitionName: "header" }}
-        className={`fixed top-0 z-50 w-full transition-all duration-[var(--duration-default)] ${
+        className={`fixed top-0 z-50 w-full backdrop-blur-lg backdrop-saturate-150 transition-all duration-[var(--duration-default)] ${
           scrolled
-            ? "border-b border-border/60 bg-bg/90 backdrop-blur-lg backdrop-saturate-150"
-            : "bg-bg/95 backdrop-blur-sm"
+            ? "border-b border-[color:var(--color-border)]/60 bg-[color:var(--color-bg)]/90"
+            : "bg-[color:var(--color-bg)]/85 border-b border-transparent"
         }`}
       >
-        <nav className="mx-auto flex max-w-[var(--width-wide)] items-center justify-between px-6 py-4">
+        <nav className="mx-auto flex max-w-[var(--width-wide)] items-center gap-8 px-6 py-4 md:px-7">
           <Link
             href="/"
-            className="flex items-center gap-2 opacity-80 transition-opacity duration-[var(--duration-default)] hover:opacity-100"
+            className="flex items-center gap-2.5 transition-opacity duration-[var(--duration-default)] hover:opacity-90"
           >
-            <Image src="/logo.png" alt="Logo" width={32} height={32} />
-            <span className="font-heading text-xl tracking-display text-text">
-              Vincent Dolez
+            <span className="brand-mark" aria-hidden="true" />
+            <span className="font-heading text-lg font-semibold tracking-tight text-[color:var(--color-text-strong)]">
+              vincent dolez
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="ml-auto hidden items-center gap-7 text-[15px] md:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-sm transition-colors duration-[var(--duration-default)] ${
+                className={`link-underline transition-colors duration-[var(--duration-default)] ${
                   pathname === link.href
-                    ? "text-text"
-                    : "text-muted hover:text-text link-underline"
+                    ? "text-[color:var(--color-text-strong)] active"
+                    : "text-[color:var(--color-text)] hover:text-[color:var(--color-vd-moss)]"
                 }`}
               >
                 {link.label}
-                {pathname === link.href && (
-                  <span className="absolute bottom-0 left-0 right-0 h-px bg-text/40" />
-                )}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="rounded-md bg-accent px-4 py-2 text-sm text-stone-700 transition-all duration-[var(--duration-default)] hover:bg-accent/90"
+              className="inline-flex items-center gap-2.5 rounded-full bg-[var(--color-ink)] px-5 py-2.5 text-sm font-medium text-[var(--color-on-ink)] transition-all duration-[var(--duration-default)] hover:-translate-y-px hover:shadow-md"
             >
-              Contact
+              <span className="h-2 w-2 rounded-full bg-[var(--color-vd-acid)]" aria-hidden="true" />
+              prendre rendez-vous
             </Link>
           </div>
 
@@ -88,23 +85,21 @@ export function Header() {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="flex h-11 w-11 items-center justify-center md:hidden"
+            className="ml-auto flex h-11 w-11 items-center justify-center md:hidden"
             aria-label="Ouvrir le menu"
           >
             <div className="relative h-4 w-5">
-              <span className="absolute left-0 top-0 h-px w-5 bg-text" />
-              <span className="absolute left-0 top-[7px] h-px w-5 bg-text" />
-              <span className="absolute left-0 top-[14px] h-px w-5 bg-text" />
+              <span className="absolute left-0 top-0 h-px w-5 bg-[color:var(--color-text-strong)]" />
+              <span className="absolute left-0 top-[7px] h-px w-5 bg-[color:var(--color-text-strong)]" />
+              <span className="absolute left-0 top-[14px] h-px w-5 bg-[color:var(--color-text-strong)]" />
             </div>
           </button>
         </nav>
       </header>
 
-      {/* Mobile menu overlay — rendered outside header to avoid stacking context issues */}
+      {/* Mobile menu overlay */}
       {open && (
-        <div
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-bg md:hidden"
-        >
+        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[color:var(--color-bg)] md:hidden">
           <button
             type="button"
             onClick={() => setOpen(false)}
@@ -112,8 +107,8 @@ export function Header() {
             aria-label="Fermer le menu"
           >
             <div className="relative h-4 w-5">
-              <span className="absolute left-0 top-[7px] h-px w-5 rotate-45 bg-text" />
-              <span className="absolute left-0 top-[7px] h-px w-5 -rotate-45 bg-text" />
+              <span className="absolute left-0 top-[7px] h-px w-5 rotate-45 bg-[color:var(--color-text-strong)]" />
+              <span className="absolute left-0 top-[7px] h-px w-5 -rotate-45 bg-[color:var(--color-text-strong)]" />
             </div>
           </button>
           <nav className="flex flex-col items-center gap-8">
@@ -121,10 +116,10 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-heading text-2xl tracking-display transition-colors duration-[var(--duration-default)] ${
+                className={`font-heading text-2xl tracking-tight transition-colors duration-[var(--duration-default)] ${
                   pathname === link.href
-                    ? "text-text"
-                    : "text-muted hover:text-text"
+                    ? "text-[color:var(--color-text-strong)]"
+                    : "text-[color:var(--color-text)] hover:text-[color:var(--color-vd-moss)]"
                 }`}
               >
                 {link.label}
@@ -132,9 +127,10 @@ export function Header() {
             ))}
             <Link
               href="/contact"
-              className="mt-4 rounded-md bg-accent px-8 py-3 text-base font-medium text-stone-700 transition-all duration-[var(--duration-default)] hover:bg-accent/90"
+              className="mt-4 inline-flex items-center gap-2.5 rounded-full bg-[var(--color-ink)] px-7 py-3 text-base font-medium text-[var(--color-on-ink)]"
             >
-              Prendre rendez-vous
+              <span className="h-2 w-2 rounded-full bg-[var(--color-vd-acid)]" aria-hidden="true" />
+              prendre rendez-vous
             </Link>
           </nav>
         </div>

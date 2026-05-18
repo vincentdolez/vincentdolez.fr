@@ -15,7 +15,7 @@ export function Accordion({ items }: AccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="divide-y divide-border">
+    <div className="divide-y divide-[color:var(--color-border)]">
       {items.map((item, index) => (
         <div key={index}>
           <button
@@ -23,7 +23,7 @@ export function Accordion({ items }: AccordionProps) {
             onClick={() =>
               setOpenIndex(openIndex === index ? null : index)
             }
-            className="flex w-full items-center justify-between py-4 text-left text-base font-medium text-text transition-colors duration-[var(--duration-default)] hover:text-accent"
+            className="flex w-full items-center justify-between py-4 text-left text-base font-medium text-[color:var(--color-text-strong)] transition-colors duration-[var(--duration-default)] hover:text-[color:var(--color-vd-moss)]"
             aria-expanded={openIndex === index}
           >
             <span>{item.question}</span>
@@ -54,7 +54,7 @@ export function Accordion({ items }: AccordionProps) {
               opacity: openIndex === index ? 1 : 0,
             }}
           >
-            <p className="pb-4 text-muted leading-normal">{item.answer}</p>
+            <p className="pb-4 leading-normal text-[color:var(--color-text)]">{item.answer}</p>
           </div>
         </div>
       ))}

@@ -1,37 +1,59 @@
 @import "tailwindcss";
 
-/* ── Design Tokens (from KB: 02-marque/design-tokens.md) ── */
+/* =========================================================
+   Vincent Dolez — Design Tokens (v2 — Forêt vivante)
+   Vert profond + acide jaune-vert · Bricolage Grotesque
+   ========================================================= */
 
-/* Colors — use @theme (not inline) so utilities reference var() and dark mode overrides work */
 @theme {
-  --color-bg: #FFFFFF;
-  --color-text: #4F4F4F;
-  --color-muted: #6B7280;
-  --color-accent: #74E5D1;
-  --color-accent-dark: #3DBAA6;  /* For text on white — better contrast */
-  --color-surface: #F9FAFB;
-  --color-border: #E5E7EB;
-  --color-success: #059669;
-  --color-warning: #D97706;
-  --color-error: #DC2626;
+  /* ── Brand colors — Forêt vivante ── */
+  --color-vd-forest: #0a3a1d;
+  --color-vd-moss: #1f6b3d;
+  --color-vd-acid: #c8ff3a;
+  --color-vd-acid-soft: #c8ff3a33;
+  --color-vd-paper: #fdfcf6;
+  --color-vd-bone: #f5f3ec;
 
-  /* Neutral palette for micro-details */
-  --color-stone-100: #F5F5F4;
-  --color-stone-300: #D1D5DB;
-  --color-stone-500: #6B7280;
-  --color-stone-600: #4F4F4F;
-  --color-stone-700: #374151;
-  --color-stone-800: #1F2937;
+  /* ── Foundations (light by default) ── */
+  --color-bg: #fdfcf6;
+  --color-surface: #f5f3ec;
+  --color-surface-elevated: #fdfcf6;
+  --color-text: #344139;
+  --color-text-strong: #0a3a1d;
+  --color-muted: #6c7a6f;
+  --color-border: #d8d6cd;
+  --color-border-subtle: #e6e4dc;
+  --color-accent: #1f6b3d;
+  --color-accent-dark: #0a3a1d;
+  --color-accent-ink: #fdfcf6;
+
+  /* Brand pair — auto-adaptive light/dark via .ink-* below */
+  --color-ink: #0a3a1d;
+  --color-on-ink: #fdfcf6;
+
+  /* Stone scale — warm green-tinted neutrals */
+  --color-stone-100: #f5f3ec;
+  --color-stone-300: #d8d6cd;
+  --color-stone-500: #6c7a6f;
+  --color-stone-600: #344139;
+  --color-stone-700: #1f2c25;
+  --color-stone-800: #0a3a1d;
+
+  /* Semantic */
+  --color-success: #1f6b3d;
+  --color-warning: #c97a07;
+  --color-error: #b8311f;
+  --color-pain: #b8311f;
 }
 
-/* Static tokens — inline for smaller CSS output */
 @theme inline {
-  /* Font families — Museo/Futura (commercial, self-host) with Jost fallback */
-  --font-heading: "Museo", "Jost", system-ui, sans-serif;
-  --font-sans: "Futura", "Jost", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  /* ── Type ── */
+  --font-heading: "Bricolage Grotesque", "Jost", system-ui, sans-serif;
+  --font-sans: "Bricolage Grotesque", "Jost", system-ui, sans-serif;
+  --font-accent: "Bricolage Grotesque", "Jost", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  /* Font sizes (18px base) */
+  /* Type scale (rem) */
   --text-xs: 0.875rem;
   --text-sm: 1rem;
   --text-base: 1.125rem;
@@ -41,12 +63,19 @@
   --text-3xl: 2.0625rem;
   --text-4xl: 2.5625rem;
   --text-5xl: 3.3125rem;
+  --text-6xl: 4.5rem;
 
   /* Line heights */
-  --leading-tight: 1.1;
-  --leading-snug: 1.3;
-  --leading-normal: 1.6;
-  --leading-loose: 1.8;
+  --leading-tight: 1.0;
+  --leading-snug: 1.25;
+  --leading-normal: 1.55;
+  --leading-loose: 1.75;
+
+  /* Tracking */
+  --tracking-display: -0.04em;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.12em;
 
   /* Spacing (base 4px) */
   --spacing-1: 4px;
@@ -59,73 +88,320 @@
   --spacing-16: 64px;
   --spacing-24: 96px;
 
-  /* Border radius */
+  /* Radii */
   --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+  /* Shadows — tinted forêt */
+  --shadow-sm: 0 1px 2px 0 rgba(10, 58, 29, 0.06);
+  --shadow-md: 0 4px 12px -2px rgba(10, 58, 29, 0.10), 0 2px 4px -2px rgba(10, 58, 29, 0.05);
+  --shadow-lg: 0 16px 40px -8px rgba(10, 58, 29, 0.15), 0 6px 12px -4px rgba(10, 58, 29, 0.06);
+  --shadow-acid: 0 0 0 6px rgba(200, 255, 58, 0.2);
 
-  /* Max widths */
+  /* Layout */
   --width-content: 720px;
   --width-wide: 1120px;
 
-  /* Timing */
+  /* Motion */
   --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --duration-default: 400ms;
   --duration-fast: 200ms;
   --duration-reveal: 600ms;
 }
 
-/* ── Global styles ── */
+/* =========================================================
+   GLOBAL STYLES
+   ========================================================= */
 
 body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-sans);
-  font-feature-settings: "kern" 1, "liga" 1;
+  font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
 }
 
-/* ── Micro-details ── */
-
-/* Gradient titles — subtle depth */
-.gradient-text {
-  background: linear-gradient(to right, var(--color-stone-800), var(--color-stone-600));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+::selection {
+  background: var(--color-vd-acid);
+  color: var(--color-vd-forest);
 }
 
-/* Tight tracking for serif display titles */
-.tracking-display {
-  letter-spacing: -0.03em;
+/* ── Headings — Bricolage Grotesque variable ── */
+
+h1, .h1 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-variation-settings: "opsz" 96;
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-tight);
+  color: var(--color-text-strong);
+  text-wrap: balance;
 }
 
-/* Hairline separators */
-.hairline {
+h1 em, .h1 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-vd-moss);
+}
+
+h2, .h2 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-variation-settings: "opsz" 64;
+  letter-spacing: var(--tracking-display);
+  line-height: 1.05;
+  color: var(--color-text-strong);
+  text-wrap: balance;
+}
+
+h2 em, .h2 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-vd-moss);
+}
+
+h3, .h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-variation-settings: "opsz" 32;
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.2;
+  color: var(--color-text-strong);
+  text-wrap: pretty;
+}
+
+h3 em, .h3 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-vd-moss);
+}
+
+h4, .h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.35;
+  color: var(--color-text-strong);
+}
+
+em {
+  font-style: italic;
+  color: var(--color-vd-moss);
+}
+
+strong, b {
+  font-weight: 600;
+  color: var(--color-text-strong);
+}
+
+/* ── Eyebrow — mono mousse with rule ── */
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-vd-moss);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+}
+
+.eyebrow-pulse::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-vd-acid);
+  box-shadow: 0 0 0 4px var(--color-vd-acid-soft);
+  animation: vd-pulse 2.4s var(--ease-out) infinite;
+}
+
+@keyframes vd-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px var(--color-vd-acid-soft); }
+  50%      { box-shadow: 0 0 0 8px transparent; }
+}
+
+/* ── Arrow lists — signature of the charter ── */
+
+.list-arrow {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-arrow > li {
+  position: relative;
+  padding-left: 1.6em;
+  margin-block: 0.6em;
+  line-height: var(--leading-normal);
+}
+
+.list-arrow > li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-vd-moss);
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+
+/* ── Numbered step badge — round forêt + acid digits ── */
+
+.step-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-vd-forest);
+  color: var(--color-vd-acid);
+  display: inline-grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* ── Eligible badge — for "Recommandé" / "CII" pill ── */
+
+.badge-acid {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--color-vd-acid);
+  color: var(--color-vd-forest);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+/* ── Brand mark (forest disk + acid bird) ── */
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-vd-forest);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.brand-mark::after {
+  content: "";
+  width: 65%;
+  height: 65%;
+  background-color: var(--color-vd-acid);
+  -webkit-mask: url(/bird.svg) center/contain no-repeat;
+  mask: url(/bird.svg) center/contain no-repeat;
+}
+
+.brand-mark--sm {
+  width: 28px;
+  height: 28px;
+}
+
+/* ── Section dividers ── */
+
+.divider-rule {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 64px 0;
+}
+
+.hairline,
+.hairline-fade {
   border: none;
-  height: 0.5px;
-  background: var(--color-stone-300);
+  height: 1px;
+  background: var(--color-border);
 }
 
 .hairline-fade {
-  border: none;
-  height: 0.5px;
-  background: linear-gradient(to right, transparent, var(--color-stone-300), transparent);
+  background: linear-gradient(to right, transparent, var(--color-border), transparent);
 }
 
-/* Scroll reveal animation */
+/* ── Decorative orbit ring ── */
+
+.orbit {
+  position: absolute;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* ── Gradient title (forêt → mousse → forêt) ── */
+
+.gradient-text {
+  background: linear-gradient(110deg, var(--color-vd-forest) 0%, var(--color-vd-moss) 60%, var(--color-vd-forest) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ── Compatibility shims for legacy class names (mapped to new tokens) ── */
+
+.tracking-display {
+  letter-spacing: var(--tracking-display);
+}
+
+.accent-italic {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-vd-moss);
+}
+
+.gold-glow {
+  color: var(--color-vd-moss);
+}
+
+.pain-text {
+  color: var(--color-pain);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* ── Animated underline ── */
+
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  transition: background-size var(--duration-default) var(--ease-default);
+  padding-bottom: 2px;
+}
+
+.link-underline:hover,
+.link-underline.active {
+  background-size: 100% 1.5px;
+}
+
+/* ── Scroll reveal ── */
+
 .reveal {
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity var(--duration-reveal) var(--ease-default),
+  transition:
+    opacity var(--duration-reveal) var(--ease-default),
     transform var(--duration-reveal) var(--ease-default);
 }
 
@@ -134,7 +410,6 @@ body {
   transform: translateY(0);
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
@@ -143,74 +418,46 @@ body {
   }
 }
 
-/* ── Hero gradient mesh ── */
+/* ── Hero decorative background ── */
 
-.hero-mesh {
+.hero-dark {
+  position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface) 50%, var(--color-bg) 100%);
 }
 
-.hero-blob {
+.hero-leaf {
   position: absolute;
+  right: -120px;
+  top: -60px;
+  width: 540px;
+  height: 540px;
+  background: radial-gradient(circle at 30% 40%, var(--color-vd-acid) 0%, transparent 60%);
+  opacity: 0.5;
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.hero-orbit {
+  position: absolute;
+  bottom: -200px;
+  left: -160px;
+  width: 540px;
+  height: 540px;
+  border: 1px solid var(--color-vd-forest);
   border-radius: 50%;
-  will-change: transform;
-}
-
-.hero-blob-1 {
-  width: 60%;
-  height: 60%;
-  top: -10%;
-  left: -10%;
-  background: radial-gradient(circle, var(--color-stone-300) 0%, transparent 70%);
-  opacity: 0.35;
-  animation: blob-drift-1 70s ease-in-out infinite;
-}
-
-.hero-blob-2 {
-  width: 50%;
-  height: 50%;
-  bottom: -5%;
-  right: -10%;
-  background: radial-gradient(circle, var(--color-stone-500) 0%, transparent 70%);
   opacity: 0.12;
-  animation: blob-drift-2 90s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.hero-blob-3 {
-  width: 40%;
-  height: 40%;
-  top: 30%;
-  left: 40%;
-  background: radial-gradient(circle, var(--color-stone-300) 0%, transparent 70%);
-  opacity: 0.25;
-  animation: blob-drift-3 80s ease-in-out infinite;
+.hero-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 80px;
+  border: 1px solid var(--color-vd-forest);
+  border-radius: 50%;
 }
 
-@keyframes blob-drift-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(8%, 12%) scale(1.05); }
-  66% { transform: translate(-5%, 6%) scale(0.97); }
-}
-
-@keyframes blob-drift-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-10%, -8%) scale(1.08); }
-  66% { transform: translate(6%, -4%) scale(0.95); }
-}
-
-@keyframes blob-drift-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(12%, -6%) scale(0.96); }
-  66% { transform: translate(-8%, 10%) scale(1.06); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-blob {
-    animation: none;
-  }
-}
-
-/* ── Floating label ── */
+/* ── Floating label inputs ── */
 
 .floating-field {
   position: relative;
@@ -245,7 +492,7 @@ body {
   top: 0.35rem;
   transform: none;
   font-size: 0.7rem;
-  color: var(--color-accent);
+  color: var(--color-vd-moss);
 }
 
 /* ── View Transitions ── */
@@ -275,52 +522,8 @@ body {
   }
 }
 
-/* ── Link underline animation ── */
-
-.link-underline {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 0% 1px;
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  transition: background-size var(--duration-default) var(--ease-default);
-}
-
-.link-underline:hover {
-  background-size: 100% 1px;
-}
-
-/* ── Text balance for subtitles ── */
+/* ── Text balance ── */
 
 .text-balance {
   text-wrap: balance;
-}
-
-/* ── Selection ── */
-
-::selection {
-  background: var(--color-accent);
-  color: white;
-}
-
-/* ── Dark mode ── */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #171717;
-    --color-text: #D4D4D4;
-    --color-muted: #8B8B8B;
-    --color-accent: #74E5D1;
-    --color-accent-dark: #5DD4BF;
-    --color-surface: #1F1F1F;
-    --color-border: #2E2E2E;
-    --color-success: #34D399;
-    --color-warning: #FBBF24;
-    --color-error: #F87171;
-    --color-stone-100: #1C1917;
-    --color-stone-300: #44403C;
-    --color-stone-500: #A8A29E;
-    --color-stone-600: #C4C0BC;
-    --color-stone-800: #E0DEDA;
-  }
-
 }

@@ -72,7 +72,7 @@ export const organizationJsonLd = {
   name: "Vincent Dolez",
   url: BASE_URL,
   description:
-    "Référent IA externalisé — Je construis le logiciel métier qui manque ou je restructure celui qui existe. Vous repartez autonomes.",
+    "Tech leader & CTO détaché — Legacy rescue : je transforme votre logiciel vieillissant en capital avec l'IA. Extraction métier, réécriture, équipe autonome.",
   founder: {
     "@type": "Person",
     name: "Vincent Dolez",
