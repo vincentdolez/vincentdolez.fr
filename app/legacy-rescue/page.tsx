@@ -9,9 +9,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Legacy Rescue — Transformation de logiciels vieillissants",
+  title: "Legacy Rescue — Transformation de logiciels vieillissants avec l'IA",
   description:
-    "Migration bloquée depuis 3 ans ? Dev clé qui part ? Je transforme votre logiciel legacy en capital avec l'IA. Quickscan offert.",
+    "Migration bloquée depuis 3 ans ? Dev clé qui part ? J'extrais votre modèle métier, je restructure avec l'IA, je forme votre équipe. Une brique à la fois. Quickscan offert pour les 10 premiers éditeurs Q3 2026.",
   path: "/legacy-rescue",
 });
 
@@ -19,12 +19,12 @@ const faqItems = [
   {
     question: "C'est quoi un Quickscan ?",
     answer:
-      "Je lis votre code pendant quelques jours. Je vous dis ce qu'il y a vraiment dedans : le modèle métier implicite, les dépendances, la dette, les risques. Vous repartez avec un plan d'action chiffré et priorisé.",
+      "Je lis votre code pendant quelques jours. Je vous dis ce qu'il y a vraiment dedans : le modèle métier implicite, les dépendances, la dette, les risques. Vous repartez avec un plan d'action chiffré et priorisé. Offert pour les 10 premiers éditeurs Q3 2026.",
   },
   {
     question: "On n'a pas 6 mois devant nous.",
     answer:
-      "Le Sprint de déverrouillage dure quelques semaines, pas des mois. Les premiers résultats sont mesurables dès les premières livraisons. On ne refait pas tout — on restructure chirurgicalement.",
+      "Le Sprint de déverrouillage dure quelques semaines, pas des mois. Les premiers résultats sont mesurables dès les premières livraisons. On ne refait pas tout — on restructure chirurgicalement, une brique à la fois.",
   },
   {
     question: "Notre CTO dit que la migration avance.",
@@ -39,7 +39,7 @@ const faqItems = [
   {
     question: "On peut financer ça ?",
     answer:
-      "Oui. Je suis agréé CII (20% de remboursement sur les dépenses d'innovation). Les formations sont finançables OPCO.",
+      "Oui. Je suis agréé CII (20 % de remboursement sur les dépenses d'innovation). Les formations Claude Code sont finançables OPCO.",
   },
 ];
 
@@ -60,6 +60,12 @@ export default function LegacyRescuePage() {
             Le produit tourne. Les clients paient. Mais la migration patine
             depuis 3 ans, chaque nouvelle feature est un calvaire, et le dev qui
             sait commence à regarder ailleurs.
+          </p>
+        </Reveal>
+        <Reveal delay={200}>
+          <p className="mt-4 text-sm text-muted">
+            30 minutes. Pas de pitch. Un vrai diagnostic.{" "}
+            <span className="text-accent">Disponible Q3 2026 · 1-2 missions long terme par mois.</span>
           </p>
         </Reveal>
       </Section>
@@ -131,6 +137,23 @@ export default function LegacyRescuePage() {
           </h2>
         </Reveal>
         <div className="mt-10 max-w-[var(--width-content)] space-y-8">
+
+          {/* Encart — Couche sémantique */}
+          <Reveal delay={50}>
+            <div className="rounded-lg border border-accent/30 bg-surface-elevated px-8 py-6">
+              <p className="mb-4 font-heading text-sm font-bold uppercase tracking-widest text-accent">
+                Ce qu&apos;on pose en premier : votre modèle métier
+              </p>
+              <p className="text-base leading-relaxed text-text">
+                Le métier de votre produit est dans votre code — enfoui sous 10 ou 15 ans d&apos;évolutions. Vos règles, vos objets, votre vocabulaire : tout est là, mais implicite.
+              </p>
+              <p className="mt-3 text-base leading-relaxed text-text">
+                La première chose qu&apos;on fait, c&apos;est rendre cette{" "}
+                <strong>couche sémantique</strong> explicite. Lecture du code, interviews ciblées, extraction DDD. Vos bounded contexts, vos agrégats, votre langage ubiquitaire deviennent un modèle lisible. C&apos;est ce qui permet à l&apos;IA de raisonner sur votre métier, pas sur du JavaScript générique. Sans cette extraction, aucune IA ne sera utile sur votre legacy.
+              </p>
+            </div>
+          </Reveal>
+
           <Reveal delay={100}>
             <p className="text-lg leading-relaxed text-text">
               <span className="mr-2 font-heading font-bold text-accent">01</span>
@@ -145,7 +168,7 @@ export default function LegacyRescuePage() {
               <strong>Je reconstruis sur des fondations propres.</strong>{" "}
               Réécriture model-driven avec l&apos;IA. Le code est généré, structuré,
               vérifiable, aligné sur le métier. Pas un rewrite from scratch — une
-              restructuration progressive.
+              restructuration progressive, ancien et nouveau cohabitent jusqu&apos;à bascule.
             </p>
           </Reveal>
           <Reveal delay={300}>
@@ -153,9 +176,25 @@ export default function LegacyRescuePage() {
               <span className="mr-2 font-heading font-bold text-accent">03</span>
               <strong>Je forme votre équipe à maintenir avec l&apos;IA.</strong>{" "}
               Formation Claude Code intégrée au transfert. L&apos;outil qui a servi à
-              réparer devient l&apos;outil du quotidien de vos devs.
+              réparer devient l&apos;outil du quotidien de vos devs. À la sortie, l&apos;équipe est autonome.
             </p>
           </Reveal>
+
+          {/* Encart — Brique à la fois */}
+          <Reveal delay={350}>
+            <div className="rounded-lg border border-accent/30 bg-surface-elevated px-8 py-6">
+              <p className="mb-4 font-heading text-sm font-bold uppercase tracking-widest text-accent">
+                Une brique à la fois. Pas un rewrite.
+              </p>
+              <p className="text-base leading-relaxed text-text">
+                Beaucoup d&apos;éditeurs ont essayé &ldquo;le grand rewrite&rdquo;. 80 % échouent. Trop gros, trop long, trop risqué — pendant des mois on paye double (l&apos;ancien tourne, le nouveau se construit) avant de découvrir que le périmètre était mal compris.
+              </p>
+              <p className="mt-3 text-base leading-relaxed text-text">
+                Ce qu&apos;on fait à la place : <strong>une brique à la fois</strong>. Chaque chantier produit un gain mesurable tout seul — un bounded context isolé, un agrégat réécrit, une zone critique restructurée. Chaque brique tient seule. Chaque brique prépare la suivante. Vous mesurez à chaque étape, vous pouvez vous arrêter à n&apos;importe quelle brique et garder la valeur acquise.
+              </p>
+            </div>
+          </Reveal>
+
           <Reveal delay={400}>
             <p className="mt-6 text-center font-heading text-lg font-bold tracking-display text-accent">
               À la sortie : un système maintenable. Une équipe autonome. Plus besoin de moi.
@@ -220,6 +259,65 @@ export default function LegacyRescuePage() {
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
+      {/* Section 7.2 — Anti-garantie */}
+      <Section variant="white">
+        <Reveal>
+          <h2 className="gradient-text font-heading text-3xl leading-tight tracking-display">
+            Pour qui · pour qui pas
+          </h2>
+        </Reveal>
+        <div className="mt-10 grid gap-8 max-w-[var(--width-content)] md:grid-cols-2">
+          <Reveal delay={100}>
+            <div className="rounded-lg border border-border bg-surface-elevated px-8 py-6">
+              <p className="mb-4 font-heading text-base font-bold tracking-display text-text">
+                Le Legacy Rescue est pour vous si :
+              </p>
+              <ul className="space-y-3 text-sm text-muted">
+                <li className="flex gap-2">
+                  <span className="shrink-0 font-bold text-accent">—</span>
+                  Vous avez un produit qui tourne, des clients qui paient, et un code qui vous empêche d&apos;avancer.
+                </li>
+                <li className="flex gap-2">
+                  <span className="shrink-0 font-bold text-accent">—</span>
+                  Vous voulez un partenaire qui entre dans votre code, pas un consultant qui rédige un rapport.
+                </li>
+                <li className="flex gap-2">
+                  <span className="shrink-0 font-bold text-accent">—</span>
+                  Vous voulez une approche progressive (brique à la fois), pas un rewrite from scratch.
+                </li>
+                <li className="flex gap-2">
+                  <span className="shrink-0 font-bold text-accent">—</span>
+                  Vous voulez que votre équipe puisse maintenir et faire évoluer le système après mon départ.
+                </li>
+              </ul>
+            </div>
+          </Reveal>
+          <Reveal delay={200}>
+            <div className="rounded-lg border border-border bg-surface-elevated px-8 py-6">
+              <p className="mb-4 font-heading text-base font-bold tracking-display text-text">
+                Le Legacy Rescue n&apos;est pas pour vous si :
+              </p>
+              <ul className="space-y-3 text-sm text-muted">
+                <li className="flex gap-2">
+                  <span className="shrink-0 font-bold text-muted">—</span>
+                  Vous cherchez à embaucher du temps de développement (rôle d&apos;ESN).
+                </li>
+                <li className="flex gap-2">
+                  <span className="shrink-0 font-bold text-muted">—</span>
+                  Vous voulez une refonte &ldquo;from scratch&rdquo; sans extraction préalable du modèle métier.
+                </li>
+                <li className="flex gap-2">
+                  <span className="shrink-0 font-bold text-muted">—</span>
+                  Vous attendez une solution magique sans regarder votre code.
+                </li>
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      <hr className="hairline-fade mx-auto max-w-xs" />
+
       {/* Section 6 — Track record */}
       <TrackRecord
         title="20 ans de systèmes livrés"
@@ -250,7 +348,52 @@ export default function LegacyRescuePage() {
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
-      {/* Section 7 — Financing */}
+      {/* Section 7.1 — Bonus */}
+      <Section variant="white">
+        <Reveal>
+          <h2 className="gradient-text font-heading text-3xl leading-tight tracking-display">
+            Offre de lancement Q3 2026
+          </h2>
+        </Reveal>
+        <Reveal delay={100}>
+          <p className="mt-4 max-w-[var(--width-content)] text-base text-muted">
+            Pour les <strong className="text-text">10 premiers éditeurs</strong> qui réservent un Quickscan d&apos;ici fin Q3 2026 :
+          </p>
+        </Reveal>
+        <div className="mt-6 max-w-[var(--width-content)] space-y-4">
+          <Reveal delay={150}>
+            <div className="rounded-lg border border-accent/30 bg-surface-elevated px-8 py-5">
+              <p className="font-heading font-bold text-text">
+                Quickscan offert{" "}
+                <span className="text-sm font-normal text-muted">(valeur 4 500 €)</span>
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                Lecture de code + extraction du modèle métier + plan d&apos;action chiffré priorisé sur 6-12 mois.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={200}>
+            <div className="rounded-lg border border-border bg-surface-elevated px-8 py-5">
+              <p className="font-heading font-bold text-text">Cartographie de la dette technique</p>
+              <p className="mt-1 text-sm text-muted">
+                Incluse, utilisable pour décision board / financement.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={250}>
+            <div className="rounded-lg border border-border bg-surface-elevated px-8 py-5">
+              <p className="font-heading font-bold text-text">Pré-cadrage du Sprint</p>
+              <p className="mt-1 text-sm text-muted">
+                Si vous décidez d&apos;enchaîner, on entre directement en exécution.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      <hr className="hairline-fade mx-auto max-w-xs" />
+
+      {/* Section 7.3 — Financing */}
       <Section variant="surface">
         <Reveal>
           <h2 className="gradient-text font-heading text-3xl leading-tight tracking-display">
@@ -284,7 +427,7 @@ export default function LegacyRescuePage() {
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
-      {/* Section 8 — FAQ */}
+      {/* Section 7.4 — FAQ */}
       <Section variant="white">
         <Reveal>
           <h2 className="gradient-text mb-8 font-heading text-3xl leading-tight tracking-display">
@@ -296,6 +439,35 @@ export default function LegacyRescuePage() {
         </div>
       </Section>
 
+      <hr className="hairline-fade mx-auto max-w-xs" />
+
+      {/* Section 8 — Final CTA */}
+      <Section variant="surface">
+        <Reveal>
+          <h2 className="gradient-text font-heading text-3xl leading-tight tracking-display">
+            Réservez votre Quickscan.
+          </h2>
+        </Reveal>
+        <Reveal delay={100}>
+          <p className="mt-6 max-w-[var(--width-content)] text-base leading-relaxed text-muted">
+            Je prends 1 à 2 missions long terme par mois. Les 10 premiers Quickscans Q3 2026 sont offerts.
+          </p>
+          <p className="mt-3 max-w-[var(--width-content)] text-base leading-relaxed text-muted">
+            Prochain pas : un appel de 30 minutes. On voit si votre situation est un terrain qui en vaut la peine, et si je suis le bon pour intervenir.
+          </p>
+        </Reveal>
+        <Reveal delay={200}>
+          <div className="mt-8 flex flex-col items-start gap-4">
+            <Button href="/contact">Réserver mon Quickscan</Button>
+            <a
+              href="/quickscan-pme"
+              className="text-sm text-muted underline underline-offset-4 transition-colors hover:text-text"
+            >
+              Voir aussi — Quickscan PME (cycle court)
+            </a>
+          </div>
+        </Reveal>
+      </Section>
     </>
   );
 }
