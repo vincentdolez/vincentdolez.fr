@@ -96,7 +96,7 @@ export default async function BlogPostPage({ params }: Params) {
       <CTASection
         text="Ce sujet vous parle ?"
         primaryCTA={{ label: "Prendre rendez-vous", href: "/contact" }}
-        secondaryCTA={{ label: "Voir les offres", href: "/offres" }}
+        secondaryCTA={{ label: "Voir les offres", href: "/" }}
       />
     </>
   );
