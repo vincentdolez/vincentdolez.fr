@@ -85,15 +85,7 @@ export default function QuickscanPMEPage() {
               </em>
             </h1>
             <p className="mt-8 max-w-2xl text-xl leading-[1.6] text-[color:var(--color-text)]">
-              Pas par hasard. Sans méthode, sans contexte, sans système — même
-              la meilleure IA produit du plausible, pas du juste. Vous avez
-              passé plus de temps à reprendre les sorties qu&apos;à faire
-              vous-même.
-            </p>
-            <p className="mt-5 max-w-2xl text-xl leading-[1.6] text-[color:var(--color-text)]">
-              Je viens chez vous. Je regarde votre métier. Je vous montre où
-              l&apos;IA fait gagner du temps réel, et comment l&apos;utiliser
-              pour de vrai.
+              Je viens chez vous. Je regarde votre métier. Je vous montre où l&apos;IA fait gagner du temps réel.
             </p>
             <div className="mt-10">
               <Button href="/contact">Réserver un Quickscan</Button>
@@ -106,33 +98,16 @@ export default function QuickscanPMEPage() {
         </div>
       </section>
 
-      <hr className="divider-rule mx-auto max-w-2xl" />
-
       {/* Section 2 — Sous-titre étendu */}
-      <Section variant="white" maxWidth="content">
-        <Reveal>
-          <span className="eyebrow mb-4">À qui s&apos;adresse le Quickscan</span>
-        </Reveal>
-        <div className="mt-2 space-y-5 leading-normal text-[color:var(--color-text)]">
-          <Reveal delay={100}>
-            <p className="text-lg leading-relaxed">
-              Pour les dirigeants de PME qui ont essayé — eux, leurs équipes,
-              peut-être leurs devs — et qui ont fait le même constat : du
-              contenu plausible, des gains à la marge, plus de temps à reprendre
-              les sorties qu&apos;à faire soi-même. Rien qui touche le cœur du
-              métier. Et pour ceux qui ont du code :{" "}
-              <em>«&nbsp;l&apos;IA ne marche pas sur notre legacy.&nbsp;»</em>
-            </p>
-          </Reveal>
-          <Reveal delay={200}>
-            <p className="text-lg leading-relaxed">
-              Une journée terrain. Je radiographie votre fonctionnement réel.
-              Vous repartez avec un plan d&apos;action écrit pour votre
-              activité, et 2-3 chantiers prêts à démarrer.
+      <div className="bg-[color:var(--color-bg)] px-6 pb-10">
+        <div className="mx-auto max-w-[var(--width-wide)]">
+          <Reveal>
+            <p className="max-w-2xl text-xl leading-relaxed text-[color:var(--color-text)]">
+              Une journée chez vous. Un plan d&apos;action écrit. 2-3 chantiers prêts à démarrer.
             </p>
           </Reveal>
         </div>
-      </Section>
+      </div>
 
       <hr className="divider-rule mx-auto max-w-2xl" />
 
@@ -148,59 +123,13 @@ export default function QuickscanPMEPage() {
           <Reveal delay={100}>
             <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-elevated)] px-8 py-6">
               <p className="leading-relaxed text-[color:var(--color-text)]">
-                Vous avez ouvert ChatGPT. Vous avez demandé. La réponse était à
-                côté, trop générique, parfois inventée. Vous avez passé plus de
-                temps à reprendre la sortie qu&apos;à faire vous-même.
+                ChatGPT essayé. Vos équipes aussi. Gains à la marge — rien qui ait bougé la ligne.
               </p>
               <p className="mt-3 leading-relaxed text-[color:var(--color-text)]">
-                Vos équipes ont essayé pour la rédaction, le résumé, le tri
-                d&apos;emails. Quelques gains à la marge, rien qui ait bougé la
-                ligne.
-              </p>
-              <p className="mt-3 leading-relaxed text-[color:var(--color-text)]">
-                Vos devs, s&apos;il y en a, ont testé Copilot ou Cursor.
-                Verdict : «&nbsp;Ça ne marche pas sur notre code.&nbsp;» Le
-                legacy, l&apos;IA s&apos;y casse les dents — parce qu&apos;elle
-                n&apos;a aucun moyen de remonter votre stack, vos conventions,
-                votre histoire.
+                <strong>Un gain personnel n&apos;est pas un ROI d&apos;entreprise.</strong>{" "}
+                L&apos;IA sans contexte produit du plausible. Pas du juste.
               </p>
             </div>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-elevated)] px-8 py-6">
-              <p className="leading-relaxed text-[color:var(--color-text)]">
-                Et même quand ça marche un peu — vous, en personne, sur vos
-                dossiers — le gain reste à votre échelle. Il ne traverse pas
-                l&apos;équipe. Il ne survit pas à votre semaine de congé. Il
-                n&apos;apparaît pas dans les comptes.{" "}
-                <strong>Un gain personnel n&apos;est pas un ROI d&apos;entreprise.</strong>
-              </p>
-              <p className="mt-3 leading-relaxed text-[color:var(--color-text)]">
-                Le problème n&apos;est pas l&apos;IA. C&apos;est qu&apos;elle a
-                été utilisée comme un moteur de recherche : sans méthode, sans
-                système, sans contexte. Et l&apos;IA sans contexte fournit du
-                contenu plausible — pas du résultat juste.
-              </p>
-              <p className="mt-3 leading-relaxed text-[color:var(--color-text)]">
-                Pendant ce temps, vos concurrents parlent IA, les articles
-                promettent monts et merveilles, et vous savez qu&apos;il y a un
-                gain à aller chercher sans voir par où.{" "}
-                <strong>95 % des POC IA ne livrent rien</strong> (étude MIT,
-                2025). Ils visent à remplacer ; ce qui marche, c&apos;est
-                l&apos;inverse — amplifier vos équipes sur des tâches précises,
-                avec contexte et méthode.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={300}>
-            <p className="mt-2 text-center font-heading text-lg leading-snug tracking-tight text-[color:var(--color-text-strong)] md:text-xl">
-              Ce qu&apos;il vous manque, ce n&apos;est pas plus d&apos;outils.
-              C&apos;est quelqu&apos;un qui regarde votre métier de
-              l&apos;intérieur, et vous montre comment utiliser l&apos;IA, sur
-              quoi, avec quels garde-fous.
-            </p>
           </Reveal>
         </div>
       </Section>
@@ -210,9 +139,8 @@ export default function QuickscanPMEPage() {
       {/* Section 4 — Solution */}
       <Section variant="white">
         <Reveal>
-          <span className="eyebrow mb-4">La méthode</span>
           <h2 className="font-heading text-3xl font-semibold leading-tight tracking-[-0.04em] text-[color:var(--color-text-strong)] text-balance md:text-4xl">
-            Le Quickscan : je viens, je regarde,{" "}
+            Je viens, je regarde,{" "}
             <em>je vous laisse un plan.</em>
           </h2>
         </Reveal>
@@ -221,22 +149,10 @@ export default function QuickscanPMEPage() {
         <Reveal delay={100}>
           <div className="mt-10 rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-7 md:p-8">
             <span className="eyebrow mb-3">
-              Ce qu&apos;on pose en premier · Votre langue métier
+              Ce qu&apos;on pose en premier
             </span>
             <p className="mt-2 leading-relaxed text-[color:var(--color-text)]">
-              ChatGPT ne sait pas comment vous appelez vos clients, vos
-              produits, vos étapes. Copilot ne sait pas ce qui distingue un
-              «&nbsp;dossier&nbsp;» d&apos;un «&nbsp;lot&nbsp;» dans votre
-              activité. C&apos;est pour ça que les sorties sont à côté :
-              l&apos;IA générique parle français — pas votre français.
-            </p>
-            <p className="mt-3 leading-relaxed text-[color:var(--color-text)]">
-              Une partie du Quickscan consiste à poser cette{" "}
-              <strong>couche sémantique</strong> : nommer ce que vous nommez,
-              modéliser vos objets métier, structurer vos données pour
-              qu&apos;elles parlent. Une fois posée, n&apos;importe quelle IA
-              (Claude, ChatGPT, votre propre LLM) devient pertinente sur votre
-              activité. Sans elle, aucune IA ne le sera jamais.
+              L&apos;IA générique parle français — pas votre français. Une partie du Quickscan consiste à poser votre <strong>langue métier</strong> : vos objets, vos règles, votre vocabulaire. Sans ça, aucune IA ne sera pertinente sur votre activité.
             </p>
           </div>
         </Reveal>
@@ -290,28 +206,10 @@ export default function QuickscanPMEPage() {
         <Reveal delay={100}>
           <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-7 md:p-8">
             <span className="eyebrow mb-3">
-              Une brique à la fois · Pas un grand soir
+              Une brique à la fois
             </span>
             <p className="mt-2 leading-relaxed text-[color:var(--color-text)]">
-              <em>
-                «&nbsp;ChatGPT m&apos;aide énormément sur mes dossiers — mais
-                ça n&apos;a pas changé l&apos;entreprise.&nbsp;»
-              </em>{" "}
-              C&apos;est la phrase qu&apos;on entend le plus. Elle est juste :
-              un gain personnel n&apos;est pas un ROI d&apos;entreprise.
-            </p>
-            <p className="mt-3 leading-relaxed text-[color:var(--color-text)]">
-              Le ROI vient de la <strong>systématisation</strong>. Chaque
-              chantier qu&apos;on lance produit un gain mesurable tout seul —
-              et prépare le terrain pour le suivant. Mois après mois, vous ne
-              payez pas un POC géant qui promet de tout changer : vous posez
-              des briques qui se renforcent. À la fin, vous n&apos;avez pas une
-              démo. Vous avez <strong>un système</strong>.
-            </p>
-            <p className="mt-3 leading-relaxed text-[color:var(--color-text)]">
-              Chaque brique tient seule. Vous pouvez vous arrêter à
-              n&apos;importe laquelle et garder la valeur acquise. Vous mesurez
-              à chaque étape.
+              Chaque chantier produit un gain mesurable seul — et prépare le suivant. À la fin, vous n&apos;avez pas une démo. Vous avez <strong>un système</strong>.
             </p>
           </div>
         </Reveal>
@@ -347,12 +245,12 @@ export default function QuickscanPMEPage() {
         title="20 ans à entrer dans des entreprises et à en sortir le système qui manquait."
         systems={[
           {
-            client: "iRaiser",
+            client: "Acteur fintech européen",
             context: "Éditeur logiciel, migration bloquée depuis 3 ans.",
             outcome: "Livrée. Talk Let It Ship.",
           },
           {
-            client: "Arkea",
+            client: "Arka",
             context:
               "D'une idée (images 3D animées) à un produit + ERP + portail client.",
             outcome: "Business durable.",
@@ -376,7 +274,7 @@ export default function QuickscanPMEPage() {
       <Section variant="white" maxWidth="content" className="pt-0">
         <Reveal>
           <p className="mx-auto max-w-2xl text-center text-base leading-relaxed text-[color:var(--color-muted)]">
-            15 ans CTO. Quatre maisons menées de la première ligne au produit
+            20 ans CTO. Quatre maisons menées de la première ligne au produit
             qui dure. Pas de «&nbsp;transformation digitale&nbsp;» — je règle
             des problèmes précis avec des dirigeants qui ont une équipe et des
             clients.

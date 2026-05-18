@@ -435,6 +435,8 @@ strong, b {
   opacity: 0.5;
   filter: blur(24px);
   pointer-events: none;
+  animation: leaf-drift 12s ease-in-out infinite alternate;
+  will-change: transform, opacity;
 }
 
 .hero-orbit {
@@ -447,6 +449,8 @@ strong, b {
   border-radius: 50%;
   opacity: 0.12;
   pointer-events: none;
+  animation: orbit-breathe 8s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .hero-orbit::after {
@@ -455,6 +459,16 @@ strong, b {
   inset: 80px;
   border: 1px solid var(--color-vd-forest);
   border-radius: 50%;
+}
+
+@keyframes leaf-drift {
+  from { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  to   { transform: translate(60px, -50px) scale(1.2); opacity: 0.3; }
+}
+
+@keyframes orbit-breathe {
+  from { transform: scale(1) rotate(0deg); }
+  to   { transform: scale(1.25) rotate(8deg); }
 }
 
 /* ── Floating label inputs ── */

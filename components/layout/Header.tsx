@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, startTransition } from "react";
 
 const navLinks = [
-  { href: "/a-propos", label: "à propos" },
-  { href: "/legacy-rescue", label: "offres" },
+  { href: "/a-propos", label: "À Propos" },
+  { href: "/legacy-rescue", label: "Legacy" },
+  { href: "/quickscan-pme", label: "Quickscan" },
   { href: "/ia-act", label: "IA Act" },
-  { href: "/blog", label: "notes" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export function Header() {
@@ -77,7 +78,7 @@ export function Header() {
               className="inline-flex items-center gap-2.5 rounded-full bg-[var(--color-ink)] px-5 py-2.5 text-sm font-medium text-[var(--color-on-ink)] transition-all duration-[var(--duration-default)] hover:-translate-y-px hover:shadow-md"
             >
               <span className="h-2 w-2 rounded-full bg-[var(--color-vd-acid)]" aria-hidden="true" />
-              prendre rendez-vous
+              Prendre rendez-vous
             </Link>
           </div>
 
@@ -130,7 +131,7 @@ export function Header() {
               className="mt-4 inline-flex items-center gap-2.5 rounded-full bg-[var(--color-ink)] px-7 py-3 text-base font-medium text-[var(--color-on-ink)]"
             >
               <span className="h-2 w-2 rounded-full bg-[var(--color-vd-acid)]" aria-hidden="true" />
-              prendre rendez-vous
+              Prendre rendez-vous
             </Link>
           </nav>
         </div>

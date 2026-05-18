@@ -56,7 +56,7 @@ export default function AboutPage() {
         title="4 systèmes, 4 dirigeants, 4 business qui durent."
         systems={[
           {
-            client: "Arkea",
+            client: "Arka",
             context: "D'une graine — animer des images 3D — un produit + ERP + portail client.",
             outcome: "Enrichissement du fondateur. Business durable.",
           },
@@ -71,7 +71,7 @@ export default function AboutPage() {
             outcome: "5 ans d'exploitation, revente propre.",
           },
           {
-            client: "iRaiser",
+            client: "Acteur fintech européen",
             context: "Migration bloquée 3 ans. Extraction DDD + réécriture IA.",
             outcome: "Terminé. Talk Let It Ship.",
           },

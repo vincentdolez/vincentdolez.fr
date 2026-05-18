@@ -28,7 +28,7 @@ export default function HomePage() {
 
       {/* Section 1 — Hero */}
       <Hero
-        eyebrow="Disponible Q3 2026 · Tech leader détaché · 20 ans CTO"
+        eyebrow="Tech leader détaché · Disponible Q3 2026"
         pulse
         title={
           <>
@@ -37,18 +37,7 @@ export default function HomePage() {
             <em>Je croise les trois.</em>
           </>
         }
-        subtitle={
-          <>
-            <p>
-              L&apos;IA ne gagnera pas la bataille à votre place.
-              <br />
-              Mais elle peut vous faire gagner du terrain.
-            </p>
-            <p className="mt-3 text-base text-[color:var(--color-muted)]">
-              20 ans CTO, engagé dans la croissance de PME et éditeurs logiciel. Vannes, Bretagne, France entière.
-            </p>
-          </>
-        }
+        subtitle="L'IA ne gagnera pas la bataille à votre place. Mais elle peut vous faire gagner du terrain."
         primaryCTA={{ label: "Échanger 30 minutes", href: "/contact" }}
       />
 
@@ -89,10 +78,7 @@ export default function HomePage() {
                 Pour les éditeurs logiciel.
               </h3>
               <p className="mt-4 text-[15px] leading-[1.7] text-[color:var(--color-text)]">
-                Votre migration patine depuis 3 ans. Le dev qui sait commence à regarder ailleurs. Chaque nouvelle feature est un calvaire.
-              </p>
-              <p className="mt-3 text-[15px] leading-[1.7] text-[color:var(--color-text)]">
-                J&apos;extrais le modèle métier enfoui dans votre code (DDD), je restructure sur des fondations propres avec l&apos;IA, je forme votre équipe à maintenir avec Claude Code. À la sortie, le système tient sans moi.
+                Migration patine. Dev qui sait regarde ailleurs. Chaque feature est un calvaire. Je débloque, je restructure, je transfère. À la sortie, le système tient sans moi.
               </p>
               <p className="mt-4 border-t border-[color:var(--color-border)] pt-4 font-mono text-xs italic text-[color:var(--color-muted)]">
                 Engagement long. Missions de plusieurs mois.
@@ -110,10 +96,7 @@ export default function HomePage() {
                 Pour les dirigeants de PME.
               </h3>
               <p className="mt-4 text-[15px] leading-[1.7] text-[color:var(--color-text)]">
-                Vous avez essayé ChatGPT. Vos équipes aussi. Quelques gains à la marge, rien qui touche le cœur du métier.
-              </p>
-              <p className="mt-3 text-[15px] leading-[1.7] text-[color:var(--color-text)]">
-                Une journée chez vous. Je radiographie votre fonctionnement réel, je pose la couche sémantique métier, je vous laisse un plan d&apos;action écrit avec 2-3 chantiers prêts à démarrer.
+                ChatGPT essayé. Gains à la marge, rien sur le cœur du métier. Une journée chez vous — je pose ce qui manque, je vous laisse un plan prêt à exécuter.
               </p>
               <p className="mt-4 border-t border-[color:var(--color-border)] pt-4 font-mono text-xs italic text-[color:var(--color-muted)]">
                 Engagement court. Démarrage rapide. Bretagne et 2 h autour.
@@ -128,13 +111,12 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Section 4 — CaseStudy iRaiser */}
+      {/* Section 4 — CaseStudy Acteur fintech européen */}
       <CaseStudy
         title="Un éditeur logiciel. Migration bloquée depuis 3 ans."
         paragraphs={[
           "Le produit tournait. Mais le code avait 15 ans, personne ne maîtrisait l'ensemble, et chaque tentative de migration échouait. Trop gros, trop risqué, trop cher.",
-          "J'ai conçu des agents IA qui ont analysé le code, la documentation, les transcripts d'interviews. D'autres agents ont modélisé l'activité métier, mappé les écarts, affiné jusqu'à convergence.",
-          "À partir de ce modèle, j'ai reconstruit sur des fondations propres, en isolant l'ancien système. Code généré par IA, structuré, vérifiable, aligné sur le métier.",
+          "J'ai reconstruit sur des fondations propres avec l'IA — en isolant l'ancien système pour que rien ne casse pendant la transition.",
         ]}
         result="Migration livrée. Le modèle est dans le code."
         footnote="Talk Let It Ship — retour de terrain sur cette mission."
@@ -154,7 +136,7 @@ export default function HomePage() {
                 Ce qu&apos;on pose d&apos;abord : votre langue métier.
               </p>
               <p className="mt-3 text-[15px] leading-[1.7] text-[color:var(--color-text)]">
-                Vos mots, votre vocabulaire, vos objets et règles métier. ChatGPT ne sait pas comment vous appelez vos clients, vos produits, vos étapes. Sans cette couche posée, l&apos;IA reste générique. Une fois posée, n&apos;importe quelle IA (Claude, ChatGPT, votre propre LLM) devient pertinente sur votre activité.
+                ChatGPT ne sait pas comment vous appelez vos clients, vos produits, vos étapes. Sans ça, l&apos;IA reste générique. Une fois posée, elle devient pertinente sur votre activité.
               </p>
             </div>
           </Reveal>
@@ -176,7 +158,7 @@ export default function HomePage() {
         title="20 ans de systèmes livrés."
         systems={[
           {
-            client: "Arkea",
+            client: "Arka",
             context:
               "D'une graine (animer des images 3D), un produit + ERP + portail client.",
             outcome: "Enrichissement du fondateur. Business durable.",
@@ -192,7 +174,7 @@ export default function HomePage() {
             outcome: "5 ans d'exploitation, revente propre.",
           },
           {
-            client: "iRaiser",
+            client: "Acteur fintech européen",
             context:
               "Migration bloquée 3 ans. Extraction DDD + réécriture model-driven IA.",
             outcome: "Terminée. Talk Let It Ship.",

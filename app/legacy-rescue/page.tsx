@@ -47,28 +47,31 @@ export default function LegacyRescuePage() {
   return (
     <>
       {/* Section 1 — Problem */}
-      <Section variant="white" className="pt-32 pb-12">
-        <Reveal>
-          <h1 className="max-w-3xl font-heading text-4xl leading-tight tracking-display md:text-5xl">
-            Votre logiciel a de la valeur.
-            <br />
-            <span className="pain-text">Il est juste prisonnier de son propre code.</span>
-          </h1>
-        </Reveal>
-        <Reveal delay={100}>
-          <p className="mt-8 max-w-[var(--width-content)] text-xl leading-relaxed text-muted">
-            Le produit tourne. Les clients paient. Mais la migration patine
-            depuis 3 ans, chaque nouvelle feature est un calvaire, et le dev qui
-            sait commence à regarder ailleurs.
-          </p>
-        </Reveal>
-        <Reveal delay={200}>
-          <p className="mt-4 text-sm text-muted">
-            30 minutes. Pas de pitch. Un vrai diagnostic.{" "}
-            <span className="text-accent">Disponible Q3 2026 · 1-2 missions long terme par mois.</span>
-          </p>
-        </Reveal>
-      </Section>
+      <section className="hero-dark relative px-6 pt-32 pb-20 md:pt-40">
+        <div className="hero-leaf" aria-hidden="true" />
+        <div className="hero-orbit" aria-hidden="true" />
+        <div className="relative z-10 mx-auto max-w-[var(--width-wide)]">
+          <div className="max-w-3xl">
+            <span className="eyebrow mb-6">Legacy Rescue · Cycle long</span>
+            <h1 className="font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.0] tracking-[-0.04em] text-[color:var(--color-text-strong)] [font-variation-settings:'opsz'_96]">
+              Votre logiciel a de la valeur.
+              <br />
+              <em className="pain-text">Il est juste prisonnier de son propre code.</em>
+            </h1>
+            <p className="mt-8 max-w-2xl text-xl leading-[1.6] text-[color:var(--color-text)]">
+              Le produit tourne. Les clients paient. Mais la migration patine
+              depuis 3 ans, chaque nouvelle feature est un calvaire, et le dev qui
+              sait commence à regarder ailleurs.
+            </p>
+            <div className="mt-10">
+              <Button href="/contact">Démarrer par un Quickscan</Button>
+            </div>
+            <p className="mt-4 text-sm text-[color:var(--color-muted)]">
+              Engagement long · Missions de plusieurs mois · Éditeurs logiciel
+            </p>
+          </div>
+        </div>
+      </section>
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
@@ -85,10 +88,6 @@ export default function LegacyRescuePage() {
               <p className="font-heading text-lg leading-snug text-text">
                 &ldquo;La migration dure depuis 3 ans et on ne voit pas le bout.&rdquo;
               </p>
-              <p className="mt-2 text-sm text-muted">
-                Le CTO dit &ldquo;bientôt fini&rdquo;. Les devs s&apos;enlisent dans le legacy.
-                Chaque tentative de refonte crée plus de problèmes qu&apos;elle n&apos;en résout.
-              </p>
             </div>
           </Reveal>
           <Reveal delay={200}>
@@ -96,21 +95,12 @@ export default function LegacyRescuePage() {
               <p className="font-heading text-lg leading-snug text-text">
                 &ldquo;Mon dev senior part. Il est le seul à comprendre le code.&rdquo;
               </p>
-              <p className="mt-2 text-sm text-muted">
-                La connaissance métier est dans les têtes — quand elles partent,
-                le savoir part avec. Pas de doc, pas de modèle, juste du code que
-                personne d&apos;autre n&apos;ose toucher.
-              </p>
             </div>
           </Reveal>
           <Reveal delay={300}>
             <div className="rounded-lg border border-border bg-surface-elevated px-8 py-6">
               <p className="font-heading text-lg leading-snug text-text">
                 &ldquo;Le concurrent shippe. Nous, on est paralysé.&rdquo;
-              </p>
-              <p className="mt-2 text-sm text-muted">
-                L&apos;IA change la donne pour ceux qui peuvent en profiter. Mais votre
-                legacy vous empêche d&apos;y toucher. Chaque mois perdu creuse l&apos;écart.
               </p>
             </div>
           </Reveal>
@@ -145,11 +135,7 @@ export default function LegacyRescuePage() {
                 Ce qu&apos;on pose en premier : votre modèle métier
               </p>
               <p className="text-base leading-relaxed text-text">
-                Le métier de votre produit est dans votre code — enfoui sous 10 ou 15 ans d&apos;évolutions. Vos règles, vos objets, votre vocabulaire : tout est là, mais implicite.
-              </p>
-              <p className="mt-3 text-base leading-relaxed text-text">
-                La première chose qu&apos;on fait, c&apos;est rendre cette{" "}
-                <strong>couche sémantique</strong> explicite. Lecture du code, interviews ciblées, extraction DDD. Vos bounded contexts, vos agrégats, votre langage ubiquitaire deviennent un modèle lisible. C&apos;est ce qui permet à l&apos;IA de raisonner sur votre métier, pas sur du JavaScript générique. Sans cette extraction, aucune IA ne sera utile sur votre legacy.
+                Votre métier est dans votre code — enfoui sous 10 ou 15 ans d&apos;évolutions. La première chose qu&apos;on fait, c&apos;est le rendre explicite : votre vocabulaire, vos règles, vos objets. Sans ça, aucune IA ne sera utile sur votre legacy.
               </p>
             </div>
           </Reveal>
@@ -158,25 +144,21 @@ export default function LegacyRescuePage() {
             <p className="text-lg leading-relaxed text-text">
               <span className="mr-2 font-heading font-bold text-accent">01</span>
               <strong>J&apos;extrais le modèle métier enfoui dans votre code.</strong>{" "}
-              Avant de toucher à une ligne, je lis. DDD, cartographie des dépendances,
-              identification des règles métier que seul le code connaît.
+              Avant de toucher à une ligne, je lis — jusqu&apos;à connaître le métier mieux que le code.
             </p>
           </Reveal>
           <Reveal delay={200}>
             <p className="text-lg leading-relaxed text-text">
               <span className="mr-2 font-heading font-bold text-accent">02</span>
               <strong>Je reconstruis sur des fondations propres.</strong>{" "}
-              Réécriture model-driven avec l&apos;IA. Le code est généré, structuré,
-              vérifiable, aligné sur le métier. Pas un rewrite from scratch — une
-              restructuration progressive, ancien et nouveau cohabitent jusqu&apos;à bascule.
+              Avec l&apos;IA, progressivement — ancien et nouveau cohabitent jusqu&apos;à bascule. Rien ne casse pendant la transition.
             </p>
           </Reveal>
           <Reveal delay={300}>
             <p className="text-lg leading-relaxed text-text">
               <span className="mr-2 font-heading font-bold text-accent">03</span>
               <strong>Je forme votre équipe à maintenir avec l&apos;IA.</strong>{" "}
-              Formation Claude Code intégrée au transfert. L&apos;outil qui a servi à
-              réparer devient l&apos;outil du quotidien de vos devs. À la sortie, l&apos;équipe est autonome.
+              À la sortie, l&apos;équipe est autonome. Plus besoin de moi.
             </p>
           </Reveal>
 
@@ -187,10 +169,7 @@ export default function LegacyRescuePage() {
                 Une brique à la fois. Pas un rewrite.
               </p>
               <p className="text-base leading-relaxed text-text">
-                Beaucoup d&apos;éditeurs ont essayé &ldquo;le grand rewrite&rdquo;. 80 % échouent. Trop gros, trop long, trop risqué — pendant des mois on paye double (l&apos;ancien tourne, le nouveau se construit) avant de découvrir que le périmètre était mal compris.
-              </p>
-              <p className="mt-3 text-base leading-relaxed text-text">
-                Ce qu&apos;on fait à la place : <strong>une brique à la fois</strong>. Chaque chantier produit un gain mesurable tout seul — un bounded context isolé, un agrégat réécrit, une zone critique restructurée. Chaque brique tient seule. Chaque brique prépare la suivante. Vous mesurez à chaque étape, vous pouvez vous arrêter à n&apos;importe quelle brique et garder la valeur acquise.
+                80 % des rewrites from scratch échouent. Trop gros, trop long — on paye double avant de découvrir que le périmètre était mal compris. Ce qu&apos;on fait à la place : <strong>une brique à la fois</strong>. Chaque chantier produit un gain mesurable seul. Vous pouvez vous arrêter à n&apos;importe quelle brique et garder la valeur acquise.
               </p>
             </div>
           </Reveal>
@@ -236,9 +215,9 @@ export default function LegacyRescuePage() {
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
-      {/* Section 5 — Detailed iRaiser case */}
+      {/* Section 5 — Detailed Acteur fintech européen case */}
       <CaseStudy
-        title="iRaiser — Migration bloquée depuis 3 ans. Livrée."
+        title="Acteur fintech européen — Migration bloquée depuis 3 ans. Livrée."
         paragraphs={[
           "Éditeur logiciel, secteur fundraising. Le produit avait 15 ans de code, personne ne maîtrisait l'ensemble, chaque tentative de migration échouait. Trop gros, trop risqué, trop cher.",
           "J'ai conçu des agents IA qui ont analysé le code, la documentation, les tutoriaux vidéo, les transcripts d'interviews utilisateurs. D'autres agents ont modélisé l'activité métier. D'autres encore ont mappé ce qu'ils avaient découvert dans le code sur le modèle métier — puis analysé les écarts et affiné le modèle jusqu'à convergence.",
@@ -263,52 +242,48 @@ export default function LegacyRescuePage() {
       <Section variant="white">
         <Reveal>
           <h2 className="gradient-text font-heading text-3xl leading-tight tracking-display">
-            Pour qui · pour qui pas
+            Pour vous, ou pas.
           </h2>
         </Reveal>
-        <div className="mt-10 grid gap-8 max-w-[var(--width-content)] md:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 md:items-start">
           <Reveal delay={100}>
             <div className="rounded-lg border border-border bg-surface-elevated px-8 py-6">
-              <p className="mb-4 font-heading text-base font-bold tracking-display text-text">
-                Le Legacy Rescue est pour vous si :
-              </p>
-              <ul className="space-y-3 text-sm text-muted">
+              <p className="eyebrow mb-5">Pour vous si…</p>
+              <ul className="space-y-3 text-sm leading-relaxed text-muted">
                 <li className="flex gap-2">
                   <span className="shrink-0 font-bold text-accent">—</span>
                   Vous avez un produit qui tourne, des clients qui paient, et un code qui vous empêche d&apos;avancer.
                 </li>
                 <li className="flex gap-2">
                   <span className="shrink-0 font-bold text-accent">—</span>
-                  Vous voulez un partenaire qui entre dans votre code, pas un consultant qui rédige un rapport.
+                  Vous voulez quelqu&apos;un qui entre dans votre code, pas un consultant qui rédige un rapport.
                 </li>
                 <li className="flex gap-2">
                   <span className="shrink-0 font-bold text-accent">—</span>
-                  Vous voulez une approche progressive (brique à la fois), pas un rewrite from scratch.
+                  Vous voulez une approche progressive — brique à la fois — pas un rewrite from scratch.
                 </li>
                 <li className="flex gap-2">
                   <span className="shrink-0 font-bold text-accent">—</span>
-                  Vous voulez que votre équipe puisse maintenir et faire évoluer le système après mon départ.
+                  Vous voulez que votre équipe puisse maintenir le système après mon départ.
                 </li>
               </ul>
             </div>
           </Reveal>
           <Reveal delay={200}>
             <div className="rounded-lg border border-border bg-surface-elevated px-8 py-6">
-              <p className="mb-4 font-heading text-base font-bold tracking-display text-text">
-                Le Legacy Rescue n&apos;est pas pour vous si :
-              </p>
-              <ul className="space-y-3 text-sm text-muted">
+              <p className="eyebrow mb-5">Pas pour vous si…</p>
+              <ul className="space-y-3 text-sm leading-relaxed text-muted">
                 <li className="flex gap-2">
                   <span className="shrink-0 font-bold text-muted">—</span>
                   Vous cherchez à embaucher du temps de développement (rôle d&apos;ESN).
                 </li>
                 <li className="flex gap-2">
                   <span className="shrink-0 font-bold text-muted">—</span>
-                  Vous voulez une refonte &ldquo;from scratch&rdquo; sans extraction préalable du modèle métier.
+                  Vous voulez une refonte from scratch sans extraction préalable du modèle métier.
                 </li>
                 <li className="flex gap-2">
                   <span className="shrink-0 font-bold text-muted">—</span>
-                  Vous attendez une solution magique sans regarder votre code.
+                  Vous attendez une solution sans regarder votre code de près.
                 </li>
               </ul>
             </div>
@@ -323,7 +298,7 @@ export default function LegacyRescuePage() {
         title="20 ans de systèmes livrés"
         systems={[
           {
-            client: "Arkea",
+            client: "Arka",
             context: "D'une graine — animer des images 3D — un produit + ERP + portail client.",
             outcome: "Enrichissement du fondateur. Business durable.",
           },
@@ -338,7 +313,7 @@ export default function LegacyRescuePage() {
             outcome: "5 ans d'exploitation, revente propre.",
           },
           {
-            client: "iRaiser",
+            client: "Acteur fintech européen",
             context: "Migration bloquée 3 ans. Extraction DDD + réécriture IA.",
             outcome: "Terminé. Talk Let It Ship.",
           },
