@@ -72,7 +72,7 @@ export const organizationJsonLd = {
   name: "Vincent Dolez",
   url: BASE_URL,
   description:
-    "Tech leader & CTO détaché — Legacy rescue : je transforme votre logiciel vieillissant en capital avec l'IA. Extraction métier, réécriture, équipe autonome.",
+    "Partenaire IA et tech leader / CTO détaché. Legacy rescue pour éditeurs logiciel, outillage métier pour PME : extraction du modèle, réécriture model-driven, équipe autonome.",
   founder: {
     "@type": "Person",
     name: "Vincent Dolez",
@@ -84,10 +84,10 @@ export const personJsonLd = {
   "@type": "Person",
   name: "Vincent Dolez",
   url: BASE_URL,
-  jobTitle: "CTO indépendant · Référent IA externalisé",
+  jobTitle: "Tech leader · Partenaire IA · CTO détaché",
   description:
-    "20 ans à construire des systèmes complets pour des dirigeants. CTO indépendant, référent IA externalisé. Legacy rescue et Quickscan PME.",
-  knowsAbout: ["Intelligence Artificielle", "CTO externalisé", "Legacy rescue", "PME-PMI", "Next.js", "TypeScript"],
+    "20 ans à construire des systèmes complets pour des dirigeants. Tech leader et partenaire IA, expert par la pratique. Legacy rescue et Quickscan PME.",
+  knowsAbout: ["Intelligence Artificielle", "Référent IA externalisé", "Legacy rescue", "Outillage métier", "Domain-Driven Design", "Génération model-driven", "Formation Claude Code", "CTO externalisé", "Next.js", "TypeScript"],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Vannes",

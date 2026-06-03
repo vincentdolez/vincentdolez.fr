@@ -2,7 +2,7 @@
 
 ## What
 
-Personal website for Vincent Dolez — Référent IA externalisé pour PME-PMI.
+Personal website for Vincent Dolez — Partenaire IA / Tech leader (CTO détaché). Legacy rescue (éditeurs logiciel) + outillage métier (PME). Référent IA externalisé = label SEO.
 6 pages: accueil, à propos, offres, IA Act, blog, contact.
 
 ## Stack

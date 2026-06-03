@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
   const title = searchParams.get("title") ?? "Vincent Dolez";
   const description =
-    searchParams.get("description") ?? "Référent IA externalisé pour PME-PMI";
+    searchParams.get("description") ?? "Partenaire IA · Tech leader / CTO détaché";
 
   return new ImageResponse(
     (

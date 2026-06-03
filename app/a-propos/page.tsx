@@ -7,7 +7,7 @@ import { buildMetadata, personJsonLd } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "À propos",
   description:
-    "20 ans à construire des systèmes complets pour des dirigeants. CTO indépendant, référent IA externalisé. D'un besoin, je fais une ambition.",
+    "20 ans à construire des systèmes complets pour des dirigeants. Tech leader, partenaire IA, expert par la pratique. D'un besoin, je fais une ambition.",
   path: "/a-propos",
 });
 
@@ -26,7 +26,7 @@ export default function AboutPage() {
             Vincent Dolez
           </h1>
           <p className="mt-6 max-w-2xl text-xl leading-[1.6] text-[color:var(--color-text)]">
-            CTO indépendant · Référent IA externalisé · 20 ans de systèmes complets
+            Tech leader · Partenaire IA · 20 ans de systèmes complets
           </p>
         </Reveal>
       </Section>
@@ -104,7 +104,7 @@ export default function AboutPage() {
           <Reveal delay={200}>
             <p>
               Le fondateur n&apos;a pas besoin de traduire entre consultant et équipe
-              technique. Je parle les deux langues — 15 ans CTO, 20 ans de terrain.
+              technique. Je parle les deux langues — 20 ans CTO, autant de terrain.
             </p>
           </Reveal>
           <Reveal delay={300}>

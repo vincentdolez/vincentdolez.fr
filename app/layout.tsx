@@ -24,11 +24,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Vincent Dolez — Référent IA externalisé pour PME-PMI",
+    default: "Vincent Dolez — Partenaire IA · Tech leader / CTO détaché — legacy rescue",
     template: "%s — Vincent Dolez",
   },
   description:
-    "CTO indépendant et référent IA externalisé. J'aide les PME-ETI à se libérer du goulot : extraction métier, déverrouillage des systèmes, autonomie des équipes.",
+    "Partenaire IA et tech leader, 20 ans CTO. Je fais livrer l'IA dans le code et le métier : legacy rescue pour éditeurs logiciel, outillage métier pour PME.",
   metadataBase: new URL("https://vincentdolez.fr"),
   alternates: { canonical: "https://vincentdolez.fr" },
   icons: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Vincent Dolez",
     images: [
       {
-        url: "/og?title=Vincent+Dolez&description=R%C3%A9f%C3%A9rent+IA+externalis%C3%A9+pour+PME-PMI",
+        url: "/og?title=Vincent+Dolez&description=Partenaire+IA+%C2%B7+Tech+leader+%2F+CTO+d%C3%A9tach%C3%A9",
         width: 1200,
         height: 630,
       },
