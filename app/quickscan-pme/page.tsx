@@ -11,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
   title:
     "Quickscan PME — Vous avez essayé l'IA, rien n'a changé sur votre métier",
   description:
-    "Une journée terrain dans votre entreprise. Je vous montre où l'IA fait gagner du temps réel — pas un POC. Plan d'action écrit pour votre activité. Bretagne et 2 h autour. 10 premiers Quickscans offerts.",
+    "Une journée terrain dans votre entreprise. Je vous montre où l'IA fait gagner du temps réel — pas un POC. Plan d'action écrit pour votre activité. Bretagne et 2 h autour. Quickscan offert contre le droit de publier votre cas.",
   path: "/quickscan-pme",
 });
 
@@ -20,7 +20,7 @@ const quickscanJsonLd = {
   "@type": "WebPage",
   name: "Quickscan PME — Vous avez essayé l'IA, rien n'a changé sur votre métier",
   description:
-    "Quickscan terrain pour dirigeants de PME : une journée chez vous, un plan d'action IA écrit pour votre activité. 10 premiers offerts en Q3 2026.",
+    "Quickscan terrain pour dirigeants de PME : une journée chez vous, un plan d'action IA écrit pour votre activité. Offert contre le droit de publier votre cas, en lancement Q3 2026.",
   url: "https://vincentdolez.fr/quickscan-pme",
   author: {
     "@type": "Person",
@@ -41,9 +41,9 @@ const faqItems = [
       "Surtout dans ce cas. Le Quickscan ne demande aucune compétence tech préalable. Je parle métier avec vous, je traduis. Si une suite technique est nécessaire, je la cadre — vous décidez ensuite.",
   },
   {
-    question: "Combien ça coûte après les 10 premiers ?",
+    question: "Combien ça coûte ?",
     answer:
-      "1 800 € HT pour une journée terrain + plan d'action écrit. Si une mission suit, le Quickscan est déduit.",
+      "1 800 € HT pour une journée terrain + plan d'action écrit. Si une mission suit, le Quickscan est déduit. En lancement, je l'offre à mes premiers cas — contre le droit de publier le résultat.",
   },
   {
     question: "On a déjà fait un audit l'an dernier.",
@@ -76,7 +76,7 @@ export default function QuickscanPMEPage() {
         <div className="hero-orbit" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-[var(--width-wide)]">
           <div className="max-w-3xl">
-            <span className="eyebrow mb-6">Quickscan PME · Cycle court</span>
+            <span className="eyebrow mb-6">Quickscan PME · Une journée</span>
             <h1 className="font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.0] tracking-[-0.04em] text-[color:var(--color-text-strong)] [font-variation-settings:'opsz'_96]">
               Vous avez essayé l&apos;IA.
               <br />
@@ -91,8 +91,7 @@ export default function QuickscanPMEPage() {
               <Button href="/contact">Réserver un Quickscan</Button>
             </div>
             <p className="mt-4 text-sm text-[color:var(--color-muted)]">
-              {/* TODO copy annex Q2 : "il en reste 7" — caler le compteur réel avec Vincent avant publication */}
-              Disponible Q3 2026 · 10 premiers offerts · Bretagne et 2 h autour
+              Disponible Q3 2026 · Premiers cas offerts · Bretagne et 2 h autour
             </p>
           </div>
         </div>
@@ -289,17 +288,15 @@ export default function QuickscanPMEPage() {
         <Reveal>
           <span className="eyebrow mb-4">Offre de lancement · Q3 2026</span>
           <h2 className="font-heading text-3xl font-semibold leading-tight tracking-[-0.04em] text-[color:var(--color-text-strong)] text-balance md:text-4xl">
-            Les <em>10 premières PME</em> qui réservent un Quickscan.
+            Quickscan offert. <em>Contre le droit de publier votre cas.</em>
           </h2>
         </Reveal>
         <Reveal delay={100}>
           <div className="mt-8 rounded-2xl border border-[color:var(--color-ink)] bg-[color:var(--color-surface-elevated)] p-7 shadow-md md:p-8">
             <ul className="space-y-4 leading-relaxed text-[color:var(--color-text)]">
               <li>
-                <strong>Quickscan offert</strong>{" "}
-                {/* TODO copy annex Q1 : confirmer affichage public du tarif 1 800 € HT */}
-                (valeur 1 800 €) — une journée terrain + plan d&apos;action
-                écrit.
+                <strong>Quickscan offert</strong> (valeur 1 800 €) — une journée
+                terrain + plan d&apos;action écrit.
               </li>
               <li>
                 <strong>Cartographie IA Act incluse</strong> — vos usages IA,
@@ -329,7 +326,7 @@ export default function QuickscanPMEPage() {
         <Reveal>
           <span className="eyebrow mb-4">Anti-garantie</span>
           <h2 className="font-heading text-3xl font-semibold leading-tight tracking-[-0.04em] text-[color:var(--color-text-strong)] text-balance md:text-4xl">
-            Pour qui · <em>pour qui pas.</em>
+            Pour vous. <em>Ou pas.</em>
           </h2>
         </Reveal>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -395,9 +392,8 @@ export default function QuickscanPMEPage() {
       </Section>
 
       {/* Section 7 — CTA final */}
-      {/* TODO copy annex Q2 : "il en reste 7" — caler le compteur réel avec Vincent avant publication */}
       <CTASection
-        text={"Réservez votre Quickscan.\nIl en reste 7 sur Q3 2026."}
+        text={"Réservez votre Quickscan.\nPremiers cas offerts en Q3 2026."}
         primaryCTA={{ label: "Réserver mon Quickscan", href: "/contact" }}
         secondaryCTA={{
           label: "Voir aussi · IA Act",
