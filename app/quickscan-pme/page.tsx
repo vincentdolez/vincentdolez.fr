@@ -53,7 +53,7 @@ const faqItems = [
   {
     question: "Et après le Quickscan, vous faites quoi ?",
     answer:
-      "Deux cas naturels. (1) Vous exécutez avec votre équipe — le plan est écrit pour ça. Je peux rester en appui ponctuel si une question bloque. (2) Vous me confiez la suite — on enchaîne sur le premier chantier. Sprint court, livraison terrain, équipe formée pour reprendre seule à la sortie.",
+      "Deux cas naturels. (1) Vous exécutez avec votre équipe — le plan est écrit pour ça. Je reste en appui ponctuel si une question bloque. (2) Vous me confiez la suite. Et là, le Quickscan n'était que la porte d'entrée : industrialiser un process, solder une dette technique ou d'organisation, faire évoluer votre système d'information. Je ne pousse aucun produit — je résous le problème. Souvent celui que vous n'osiez plus regarder. Sprint court, livraison terrain, équipe formée pour reprendre seule.",
   },
   {
     question: "Vous travaillez chez nous ou à distance ?",
@@ -85,7 +85,7 @@ export default function QuickscanPMEPage() {
               </em>
             </h1>
             <p className="mt-8 max-w-2xl text-xl leading-[1.6] text-[color:var(--color-text)]">
-              Je viens chez vous. Je regarde votre métier. Je vous montre où l&apos;IA fait gagner du temps réel.
+              Je passe une journée dans votre activité. Pas pour vous vendre l&apos;IA — pour trouver les deux ou trois endroits où elle vous fait vraiment gagner du temps. Et vous laisser le plan pour y aller.
             </p>
             <div className="mt-10">
               <Button href="/contact">Réserver un Quickscan</Button>
@@ -178,12 +178,12 @@ export default function QuickscanPMEPage() {
                 02
               </span>
               <strong>
-                Je radiographie ce qui marche, ce qui se perd.
+                Je radiographie ce qui marche et ce qui se perd.
               </strong>{" "}
-              Je remonte la chaîne réelle : flux d&apos;information, points de
-              friction, doublons de saisie, dépendance sur une ou deux
-              personnes. Je cartographie vos usages IA actuels et leur niveau
-              de risque (IA Act).
+              Où l&apos;info se recopie trois fois, où un devis attend deux
+              jours, où tout tient sur une seule personne qui a la tête pleine.
+              Et je regarde vos usages IA actuels — ce qu&apos;ils valent, ce
+              qu&apos;ils risquent côté IA Act.
             </p>
           </Reveal>
           <Reveal delay={300}>
@@ -348,8 +348,10 @@ export default function QuickscanPMEPage() {
                   benchmark générique.
                 </li>
                 <li>
-                  Vous voulez prendre de l&apos;avance sur vos concurrents avec
-                  un partenaire capable de prendre la suite.
+                  Vous avez un vrai chantier derrière — industrialiser un
+                  process, solder une dette technique ou d&apos;organisation,
+                  faire évoluer votre SI — et vous voulez quelqu&apos;un capable
+                  de le mener, pas seulement de le diagnostiquer.
                 </li>
               </ul>
             </div>
