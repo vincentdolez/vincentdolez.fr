@@ -11,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
   title:
     "Quickscan PME — Vous avez essayé l'IA, rien n'a changé sur votre métier",
   description:
-    "Une journée terrain dans votre entreprise. Je vous montre où l'IA fait gagner du temps réel — pas un POC. Plan d'action écrit pour votre activité. Bretagne et 2 h autour. Offert pour le lancement.",
+    "Trois rendez-vous d'1h sur une semaine. Je vous montre où l'IA fait gagner du temps réel — pas un POC. Plan d'action écrit pour votre activité. Bretagne et 2 h autour. Offert pour le lancement.",
   path: "/quickscan-pme",
 });
 
@@ -20,7 +20,7 @@ const quickscanJsonLd = {
   "@type": "WebPage",
   name: "Quickscan PME — Vous avez essayé l'IA, rien n'a changé sur votre métier",
   description:
-    "Quickscan terrain pour dirigeants de PME : une journée chez vous, un plan d'action IA écrit pour votre activité. Offert pour le lancement Q3 2026.",
+    "Quickscan terrain pour dirigeants de PME : trois rendez-vous d'1h sur une semaine, un plan d'action IA écrit pour votre activité. Offert pour le lancement Q3 2026.",
   url: "https://vincentdolez.fr/quickscan-pme",
   author: {
     "@type": "Person",
@@ -33,7 +33,7 @@ const faqItems = [
   {
     question: "Combien de temps ça prend ?",
     answer:
-      "Une journée sur place. Deux à trois jours d'analyse après. Vous recevez le plan d'action dans la semaine qui suit.",
+      "Trois rendez-vous d'une heure sur une semaine : le premier chez vous, les deux suivants en visio. J'analyse entre les séances. Vous recevez le plan d'action dans la semaine qui suit.",
   },
   {
     question: "On n'a pas d'équipe tech. Ça marche quand même ?",
@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Combien ça coûte ?",
     answer:
-      "1 800 € HT pour une journée terrain + plan d'action écrit. Si une mission suit, le Quickscan est déduit. Et pour le lancement, je l'offre.",
+      "1 800 € HT pour les trois séances + plan d'action écrit. Si une mission suit, le Quickscan est déduit. Et pour le lancement, je l'offre.",
   },
   {
     question: "On a déjà fait un audit l'an dernier.",
@@ -58,7 +58,7 @@ const faqItems = [
   {
     question: "Vous travaillez chez nous ou à distance ?",
     answer:
-      "Présentiel Bretagne et 2 h autour (Vannes, Rennes, Nantes, Brest, Lorient, Saint-Brieuc). Au-delà, on regarde au cas par cas.",
+      "La première séance en présentiel (Vannes, Rennes, Nantes, Brest, Lorient, Saint-Brieuc) — je dois voir vos écrans et votre terrain. Les deux suivantes en visio. Au-delà de la Bretagne et 2 h autour, on regarde au cas par cas.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function QuickscanPMEPage() {
         <div className="hero-orbit" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-[var(--width-wide)]">
           <div className="max-w-3xl">
-            <span className="eyebrow mb-6">Quickscan PME · Une journée</span>
+            <span className="eyebrow mb-6">Quickscan PME · 3 × 1h</span>
             <h1 className="font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.0] tracking-[-0.04em] text-[color:var(--color-text-strong)] [font-variation-settings:'opsz'_96]">
               Vous avez essayé l&apos;IA.
               <br />
@@ -85,7 +85,7 @@ export default function QuickscanPMEPage() {
               </em>
             </h1>
             <p className="mt-8 max-w-2xl text-xl leading-[1.6] text-[color:var(--color-text)]">
-              Je passe une journée dans votre activité. Pas pour vous vendre l&apos;IA — pour trouver les deux ou trois endroits où elle vous fait vraiment gagner du temps. Et vous laisser le plan pour y aller.
+              Trois heures sur une semaine, dans votre activité. Pas pour vous vendre l&apos;IA — pour trouver les deux ou trois endroits où elle vous fait vraiment gagner du temps. Et vous laisser le plan pour y aller.
             </p>
             <div className="mt-10">
               <Button href="/contact">Réserver un Quickscan</Button>
@@ -102,7 +102,7 @@ export default function QuickscanPMEPage() {
         <div className="mx-auto max-w-[var(--width-wide)]">
           <Reveal>
             <p className="max-w-2xl text-xl leading-relaxed text-[color:var(--color-text)]">
-              Une journée chez vous. Un plan d&apos;action écrit. 2-3 chantiers prêts à démarrer.
+              Trois rendez-vous d&apos;une heure. Un plan d&apos;action écrit. 2-3 chantiers prêts à démarrer.
             </p>
           </Reveal>
         </div>
@@ -170,10 +170,10 @@ export default function QuickscanPMEPage() {
               <span className="mr-2 font-heading font-bold text-[color:var(--color-vd-moss)]">
                 01
               </span>
-              <strong>Je passe une journée chez vous.</strong> En présentiel
-              quand c&apos;est possible (Vannes, Rennes, Nantes, Brest). On
-              parle vrai : qui fait quoi, avec quels outils, où ça coince, où
-              sont les leviers. Je vois vos écrans, pas vos slides.
+              <strong>Séance 1 — une heure chez vous, en présentiel.</strong>{" "}
+              (Vannes, Rennes, Nantes, Brest.) On parle vrai : qui fait quoi,
+              avec quels outils, où ça coince, où sont les leviers. Je vois vos
+              écrans, pas vos slides.
             </p>
           </Reveal>
           <Reveal delay={200}>
@@ -300,8 +300,8 @@ export default function QuickscanPMEPage() {
           <div className="mt-8 rounded-2xl border border-[color:var(--color-ink)] bg-[color:var(--color-surface-elevated)] p-7 shadow-md md:p-8">
             <ul className="space-y-4 leading-relaxed text-[color:var(--color-text)]">
               <li>
-                <strong>Quickscan offert</strong> (valeur 1 800 €) — une journée
-                terrain + plan d&apos;action écrit.
+                <strong>Quickscan offert</strong> (valeur 1 800 €) — trois
+                séances d&apos;une heure + plan d&apos;action écrit.
               </li>
               <li>
                 <strong>Cartographie IA Act incluse</strong> — vos usages IA,
