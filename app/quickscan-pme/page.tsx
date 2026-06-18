@@ -122,11 +122,16 @@ export default function QuickscanPMEPage() {
           <Reveal delay={100}>
             <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-elevated)] px-8 py-6">
               <p className="leading-relaxed text-[color:var(--color-text)]">
-                ChatGPT essayé. Vos équipes aussi. Gains à la marge — rien qui ait bougé la ligne.
+                Quelques prompts, un résumé de réunion, un mail mieux tourné. Du
+                temps grappillé sur les marges — rien qui ait bougé une ligne qui
+                compte. Un gain personnel n&apos;est pas un ROI d&apos;entreprise :
+                l&apos;IA sans contexte produit du plausible, pas du juste.
               </p>
               <p className="mt-3 leading-relaxed text-[color:var(--color-text)]">
-                <strong>Un gain personnel n&apos;est pas un ROI d&apos;entreprise.</strong>{" "}
-                L&apos;IA sans contexte produit du plausible. Pas du juste.
+                <strong>Le vrai gisement est ailleurs.</strong> Dans les
+                opérations que vous portez à bout de bras — celles qui touchent
+                vos clients, qui ne tolèrent pas l&apos;erreur, et que personne
+                n&apos;a jamais outillées.
               </p>
             </div>
           </Reveal>
@@ -358,8 +363,8 @@ export default function QuickscanPMEPage() {
                   la mode.
                 </li>
                 <li>
-                  Vous attendez que l&apos;IA résolve un problème que vous
-                  n&apos;avez pas encore formulé.
+                  Vous voulez un outil magique, sans rien changer à vos
+                  opérations.
                 </li>
                 <li>
                   Vous cherchez un consultant qui livre un rapport et disparaît.
