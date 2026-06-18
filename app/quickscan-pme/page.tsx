@@ -11,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
   title:
     "Quickscan PME — Vous avez essayé l'IA, rien n'a changé sur votre métier",
   description:
-    "Une journée terrain dans votre entreprise. Je vous montre où l'IA fait gagner du temps réel — pas un POC. Plan d'action écrit pour votre activité. Bretagne et 2 h autour. Quickscan offert contre le droit de publier votre cas.",
+    "Une journée terrain dans votre entreprise. Je vous montre où l'IA fait gagner du temps réel — pas un POC. Plan d'action écrit pour votre activité. Bretagne et 2 h autour. Offert pour le lancement.",
   path: "/quickscan-pme",
 });
 
@@ -20,7 +20,7 @@ const quickscanJsonLd = {
   "@type": "WebPage",
   name: "Quickscan PME — Vous avez essayé l'IA, rien n'a changé sur votre métier",
   description:
-    "Quickscan terrain pour dirigeants de PME : une journée chez vous, un plan d'action IA écrit pour votre activité. Offert contre le droit de publier votre cas, en lancement Q3 2026.",
+    "Quickscan terrain pour dirigeants de PME : une journée chez vous, un plan d'action IA écrit pour votre activité. Offert pour le lancement Q3 2026.",
   url: "https://vincentdolez.fr/quickscan-pme",
   author: {
     "@type": "Person",
@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Combien ça coûte ?",
     answer:
-      "1 800 € HT pour une journée terrain + plan d'action écrit. Si une mission suit, le Quickscan est déduit. En lancement, je l'offre à mes premiers cas — contre le droit de publier le résultat.",
+      "1 800 € HT pour une journée terrain + plan d'action écrit. Si une mission suit, le Quickscan est déduit. Et pour le lancement, je l'offre.",
   },
   {
     question: "On a déjà fait un audit l'an dernier.",
@@ -288,7 +288,7 @@ export default function QuickscanPMEPage() {
         <Reveal>
           <span className="eyebrow mb-4">Offre de lancement · Q3 2026</span>
           <h2 className="font-heading text-3xl font-semibold leading-tight tracking-[-0.04em] text-[color:var(--color-text-strong)] text-balance md:text-4xl">
-            Quickscan offert. <em>Contre le droit de publier votre cas.</em>
+            Le Quickscan, <em>offert.</em>
           </h2>
         </Reveal>
         <Reveal delay={100}>
@@ -309,12 +309,6 @@ export default function QuickscanPMEPage() {
                 partenaires agréés).
               </li>
             </ul>
-            <p className="mt-6 border-t border-[color:var(--color-border)] pt-5 text-sm leading-relaxed text-[color:var(--color-muted)]">
-              En contrepartie : j&apos;utilise vos résultats (anonymisés si
-              vous le souhaitez) pour montrer ce que donne un Quickscan PME en
-              pratique. Vous gagnez un diagnostic terrain ; je gagne des
-              preuves.
-            </p>
           </div>
         </Reveal>
       </Section>
