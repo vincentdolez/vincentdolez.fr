@@ -11,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
   title:
     "Quickscan PME — Vous avez essayé l'IA, rien n'a changé sur votre métier",
   description:
-    "Trois rendez-vous d'1h sur une semaine. Je vous montre où l'IA fait gagner du temps réel — pas un POC. Plan d'action écrit pour votre activité. Bretagne et 2 h autour. Offert pour le lancement.",
+    "Trois rendez-vous d'1h sur une semaine. Je vous montre où l'IA fait gagner du temps réel — pas un POC. Plan d'action écrit pour votre activité. Bretagne et 2 h autour.",
   path: "/quickscan-pme",
 });
 
@@ -20,7 +20,7 @@ const quickscanJsonLd = {
   "@type": "WebPage",
   name: "Quickscan PME — Vous avez essayé l'IA, rien n'a changé sur votre métier",
   description:
-    "Quickscan terrain pour dirigeants de PME : trois rendez-vous d'1h sur une semaine, un plan d'action IA écrit pour votre activité. Offert pour le lancement Q3 2026.",
+    "Quickscan terrain pour dirigeants de PME : trois rendez-vous d'1h sur une semaine, un plan d'action IA écrit pour votre activité.",
   url: "https://vincentdolez.fr/quickscan-pme",
   author: {
     "@type": "Person",
@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Combien ça coûte ?",
     answer:
-      "1 800 € HT pour les trois séances + plan d'action écrit. Si une mission suit, le Quickscan est déduit. Et pour le lancement, je l'offre.",
+      "1 800 € HT pour les trois séances + plan d'action écrit. Si une mission suit, le Quickscan est déduit.",
   },
   {
     question: "On a déjà fait un audit l'an dernier.",
@@ -91,7 +91,7 @@ export default function QuickscanPMEPage() {
               <Button href="/contact">Réserver un Quickscan</Button>
             </div>
             <p className="mt-4 text-sm text-[color:var(--color-muted)]">
-              Disponible Q3 2026 · Premiers cas offerts · Bretagne et 2 h autour
+              Bretagne et 2 h autour
             </p>
           </div>
         </div>
@@ -288,38 +288,6 @@ export default function QuickscanPMEPage() {
 
       <hr className="divider-rule mx-auto max-w-2xl" />
 
-      {/* Section 6.1 — Bonus offre de lancement */}
-      <Section variant="surface" maxWidth="content">
-        <Reveal>
-          <span className="eyebrow mb-4">Offre de lancement · Q3 2026</span>
-          <h2 className="font-heading text-3xl font-semibold leading-tight tracking-[-0.04em] text-[color:var(--color-text-strong)] text-balance md:text-4xl">
-            Le Quickscan, <em>offert.</em>
-          </h2>
-        </Reveal>
-        <Reveal delay={100}>
-          <div className="mt-8 rounded-2xl border border-[color:var(--color-ink)] bg-[color:var(--color-surface-elevated)] p-7 shadow-md md:p-8">
-            <ul className="space-y-4 leading-relaxed text-[color:var(--color-text)]">
-              <li>
-                <strong>Quickscan offert</strong> (valeur 1 800 €) — trois
-                séances d&apos;une heure + plan d&apos;action écrit.
-              </li>
-              <li>
-                <strong>Cartographie IA Act incluse</strong> — vos usages IA,
-                leurs niveaux de risque, vos obligations (art. 4 en vigueur,
-                art. 26/99 en août 2026).
-              </li>
-              <li>
-                <strong>Un plan d&apos;action écrit, pas une slide</strong> —
-                utilisable pour aller chercher du financement (OPCO, CII via
-                partenaires agréés).
-              </li>
-            </ul>
-          </div>
-        </Reveal>
-      </Section>
-
-      <hr className="divider-rule mx-auto max-w-2xl" />
-
       {/* Section 6.2 — Anti-garantie */}
       <Section variant="white">
         <Reveal>
@@ -392,7 +360,7 @@ export default function QuickscanPMEPage() {
 
       {/* Section 7 — CTA final */}
       <CTASection
-        text={"Réservez votre Quickscan.\nPremiers cas offerts en Q3 2026."}
+        text={"Réservez votre Quickscan."}
         primaryCTA={{ label: "Réserver mon Quickscan", href: "/contact" }}
         secondaryCTA={{
           label: "Voir aussi · IA Act",

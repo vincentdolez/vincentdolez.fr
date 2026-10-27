@@ -28,7 +28,7 @@ export default function HomePage() {
 
       {/* Section 1 — Hero */}
       <Hero
-        eyebrow="Tech leader détaché · Disponible Q3 2026"
+        eyebrow="Tech leader détaché"
         pulse
         title={
           <>
@@ -186,7 +186,7 @@ export default function HomePage() {
       {/* Section 7 — LaunchOffer */}
       <LaunchOffer
         title="Vous voulez voir ce que ça donne chez vous ?"
-        description="Pour ouvrir Q3 2026, les 10 premiers Quickscans PME sont offerts. Disponibilité limitée à 2-3 missions terrain par mois."
+        description="Disponibilité limitée à 2-3 missions terrain par mois."
         cta={{ label: "Réserver mon Quickscan", href: "/quickscan-pme" }}
         secondaryCTA={{ label: "Échanger 30 minutes", href: "/contact" }}
       />

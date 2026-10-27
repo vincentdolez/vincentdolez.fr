@@ -11,7 +11,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "Legacy Rescue — Transformation de logiciels vieillissants avec l'IA",
   description:
-    "Migration bloquée depuis 3 ans ? Dev clé qui part ? J'extrais votre modèle métier, je restructure avec l'IA, je forme votre équipe. Une brique à la fois. Quickscan offert pour les 10 premiers éditeurs Q3 2026.",
+    "Migration bloquée depuis 3 ans ? Dev clé qui part ? J'extrais votre modèle métier, je restructure avec l'IA, je forme votre équipe. Une brique à la fois.",
   path: "/legacy-rescue",
 });
 
@@ -19,7 +19,7 @@ const faqItems = [
   {
     question: "C'est quoi un Quickscan ?",
     answer:
-      "Je lis votre code pendant quelques jours. Je vous dis ce qu'il y a vraiment dedans : le modèle métier implicite, les dépendances, la dette, les risques. Vous repartez avec un plan d'action chiffré et priorisé. Offert pour les 10 premiers éditeurs Q3 2026.",
+      "Je lis votre code pendant quelques jours. Je vous dis ce qu'il y a vraiment dedans : le modèle métier implicite, les dépendances, la dette, les risques. Vous repartez avec un plan d'action chiffré et priorisé.",
   },
   {
     question: "On n'a pas 6 mois devant nous.",
@@ -231,7 +231,6 @@ export default function LegacyRescuePage() {
         <Reveal>
           <div className="text-center">
             <Button href="/contact">Prendre rendez-vous</Button>
-            <p className="mt-3 text-sm text-muted">Quickscan offert pour les 10 premiers.</p>
           </div>
         </Reveal>
       </Section>
@@ -323,51 +322,6 @@ export default function LegacyRescuePage() {
 
       <hr className="hairline-fade mx-auto max-w-xs" />
 
-      {/* Section 7.1 — Bonus */}
-      <Section variant="white">
-        <Reveal>
-          <h2 className="gradient-text font-heading text-3xl leading-tight tracking-display">
-            Offre de lancement Q3 2026
-          </h2>
-        </Reveal>
-        <Reveal delay={100}>
-          <p className="mt-4 max-w-[var(--width-content)] text-base text-muted">
-            Pour les <strong className="text-text">10 premiers éditeurs</strong> qui réservent un Quickscan d&apos;ici fin Q3 2026 :
-          </p>
-        </Reveal>
-        <div className="mt-6 max-w-[var(--width-content)] space-y-4">
-          <Reveal delay={150}>
-            <div className="rounded-lg border border-accent/30 bg-surface-elevated px-8 py-5">
-              <p className="font-heading font-bold text-text">
-                Quickscan offert{" "}
-                <span className="text-sm font-normal text-muted">(valeur 4 500 €)</span>
-              </p>
-              <p className="mt-1 text-sm text-muted">
-                Lecture de code + extraction du modèle métier + plan d&apos;action chiffré priorisé sur 6-12 mois.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={200}>
-            <div className="rounded-lg border border-border bg-surface-elevated px-8 py-5">
-              <p className="font-heading font-bold text-text">Cartographie de la dette technique</p>
-              <p className="mt-1 text-sm text-muted">
-                Incluse, utilisable pour décision board / financement.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={250}>
-            <div className="rounded-lg border border-border bg-surface-elevated px-8 py-5">
-              <p className="font-heading font-bold text-text">Pré-cadrage du Sprint</p>
-              <p className="mt-1 text-sm text-muted">
-                Si vous décidez d&apos;enchaîner, on entre directement en exécution.
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </Section>
-
-      <hr className="hairline-fade mx-auto max-w-xs" />
-
       {/* Section 7.3 — Financing */}
       <Section variant="surface">
         <Reveal>
@@ -425,7 +379,7 @@ export default function LegacyRescuePage() {
         </Reveal>
         <Reveal delay={100}>
           <p className="mt-6 max-w-[var(--width-content)] text-base leading-relaxed text-muted">
-            Je prends 1 à 2 missions long terme par mois. Les 10 premiers Quickscans Q3 2026 sont offerts.
+            Je prends 1 à 2 missions long terme par mois.
           </p>
           <p className="mt-3 max-w-[var(--width-content)] text-base leading-relaxed text-muted">
             Prochain pas : un appel de 30 minutes. On voit si votre situation est un terrain qui en vaut la peine, et si je suis le bon pour intervenir.
